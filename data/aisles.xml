@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aisles>
+  <aisle>
+    <al_id>1</al_id>
+    <al_name>Vegetables and Fruits</al_name>
+  </aisle>
+
+  <aisle>
+    <al_id>2</al_id>
+    <al_name>Meat</al_name>
+  </aisle>
+
+  <aisle>
+    <al_id>3</al_id>
+    <al_name>Bakery</al_name>
+  </aisle>
+
+  <aisle>
+    <al_id>4</al_id>
+    <al_name>Pantry</al_name>
+  </aisle>
+
+  <aisle>
+    <al_id>5</al_id>
+    <al_name>Dairy</al_name>
+  </aisle>
+
+  <aisle>
+    <al_id>6</al_id>
+    <al_name>Cleaning Supplies</al_name>
+  </aisle>
+</aisles>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addresses>
+  <address>
+    <ad_id>1</ad_id>
+    <add_1>Maisaonneuve Blvd W</add_1>
+    <add_2></add_2>
+    <city>Montreal</city>
+    <postal_code>H3H 2N3</postal_code>
+    <country>Canada</country>
+  </address>
+
+  <address>
+    <ad_id>2</ad_id>
+    <add_1>2155 Guy st</add_1>
+    <add_2></add_2>
+    <city>Montreal</city>
+    <postal_code>H3H 2L9</postal_code>
+    <country>Canada</country>
+  </address>
+</addresses>

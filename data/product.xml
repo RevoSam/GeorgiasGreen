@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+  <product>
+    <pdt_id>GGCP225_PK</pdt_id>
+    <pdt_al_id>6</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Strong Paper Towel</pdt_name>
+    <pdt_description>Ultra Strong Paper Towel, 60 sheets each roll (27.4 x 22.0 cm)</pdt_description>
+    <pdt_price>3.49</pdt_price>
+    <pdt_package_type>2/pkg</pdt_package_type>
+    <pdt_unit>2</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <img_path>..\..\assets/Cleaning Aisle Products/Paper Towel.png</img_path>
+  </product>
+
+  <product>
+    <pdt_id>GGCP336_QT</pdt_id>
+    <pdt_al_id>6</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Soft Double Ply Toilet Paper</pdt_name>
+    <pdt_description>High-quality Double Ply Toilet Paper, soft and thick. (6 Rolls - 242 Sheets per Roll)</pdt_description>
+    <pdt_price>6.97</pdt_price>
+    <pdt_package_type>242 Sheets - 6 Rolls</pdt_package_type>
+    <pdt_unit>6</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <img_path>..\..\assets/Cleaning Aisle Products/Toilet Paper.png</img_path>
+  </product>
+
+  <product>
+    <pdt_id>GGCP501_GP</pdt_id>
+    <pdt_al_id>6</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Dishwashing Liquid</pdt_name>
+    <pdt_description>Powerful grease cutting formula to clean dirty dishes.</pdt_description>
+    <pdt_price>3.99</pdt_price>
+    <pdt_package_type>740 ml</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <img_path>..\..\assets/Cleaning Aisle Products/Dishwashing.png</img_path>
+  </product>
+
+  <product>
+    <pdt_id>GGCP628_LP</pdt_id>
+    <pdt_al_id>6</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Garbage Bags</pdt_name>
+    <pdt_description>Kitchen White garbage bags. 50 bags per roll</pdt_description>
+    <pdt_price>5.99</pdt_price>
+    <pdt_package_type>50 bags / roll</pdt_package_type>
+    <pdt_unit>50</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <img_path>..\..\assets/Cleaning Aisle Products/Garbage Bags.png</img_path>
+  </product>
+  
+  <product>
+    <pdt_id>GGCP101_QF</pdt_id>
+    <pdt_al_id>6</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Bleach</pdt_name>
+    <pdt_description>A cleaning solution for cleaning and disinfecting household surfaces</pdt_description>
+    <pdt_price>3.49</pdt_price>
+    <pdt_package_type>1.27L</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <img_path>..\..\assets/Cleaning Aisle Products/Bleach.png</img_path>
+  </product>
+</products>
