@@ -25,11 +25,15 @@ function changeProductQty() {
   }
   updateProductExtendedTtl();
   //Using SessionStorage to store the value of the specific quantity count of the specific page using currentPageID
-  sessionStorage.setItem(currentPageID + "quantity", textfield.value);
+
+  var id = new URLSearchParams(window.location.search).get("ID");
+
+  sessionStorage.setItem(currentPageID + id + "quantity", textfield.value);
 }
 
 function updateProductExtendedTtl() {
-  let quantity = sessionStorage.getItem(currentPageID + "quantity");
+  var id = new URLSearchParams(window.location.search).get("ID");
+  let quantity = sessionStorage.getItem(currentPageID + id + "quantity");
   try {
     document.getElementById("total").value =
       "$" +
@@ -54,10 +58,11 @@ window.addEventListener("load", loadProductQty);
 window.addEventListener("load", loadProductsInCart);
 
 function loadProductQty() {
-  if (sessionStorage.getItem(currentPageID + "quantity") != null) {
+  var id = new URLSearchParams(window.location.search).get("ID");
+  if (sessionStorage.getItem(currentPageID + id + "quantity") != null) {
     var qtyText = document.getElementById("quantity-text");
-    if (qtyText) {
-      qtyText.value = sessionStorage.getItem(currentPageID + "quantity");
+    if (qtyText != null) {
+      qtyText.value = sessionStorage.getItem(currentPageID + id + "quantity");
     }
   }
 
@@ -410,7 +415,7 @@ function change_updateProductExtendedTtl() {
 
 function addListener2QtyBox() {
   var QtyText = document.getElementById("quantity-text");
-  if (QtyText) {
+  if (QtyText != null) {
     QtyText.addEventListener("keyup", change_updateProductExtendedTtl);
   }
 }
