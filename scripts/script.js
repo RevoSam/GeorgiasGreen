@@ -54,11 +54,14 @@ window.addEventListener("load", loadProductQty);
 window.addEventListener("load", loadProductsInCart);
 
 function loadProductQty() {
-  if (sessionStorage.getItem(currentPageID + "quantity") != null)
-    document.getElementById("quantity-text").value = sessionStorage.getItem(
-      currentPageID + "quantity"
-    );
+  if (sessionStorage.getItem(currentPageID + "quantity") != null) {
+    var qtyText = document.getElementById("quantity-text");
+    if (qtyText) {
+      qtyText.value = sessionStorage.getItem(currentPageID + "quantity");
+    }
+  }
 
+  addListener2QtyBox();
   updateProductExtendedTtl();
 }
 
@@ -384,9 +387,6 @@ function deleteEntireRow(e) {
   }
 }
 
-
-
-
 /*TEST FOR BOX UPDATE TO DELETE IF CAUSE PROBLEMS*/
 function updateExtendedTtl() {
   document.getElementById("total").value =
@@ -408,9 +408,14 @@ function change_updateProductExtendedTtl() {
   updateExtendedTtl();
 }
 
-document.getElementById("quantity-text").addEventListener("keyup", change_updateProductExtendedTtl);
-/*TEST FOR BOX UPDATE TO DELETE IF CAUSE PROBLEMS*/
+function addListener2QtyBox() {
+  var QtyText = document.getElementById("quantity-text");
+  if (QtyText) {
+    QtyText.addEventListener("keyup", change_updateProductExtendedTtl);
+  }
+}
 
+/*TEST FOR BOX UPDATE TO DELETE IF CAUSE PROBLEMS*/
 
 /** End Script for Cart Pages */
 

@@ -1,34 +1,3 @@
-<?php 
-  $file_open_products = '../data/product.xml';
-  if (file_exists($file_open_products))
-  {
-    if (isset($_GET['ID']))
-    {
-      $product_found = "";
-      $product_id = $_GET['ID'];
-      $products = simplexml_load_file($file_open_products);
-      foreach ($products->product as $product){
-        if ($product->pdt_id == $product_id)
-        {
-          $product_found =  $product;   
-        }
-      }
-      if (!$product_found){
-        header('HTTP/1.0 404 Not Found');
-        readfile('404.php');
-        exit();
-      }
-    }
-    else{
-      header('HTTP/1.0 404 Not Found');
-      readfile('404.php');
-      exit();
-    }
-  }
-  else{
-    exit('Failed to open ');
-  }
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,36 +29,7 @@
         <input type="text" placeholder="Search for a product..." />
       </div>
     </div>
-    <div class="body">
-      <div class="item_wrapper">
-        <img id="productImg" src="<?php echo $product_found[0]->img_path ?>">
-        <div class="item_details">
-        <h2 class="brand"><?php echo $product_found[0]->pdt_brand_name?></h2>
-        <span class="item_description"><?php echo $product_found[0]->pdt_name . ' (' . $product_found[0]->pdt_package_type . ')'?></span>
-        <span id = "price" class = "item_price">$<?php echo $product_found[0]->pdt_price ?></span>
-        <span class="item_price_insight">$<?php echo number_format((float)$product_found[0]->pdt_price / $product_found[0]->pdt_unit, 2, '.', '')?> / ea</span>
-        <div id="quantity-modifier">
-          <p style="margin-bottom: 0px; font-size: large;">Quantity: </p>
-          <input class="plus-minus-button" type="button" value="-">
-          <input id="quantity-text" type="text" placeholder="1" value=1>
-          <input  class="plus-minus-button" type="button" value="+">
-          <p  style="margin-bottom: 0px; font-size: large;">Item Total:<br> </p>
-          <input  id = "total" type = "text" value = "<?php echo $product_found[0]->pdt_price ?>$" disabled = "disabled" style = "padding:10px;">
-        </div>
-        <a href="" id="add2Cart" class="button" ">Add to Cart</a>
-        <div class="more-desc">
-          <hr>
-          <a class="show-more" href="">Show More</a>
-        </div>
-        <div id = "content-description" class="hideContent">
-          <h2 class="brand description">Product Description</h2>
-          <p class="product_description"><?php echo $product_found[0]->pdt_description ?></p>
-          <br>
-          <span class="item_number">Product Number: <?php echo $product_found[0]->pdt_id ?></span>
-        </div>
-      </div>
-      </div>
-    </div>
+    <h2 id="ErrorTittle">404 Page not found</h2>
     <div class="footer">
       <div id="link-list-left">
         <p><strong>Useful Links</strong></p>
