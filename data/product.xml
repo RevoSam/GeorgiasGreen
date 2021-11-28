@@ -5,6 +5,7 @@
     <pdt_al_id>6</pdt_al_id>
     <pdt_order_number></pdt_order_number>
     <pdt_name>Strong Paper Towel</pdt_name>
+    <pdt_short_description>Strong Paper Towel</pdt_short_description>
     <pdt_description>Ultra Strong Paper Towel, 60 sheets each roll (27.4 x 22.0 cm)</pdt_description>
     <pdt_price>3.49</pdt_price>
     <pdt_package_type>2/pkg</pdt_package_type>
@@ -19,6 +20,7 @@
     <pdt_al_id>6</pdt_al_id>
     <pdt_order_number></pdt_order_number>
     <pdt_name>Soft Double Ply Toilet Paper</pdt_name>
+    <pdt_short_description>Soft Double Ply TP</pdt_short_description>
     <pdt_description>High-quality Double Ply Toilet Paper, soft and thick. (6 Rolls - 242 Sheets per Roll)</pdt_description>
     <pdt_price>6.97</pdt_price>
     <pdt_package_type>242 Sheets - 6 Rolls</pdt_package_type>
@@ -33,6 +35,7 @@
     <pdt_al_id>6</pdt_al_id>
     <pdt_order_number></pdt_order_number>
     <pdt_name>Dishwashing Liquid</pdt_name>
+    <pdt_short_description>Dishwashing Liquid</pdt_short_description>
     <pdt_description>Powerful grease cutting formula to clean dirty dishes.</pdt_description>
     <pdt_price>3.99</pdt_price>
     <pdt_package_type>740 ml</pdt_package_type>
@@ -47,6 +50,7 @@
     <pdt_al_id>6</pdt_al_id>
     <pdt_order_number></pdt_order_number>
     <pdt_name>Garbage Bags</pdt_name>
+    <pdt_short_description>Garbage Bags</pdt_short_description>
     <pdt_description>Kitchen White garbage bags. 50 bags per roll</pdt_description>
     <pdt_price>5.99</pdt_price>
     <pdt_package_type>50 bags / roll</pdt_package_type>
@@ -61,6 +65,7 @@
     <pdt_al_id>6</pdt_al_id>
     <pdt_order_number></pdt_order_number>
     <pdt_name>Bleach</pdt_name>
+    <pdt_short_description>Original Liquid Bleach</pdt_short_description>
     <pdt_description>A cleaning solution for cleaning and disinfecting household surfaces</pdt_description>
     <pdt_price>3.49</pdt_price>
     <pdt_package_type>1.27L</pdt_package_type>

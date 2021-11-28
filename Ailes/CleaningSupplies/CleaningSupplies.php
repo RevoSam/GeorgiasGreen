@@ -53,11 +53,13 @@
             echo "<ul>";
               foreach($products_found  as $item){
                 echo "<li>";
-                echo "<a href = ''>";
+                $id = urlencode($item->pdt_id);
+                $url = htmlspecialchars("../../Products/product.php?ID=". $id );
+                echo "<a href = '{$url}'>";
                 echo "<div class = 'product'>";
                 echo "<img src = '{$item->img_path}'>";
                 echo "<h3>{$item->pdt_name}</h3>";
-                echo "<h4>{$item->pdt_description} ({$item->pdt_package_type})</h4>";
+                echo "<h4>{$item->pdt_short_description} ({$item->pdt_package_type})</h4>";
                 echo "<span>$ {$item->pdt_price}</span>";
                 echo "</div>";
                 echo "</a>";
@@ -66,7 +68,8 @@
             echo "<li></li>";
             echo "</ul>";
           ?>
-          <ul>
+          
+          <!-- <ul>
             <li>
               <a href="PaperTowel.php">
               <div class="product">
@@ -119,7 +122,7 @@
               </div></a>
             </li>
             <li></li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
