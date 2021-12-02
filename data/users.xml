@@ -3,7 +3,7 @@
   <user>
     <id_user>1</id_user>
     <id_add_user>1</id_add_user>
-    <id_role_user>1</id_role_user>
+    <admin>1</admin>
     <email>admin@georgiagreens.ca</email>
     <password>1234</password>
     <points>0</points>
