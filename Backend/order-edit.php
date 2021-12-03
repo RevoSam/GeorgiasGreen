@@ -1,3 +1,39 @@
+<?php 
+  $file_open_products = '../data/product.xml';
+  $file_open_orders_products = '../data/order_products.xml';
+  $file_open_orders = '../data/orders.xml';
+  $file_open_users = '../data/users.xml';
+  if (file_exists($file_open_products) && file_exists($file_open_orders))
+  {
+    if (isset($_GET['ID']))
+    {
+      $order_found = "";
+      $order_id = $_GET['ID'];
+      $orders = simplexml_load_file($file_open_orders);
+      $users = simplexml_load_file($file_open_users);
+      $products = simplexml_load_file($file_open_products);
+      foreach ($orders->order as $order){
+        if ($order->order_number == $order_id)
+        {
+          $order_found =  $order;
+        }
+      }
+      if (!$order_found){
+        header('HTTP/1.0 404 Not Found');
+        // readfile('../Products/404.php');
+        // exit();
+      }
+    }
+    else{
+        header('HTTP/1.0 404 Not Found');
+    //   readfile('../Products/404.php');
+    //   exit();
+    }
+  }
+  else{
+    exit('Failed to open ');
+  }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,351 +49,80 @@
            <p id="description-under-user-edit-logo">Add / Edit an order to the database</p>
         </div>
         <div class = "right-side">
+            <?php
+                $order_number = $order_found[0]->order_number;
+                $user_id = $order_found[0]->user_id;
+                $user_found = $users->xpath('/users/user/id_user[.= ' . $user_id . ']/parent::*');
+                $fullname = $user_found[0]->firstname . ' ' . $user_found[0]->lastname;
+                $date = date("Y-M-d",strtotime($order_found[0]->order_date));
+                $status = $order_found[0]->status;
+                $payment = $order_found[0]->payment;
+            ?>
             <div class = "xlarge-container">
-                <input type="text" name="order-number-heading" placeholder="ORDER NUMBER: 12494325" disabled>
+                <input type="text" name="order-number-heading" placeholder="ORDER NUMBER: <?php echo $order_number; ?>" disabled>
             </div>
             <div class = "xlarge-container">
-                <input type="text" name="name" placeholder="NAME : FIRST NAME & LAST NAME" disabled>
+                <input type="text" name="name" placeholder="NAME : <?php echo $fullname;?>" disabled>
             </div>
             <div class = "medium-container">
-                <input type="text" name="date" placeholder="DATE : DAY / MONTH / YEAR" disabled>
+                <input type="text" name="date" placeholder="DATE : <?php echo $date;?>" disabled>
             </div>
             <div class = "medium-container">
-                <input type="text" name="status" placeholder="STATUS : IN PROGRESS " disabled>
+                <input type="text" name="status" placeholder="STATUS : <?php echo $status;?> " disabled>
             </div>
             <div class = "xlarge-container" id = "purchase-list">
                 <div class = "purchase-list">
-                    <!--ITEM 1-->
-                    <div class = "item">
-                        <div class = "product-code">
+                    <?php 
+                    $orders_products = simplexml_load_file($file_open_orders_products);
+                    $TTL = 0;
+                    foreach($orders_products->order_product as $oproduct){
+                        if ($oproduct->order_id == $order_id)
+                        {
+                            $foundproduct = "";
+                            foreach($products->product as $item){
+                                
+                                if (strcmp($item->pdt_id, $oproduct->order_product_id) == 0)
+                                {
+                                    $foundproduct = $item;
+                                    break;
+                                }
+                            }
+                            //$foundproduct = $products->xpath('/products/product/pdt_id[.= ' . $oproduct->order_product . ']/parent::*');
+                            $ext = $oproduct->order_qty * $oproduct->price;
+                            $TTL += $ext;
+                            $htmlblock = '<div class = "item">
+                            <div class = "product-code">
                             PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="product code" disabled>
-                        </div>
-                        <div class = "product-name">
-                            PRODUCT NAME
-                            <input type = "text" name = "product-name" placeholder="product name" disabled>
-                        </div>
-                        <div class = "product-count">
-                            COUNT 
-                            <input type="number" name="count" placeholder="10" min = "0">
-                        </div>
-                        <div class = "product-bought-price">
-                            UNIT PRICE
-                            <input type = "text" name = "bought-price" placeholder = "10$">
-                        </div>
-                        <div class = "tax-price">
-                            TAX
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class ="total-product-price">
-                            TOTAL
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class = "delete-product">
-                            <button type="button">Delete</button>
-                        </div>
-                    </div>
+                            <input type = "text" name = "product-code" placeholder="' . $oproduct->order_product_id . '" disabled>
+                            </div>
+                            <div class = "product-name">
+                                PRODUCT NAME
+                                <input type = "text" name = "product-name" placeholder="' . $foundproduct[0]->pdt_name . '" disabled>
+                            </div>
+                            <div class = "product-count">
+                                COUNT 
+                                <input type="number" name="count" placeholder="' . $oproduct->order_qty . '" min = "0">
+                            </div>
+                            <div class = "product-bought-price">
+                                UNIT PRICE
+                                <input type = "text" name = "bought-price" placeholder = "' . $oproduct->price . '">
+                            </div>
+                            <div class ="total-product-price">
+                                EXT
+                                <input type = "text" name = "bought-price" placeholder = "' . $ext . '" disabled>
+                            </div>
+                            <div class = "delete-product">
+                                <button type="button">Delete</button>
+                            </div>
+                            </div>';
+                            echo $htmlblock;
+                        }
+                    }
 
-                     <!--ITEM 2-->
-                     <div class = "item">
-                        <div class = "product-code">
-                            PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="product code" disabled>
-                        </div>
-                        <div class = "product-name">
-                            PRODUCT NAME
-                            <input type = "text" name = "product-name" placeholder="product name" disabled>
-                        </div>
-                        <div class = "product-count">
-                            COUNT 
-                            <input type="number" name="count" placeholder="10" min = "0">
-                        </div>
-                        <div class = "product-bought-price">
-                            UNIT PRICE
-                            <input type = "text" name = "bought-price" placeholder = "10$">
-                        </div>
-                        <div class = "tax-price">
-                            TAX
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class ="total-product-price">
-                            TOTAL
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class = "delete-product">
-                            <button type="button">Delete</button>
-                        </div>
-                    </div>
-                    <!--ITEM3-->
-                    <div class = "item">
-                        <div class = "product-code">
-                            PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="product code" disabled>
-                        </div>
-                        <div class = "product-name">
-                            PRODUCT NAME
-                            <input type = "text" name = "product-name" placeholder="product name" disabled>
-                        </div>
-                        <div class = "product-count">
-                            COUNT 
-                            <input type="number" name="count" placeholder="10" min = "0">
-                        </div>
-                        <div class = "product-bought-price">
-                            UNIT PRICE
-                            <input type = "text" name = "bought-price" placeholder = "10$">
-                        </div>
-                        <div class = "tax-price">
-                            TAX
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class ="total-product-price">
-                            TOTAL
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class = "delete-product">
-                            <button type="button">Delete</button>
-                        </div>
-                    </div>
-                    <!--ITEM 4 -->
-                    <div class = "item">
-                        <div class = "product-code">
-                            PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="product code" disabled>
-                        </div>
-                        <div class = "product-name">
-                            PRODUCT NAME
-                            <input type = "text" name = "product-name" placeholder="product name" disabled>
-                        </div>
-                        <div class = "product-count">
-                            COUNT 
-                            <input type="number" name="count" placeholder="10" min = "0">
-                        </div>
-                        <div class = "product-bought-price">
-                            UNIT PRICE
-                            <input type = "text" name = "bought-price" placeholder = "10$">
-                        </div>
-                        <div class = "tax-price">
-                            TAX
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class ="total-product-price">
-                            TOTAL
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class = "delete-product">
-                            <button type="button">Delete</button>
-                        </div>
-                    </div>
-                    <!--ITEM 5 -->
-                    <div class = "item">
-                        <div class = "product-code">
-                            PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="product code" disabled>
-                        </div>
-                        <div class = "product-name">
-                            PRODUCT NAME
-                            <input type = "text" name = "product-name" placeholder="product name" disabled>
-                        </div>
-                        <div class = "product-count">
-                            COUNT 
-                            <input type="number" name="count" placeholder="10" min = "0">
-                        </div>
-                        <div class = "product-bought-price">
-                            UNIT PRICE
-                            <input type = "text" name = "bought-price" placeholder = "10$">
-                        </div>
-                        <div class = "tax-price">
-                            TAX
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class ="total-product-price">
-                            TOTAL
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class = "delete-product">
-                            <button type="button">Delete</button>
-                        </div>
-                    </div>
-                     <!--ITEM 6 -->
-                     <div class = "item">
-                        <div class = "product-code">
-                            PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="product code" disabled>
-                        </div>
-                        <div class = "product-name">
-                            PRODUCT NAME
-                            <input type = "text" name = "product-name" placeholder="product name" disabled>
-                        </div>
-                        <div class = "product-count">
-                            COUNT 
-                            <input type="number" name="count" placeholder="10" min = "0">
-                        </div>
-                        <div class = "product-bought-price">
-                            UNIT PRICE
-                            <input type = "text" name = "bought-price" placeholder = "10$">
-                        </div>
-                        <div class = "tax-price">
-                            TAX
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class ="total-product-price">
-                            TOTAL
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class = "delete-product">
-                            <button type="button">Delete</button>
-                        </div>
-                    </div>
-                    <!--ITEM 2-->
-                    <div class = "item">
-                        <div class = "product-code">
-                            PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="product code" disabled>
-                        </div>
-                        <div class = "product-name">
-                            PRODUCT NAME
-                            <input type = "text" name = "product-name" placeholder="product name" disabled>
-                        </div>
-                        <div class = "product-count">
-                            COUNT 
-                            <input type="number" name="count" placeholder="10" min = "0">
-                        </div>
-                        <div class = "product-bought-price">
-                            UNIT PRICE
-                            <input type = "text" name = "bought-price" placeholder = "10$">
-                        </div>
-                        <div class = "tax-price">
-                            TAX
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class ="total-product-price">
-                            TOTAL
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class = "delete-product">
-                            <button type="button">Delete</button>
-                        </div>
-                    </div>
-                    <!--ITEM3-->
-                    <div class = "item">
-                        <div class = "product-code">
-                            PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="product code" disabled>
-                        </div>
-                        <div class = "product-name">
-                            PRODUCT NAME
-                            <input type = "text" name = "product-name" placeholder="product name" disabled>
-                        </div>
-                        <div class = "product-count">
-                            COUNT 
-                            <input type="number" name="count" placeholder="10" min = "0">
-                        </div>
-                        <div class = "product-bought-price">
-                            UNIT PRICE
-                            <input type = "text" name = "bought-price" placeholder = "10$">
-                        </div>
-                        <div class = "tax-price">
-                            TAX
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class ="total-product-price">
-                            TOTAL
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class = "delete-product">
-                            <button type="button">Delete</button>
-                        </div>
-                    </div>
-                    <!--ITEM 4 -->
-                    <div class = "item">
-                        <div class = "product-code">
-                            PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="product code" disabled>
-                        </div>
-                        <div class = "product-name">
-                            PRODUCT NAME
-                            <input type = "text" name = "product-name" placeholder="product name" disabled>
-                        </div>
-                        <div class = "product-count">
-                            COUNT 
-                            <input type="number" name="count" placeholder="10" min = "0">
-                        </div>
-                        <div class = "product-bought-price">
-                            UNIT PRICE
-                            <input type = "text" name = "bought-price" placeholder = "10$">
-                        </div>
-                        <div class = "tax-price">
-                            TAX
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class ="total-product-price">
-                            TOTAL
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class = "delete-product">
-                            <button type="button">Delete</button>
-                        </div>
-                    </div>
-                    <!--ITEM 5 -->
-                    <div class = "item">
-                        <div class = "product-code">
-                            PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="product code" disabled>
-                        </div>
-                        <div class = "product-name">
-                            PRODUCT NAME
-                            <input type = "text" name = "product-name" placeholder="product name" disabled>
-                        </div>
-                        <div class = "product-count">
-                            COUNT 
-                            <input type="number" name="count" placeholder="10" min = "0">
-                        </div>
-                        <div class = "product-bought-price">
-                            UNIT PRICE
-                            <input type = "text" name = "bought-price" placeholder = "10$">
-                        </div>
-                        <div class = "tax-price">
-                            TAX
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class ="total-product-price">
-                            TOTAL
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class = "delete-product">
-                            <button type="button">Delete</button>
-                        </div>
-                    </div>
-                     <!--ITEM 6 -->
-                    <div class = "item">
-                        <div class = "product-code">
-                            PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="product code" disabled>
-                        </div>
-                        <div class = "product-name">
-                            PRODUCT NAME
-                            <input type = "text" name = "product-name" placeholder="product name" disabled>
-                        </div>
-                        <div class = "product-count">
-                            COUNT 
-                            <input type="number" name="count" placeholder="10" min = "0">
-                        </div>
-                        <div class = "product-bought-price">
-                            UNIT PRICE
-                            <input type = "text" name = "bought-price" placeholder = "10$">
-                        </div>
-                        <div class = "tax-price">
-                            TAX
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class ="total-product-price">
-                            TOTAL
-                            <input type = "text" name = "bought-price" placeholder = "10$" disabled>
-                        </div>
-                        <div class = "delete-product">
-                            <button type="button">Delete</button>
-                        </div>
-                    </div>
+                    
+                    
+                    ?>
+                    
                     <!--ADD A PRODUCT TO THE ORDER-->
                     <div id="add-to-order">
                         <button type="button" id="add-to-order">Add Product</button>
@@ -365,10 +130,10 @@
                 </div>
             </div>
             <div class = "medium-container final-line">
-                <input type="text" name="payment-type" placeholder="PAYMENT TYPE : DEBIT" disabled>
+                <input type="text" name="payment-type" placeholder="PAYMENT TYPE :<?php echo $payment;?>" disabled>
             </div>
             <div class = "medium-container final-line">
-                <input type="text" name="total-amount" placeholder="TOTAL : 10000000$ " disabled>
+                <input type="text" name="total-amount" placeholder="TOTAL : <?php echo $TTL;?> " disabled>
             </div>
             <div class = "xlarge-container final-line">
                 <button type="button" id="save-button">Save</button>
