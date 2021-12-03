@@ -90,7 +90,7 @@
                             //$foundproduct = $products->xpath('/products/product/pdt_id[.= ' . $oproduct->order_product . ']/parent::*');
                             $ext = $oproduct->order_qty * $oproduct->price;
                             $TTL += $ext;
-                            $htmlblock = '<div class = "item">
+                            $htmlblock = '<div class = "item" id="' . $oproduct->order_product_id . '">
                             <div class = "product-code">
                             PRODUCT CODE
                             <input type = "text" name = "product-code" placeholder="' . $oproduct->order_product_id . '" disabled>
@@ -101,29 +101,24 @@
                             </div>
                             <div class = "product-count">
                                 COUNT 
-                                <input type="number" name="count" placeholder="' . $oproduct->order_qty . '" min = "0">
+                                <input id="' . $oproduct->order_product_id . '" class = "qtyfields" step = "1" type="number" name="count" value="' . $oproduct->order_qty . '" min = "0">
                             </div>
                             <div class = "product-bought-price">
                                 UNIT PRICE
-                                <input type = "text" name = "bought-price" placeholder = "' . $oproduct->price . '">
+                                <input type = "text" id="' . $oproduct->order_product_id . 'price' . '"name = "bought-price" value = "' . $oproduct->price . '">
                             </div>
                             <div class ="total-product-price">
                                 EXT
-                                <input type = "text" name = "bought-price" placeholder = "' . $ext . '" disabled>
+                                <input class = "productexts" type = "text" id="' . $oproduct->order_product_id . 'ext' . '" name = "bought-price" placeholder = "' . $ext . '" value = "' . $ext . '" disabled>
                             </div>
                             <div class = "delete-product">
-                                <button type="button">Delete</button>
+                                <button class = "deleteBtns" type="button" id="' . $oproduct->order_product_id . '">Delete</button>
                             </div>
                             </div>';
                             echo $htmlblock;
                         }
                     }
-
-                    
-                    
                     ?>
-                    
-                    <!--ADD A PRODUCT TO THE ORDER-->
                     <div id="add-to-order">
                         <button type="button" id="add-to-order">Add Product</button>
                     </div>
@@ -133,12 +128,13 @@
                 <input type="text" name="payment-type" placeholder="PAYMENT TYPE :<?php echo $payment;?>" disabled>
             </div>
             <div class = "medium-container final-line">
-                <input type="text" name="total-amount" placeholder="TOTAL : <?php echo $TTL;?> " disabled>
+                <input id="total_order" type="text" name="total-amount" placeholder="TOTAL : <?php echo $TTL;?> " disabled>
             </div>
             <div class = "xlarge-container final-line">
                 <button type="button" id="save-button">Save</button>
                 <button type="button" id="cancel-button" onclick="location.href='backstore.php'">Cancel</button>
             </div>
         </div>
+        <script type = "text/javascript" src="../scripts/orderscript.js"></script>
     </body>
 </html>
