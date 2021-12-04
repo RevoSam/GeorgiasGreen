@@ -17,7 +17,7 @@
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
     <pdt_origin>Canada</pdt_origin>
-    <img_path>../../assets/Dairy Products/cheddar-cheese.png</img_path>
+    <img_path>/GeorgiasGreens/assets/Dairy\ Products/cheddar-cheese.png</img_path>
   </product>
   <!-- END OF CHEESE -->
 
@@ -35,7 +35,7 @@
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
     <pdt_origin>United-States</pdt_origin>
-    <img_path>../../assets/Dairy Products/cream.png</img_path>
+    <img_path>/GeorgiasGreens/assets/Dairy\ Products/cream.png</img_path>
   </product>
   <!-- END OF CREAM -->
 
@@ -53,7 +53,7 @@
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
     <pdt_origin>Mexico</pdt_origin>
-    <img_path>../../assets/Dairy Products/ice-cream.png</img_path>
+    <img_path>/GeorgiasGreens/assets/Dairy\ Products/ice-cream.png</img_path>
   </product>
   <!-- END OF ICE CREAM -->
 
@@ -71,7 +71,7 @@
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
     <pdt_origin>Canada</pdt_origin>
-    <img_path>../../assets/Dairy Products/milk-jug.jpg</img_path>
+    <img_path>/GeorgiasGreens/assets/Dairy\ Products/milk-jug.jpg</img_path>
   </product>
   <!-- END OF MILK -->
 
@@ -89,7 +89,7 @@
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
     <pdt_origin>United-States</pdt_origin>
-    <img_path>../../assets/Dairy Products/yogurt.png</img_path>
+    <img_path>/GeorgiasGreens/assets/Dairy\ Products/yogurt.png</img_path>
   </product>
   <!-- END OF YOGURT -->
 
@@ -108,7 +108,7 @@
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
     <pdt_origin>Mexico</pdt_origin>
-    <img_path>..\..\assets/Cleaning Aisle Products/Paper Towel.png</img_path>
+    <img_path>/GeorgiasGreens/assets/Cleaning\ Aisle\ Products/Paper\ Towel.png</img_path>
   </product>
 
   <product>
@@ -124,7 +124,7 @@
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
     <pdt_origin>Canada</pdt_origin>
-    <img_path>..\..\assets/Cleaning Aisle Products/Toilet Paper.png</img_path>
+    <img_path>/GeorgiasGreens/assets/Cleaning\ Aisle\ Products/Toilet\ Paper.png</img_path>
   </product>
 
   <product>
@@ -140,7 +140,7 @@
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
     <pdt_origin>United-States</pdt_origin>
-    <img_path>..\..\assets/Cleaning Aisle Products/Dishwashing.png</img_path>
+    <img_path>/GeorgiasGreens/assets/Cleaning\ Aisle\ Products/Dishwashing.png</img_path>
   </product>
 
   <product>
@@ -156,7 +156,7 @@
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
     <pdt_origin>Mexico</pdt_origin>
-    <img_path>..\..\assets/Cleaning Aisle Products/Garbage Bags.png</img_path>
+    <img_path>/GeorgiasGreens/assets/Cleaning\ Aisle\ Products/Garbage\ Bags.png</img_path>
   </product>
   
   <product>
@@ -172,6 +172,6 @@
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
     <pdt_origin>Canada</pdt_origin>
-    <img_path>..\..\assets/Cleaning Aisle Products/Bleach.png</img_path>
+    <img_path>/GeorgiasGreens/assets/Cleaning\ Aisle\ Products/Bleach.png</img_path>
   </product>
 </products>
