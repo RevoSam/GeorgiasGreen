@@ -27,14 +27,14 @@
         <p>Welcome User</p>
     </header>
     <aside>
-        <img src="../assets/GGLogoPicture.png" onclick="location.href='../index.html'">
-        <a href="backstore.html"><span class="glyphicon glyphicon-tags"></span>&nbsp&nbspusers</a>
-        <a href="user-list.html"><span class="glyphicon glyphicon-user"></span>&nbsp&nbspUsers</a>
-        <a href="order-list.html"><span class="glyphicon glyphicon-credit-card"></span>&nbsp&nbspOrders</a>
+        <img src="../assets/GGLogoPicture.png" onclick="location.href='../index.php'">
+        <a href="backstore.php"><span class="glyphicon glyphicon-tags"></span>&nbsp&nbspusers</a>
+        <a href="user-list.php"><span class="glyphicon glyphicon-user"></span>&nbsp&nbspUsers</a>
+        <a href="order-list.php"><span class="glyphicon glyphicon-credit-card"></span>&nbsp&nbspOrders</a>
     </aside>
     <div class="additional-components">
         <div class="additional-components">
-            <button type="button" id = "button-header" onclick="location.href='order-edit.html'">Add Order</button>
+            <button type="button" id = "button-header" onclick="location.href='order-edit.php'">Add Order</button>
             <input type="text" placeholder="Search..">
             <label for="search-keyword"><span class="glyphicon glyphicon-search"></span>&nbsp Search by keyword: </label> 
         </div>
@@ -44,8 +44,10 @@
             <div class="ailes">
                 <p>Orders</p>
             </div>
+            
+            
             <?php 
-                foreach($orders  as $order){
+                foreach($orders as $order){
                     $order_number = $order->order_number;
                     $user_id = $order->user_id;
                     $user_found = $users->xpath('/users/user/id_user[.= ' . $user_id . ']/parent::*');
@@ -77,176 +79,23 @@
                     <div class = "edit-container">
                         <button class = "edit-button" onclick="location.href = \'' . $url . '\'"><p>EDIT</p></button>
                     </div>
+                    <form id="deleteForm" method="POST">
                     <div class = "delete-container">
-                        <button class = "delete-button"><p>DELETE</p></button>
-                    </div>
+                        <input type="hidden" value= "' . $order_number . '" name="ordernumber">
+                        <input onclick= "submitForm(\'deleteorder.php\')" class = "delete-button" type="submit" id="' . $order_number . '" value="DELETE" name="DeleteOrder">
+                    </div></form>
                 </div>';
                 echo $htmlblock;
                 }
             ?>
-            <!-- 
-            <div class = "order">
-                <div class = "order-number-container">
-                    ORDER NUMBER
-                </div>
-                <div class = "name-container">
-                    FULL NAME
-                </div>
-                <div class = "date-container">
-                    DATE
-                </div>
-                <div class = "status-container">
-                    STATUS
-                </div>
-                <div class = "total-container">
-                    TOTAL
-                </div>
-                <div class = "payment-type-container">
-                    PAYMENT TYPE
-                </div>
-                <div class = "edit-container">
-                    <button class = "edit-button" onclick="location.href='order-edit.html'"><p>EDIT</p></button>
-                </div>
-                <div class = "delete-container">
-                    <button class = "delete-button"><p>DELETE</p></button>
-                </div>
-            </div>
-            <div class = "order">
-                <div class = "order-number-container">
-                    ORDER NUMBER
-                </div>
-                <div class = "name-container">
-                    FULL NAME
-                </div>
-                <div class = "date-container">
-                    DATE
-                </div>
-                <div class = "status-container">
-                    STATUS
-                </div>
-                <div class = "total-container">
-                    TOTAL
-                </div>
-                <div class = "payment-type-container">
-                    PAYMENT TYPE
-                </div>
-                <div class = "edit-container">
-                    <button class = "edit-button" onclick="location.href='order-edit.html'"><p>EDIT</p></button>
-                </div>
-                <div class = "delete-container">
-                    <button class = "delete-button"><p>DELETE</p></button>
-                </div>
-            </div>
-            <div class = "order">
-                <div class = "order-number-container">
-                    ORDER NUMBER
-                </div>
-                <div class = "name-container">
-                    FULL NAME
-                </div>
-                <div class = "date-container">
-                    DATE
-                </div>
-                <div class = "status-container">
-                    STATUS
-                </div>
-                <div class = "total-container">
-                    TOTAL
-                </div>
-                <div class = "payment-type-container">
-                    PAYMENT TYPE
-                </div>
-                <div class = "edit-container">
-                    <button class = "edit-button" onclick="location.href='order-edit.html'"><p>EDIT</p></button>
-                </div>
-                <div class = "delete-container">
-                    <button class = "delete-button"><p>DELETE</p></button>
-                </div>
-            </div>
-            <div class = "order">
-                <div class = "order-number-container">
-                    ORDER NUMBER
-                </div>
-                <div class = "name-container">
-                    FULL NAME
-                </div>
-                <div class = "date-container">
-                    DATE
-                </div>
-                <div class = "status-container">
-                    STATUS
-                </div>
-                <div class = "total-container">
-                    TOTAL
-                </div>
-                <div class = "payment-type-container">
-                    PAYMENT TYPE
-                </div>
-                <div class = "edit-container">
-                    <button class = "edit-button" onclick="location.href='order-edit.html'"><p>EDIT</p></button>
-                </div>
-                <div class = "delete-container">
-                    <button class = "delete-button"><p>DELETE</p></button>
-                </div>
-            </div>
-            <div class = "order">
-                <div class = "order-number-container">
-                    ORDER NUMBER
-                </div>
-                <div class = "name-container">
-                    FULL NAME
-                </div>
-                <div class = "date-container">
-                    DATE
-                </div>
-                <div class = "status-container">
-                    STATUS
-                </div>
-                <div class = "total-container">
-                    TOTAL
-                </div>
-                <div class = "payment-type-container">
-                    PAYMENT TYPE
-                </div>
-                <div class = "edit-container">
-                    <button class = "edit-button" onclick="location.href='order-edit.html'"><p>EDIT</p></button>
-                </div>
-                <div class = "delete-container">
-                    <button class = "delete-button"><p>DELETE</p></button>
-                </div>
-            </div>
-            <div class = "order">
-                <div class = "order-number-container">
-                    ORDER NUMBER
-                </div>
-                <div class = "name-container">
-                    FULL NAME
-                </div>
-                <div class = "date-container">
-                    DATE
-                </div>
-                <div class = "status-container">
-                    STATUS
-                </div>
-                <div class = "total-container">
-                    TOTAL
-                </div>
-                <div class = "payment-type-container">
-                    PAYMENT TYPE
-                </div>
-                <div class = "edit-container">
-                    <button class = "edit-button" onclick="location.href='order-edit.html'"><p>EDIT</p></button>
-                </div>
-                <div class = "delete-container">
-                    <button class = "delete-button"><p>DELETE</p></button>
-                </div>
-            </div> -->
+            
         </div>
     </div>
     <footer>
 
     </footer>
     </div>
+    <script type = "text/javascript" src="../scripts/orderlistscript.js"></script>
 </body>
 </html>
 
