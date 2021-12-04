@@ -13,7 +13,30 @@
   else{
     exit('Failed to open ');
   }
+
+
+//Delete an item from the xml file
+if(isset($_POST["delete"]))
+{
+    $xml = new DomDocument("1.0","UTF-8");
+    $xml->load("../data/product.xml");
+foreach($_POST as $key=>$value)
+    {
+        $product_to_delete_id = $value;
+    }
+    $xpath = new DOMXPATH($xml);
+
+foreach($xpath->query("/products/product[pdt_id = '$product_to_delete_id']") as $node)
+    {
+        $node->parentNode->removeChild($node);
+    }
+
+    $xml->save("../data/product.xml");
+    header("Location: backstore.php");
+}
+
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -26,6 +49,7 @@
 </head>
 
 <body>
+<form method = "POST" action = "backstore.php">
     <header>
         <p>Welcome User</p>
     </header>
@@ -568,7 +592,7 @@
                     <p>ORIGIN</p>
                 </div>
                 <div class="small-container">
-                    <button class = "edit-button" onclick="location.href='product-edit.php'"><p>EDIT</p></button>
+                    <button class = "edit-button" onclick= "location.href = 'product-edit.php'"><p>EDIT</p></button>
                 </div>
                 <div class="small-container">
                     <button class = "delete-button"><p>DELETE</p></button>
@@ -601,18 +625,14 @@
                         echo "<p>{$item->pdt_origin}</p>";
                     echo "</div>";
                     echo "<div class=\"small-container\">";
-                        echo "<button id = \"{$item->pdt_id}\" class = \"edit-button\" onclick=\"location.href='{$url}'\"><p>EDIT</p></button>";
+                        echo "<button class = \"edit-button\" onclick = location.href='{$url}'><p>EDIT</p></button>";
                     echo "</div>";
                     echo "<div class=\"small-container\">";
-                        echo "<button class = \"delete-button\"><p>DELETE</p></button>";
+                        echo "<button type = submit name = delete  class = \"delete-button\" value = \"{$item->pdt_id}\"><p>DELETE</p></button>";
                     echo "</div>";
                 echo "</div>";
               }
           ?>
-          <!--
-                $id = urlencode($item->pdt_id);
-                $url = htmlspecialchars("../../Products/product.php?ID=". $id );
-            -->            
             <div class="ailes">
                 <p>Cleaning Supplies</p>
             </div>
@@ -640,10 +660,10 @@
                         echo "<p>{$item->pdt_origin}</p>";
                     echo "</div>";
                     echo "<div class=\"small-container\">";
-                        echo "<button id = \"{$item->pdt_id}\" class = \"edit-button\" onclick=\"location.href='{$url}'\"><p>EDIT</p></button>";
+                        echo "<button class = \"edit-button\" onclick= location.href='{$url}'><p>EDIT</p></button>";
                     echo "</div>";
                     echo "<div class=\"small-container\">";
-                        echo "<button class = \"delete-button\"><p>DELETE</p></button>";
+                        echo "<button type = submit name = delete class = \"delete-button\" value = {$item->pdt_id} ><p>DELETE</p></button>";
                     echo "</div>";
                 echo "</div>";
               }
@@ -651,5 +671,6 @@
         </div>
     </div>
     </div>
+</form>
 </body>
 </html>
