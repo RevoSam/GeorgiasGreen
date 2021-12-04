@@ -13,6 +13,23 @@
            <p id="description-under-user-edit-logo">Add / Edit a product to the database</p>
         </div>
         <div class = "right-side">
+
+
+        <!-- PLACED ID IN EDIT BUTTON -->
+            <!-- NO ID IN ADD BUTTON -->
+            <!-- CHECK IF IT HAS AN ID -->
+            <!-- IF NO ID THEN CREATE A BLANK PAGE TO INPUT VALUE -->
+
+        <?php  
+
+            $id = substr($_SERVER['REQUEST_URI'], strpos($_SERVER['REQUEST_URI'],"=",0)+1 , strlen($_SERVER['REQUEST_URI']));
+        
+            echo $id; //check if id match an item in the listen
+
+        ?> 
+      
+      
+            
             <div id="picture-space">
                 <div class = "circled-picture">
                     <p> Put product picture here</p>
