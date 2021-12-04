@@ -1,5 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <products>
+
+  <!-- DAIRY PRODUCTS -->
+
+  <!-- CHEESE -->
+   <product>
+    <pdt_id>GGCH001_PK</pdt_id>
+    <pdt_al_id>5</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Cheese</pdt_name>
+    <pdt_short_description>Cheddar Cheese ( 450 g )</pdt_short_description>
+    <pdt_description>Good Cheese</pdt_description>
+    <pdt_price>9.99</pdt_price>
+    <pdt_package_type>1/pkg</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Canada</pdt_origin>
+    <img_path>../../assets/Dairy Products/cheddar-cheese.png</img_path>
+  </product>
+  <!-- END OF CHEESE -->
+
+  <!-- CREAM -->
+   <product>
+    <pdt_id>GGCR002_PK</pdt_id>
+    <pdt_al_id>5</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Cream</pdt_name>
+    <pdt_short_description>Cooking Cream ( 470 ml ) </pdt_short_description>
+    <pdt_description>35% thick cooking cream</pdt_description>
+    <pdt_price>4.99</pdt_price>
+    <pdt_package_type>1/pkg</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>United-States</pdt_origin>
+    <img_path>../../assets/Dairy Products/cream.png</img_path>
+  </product>
+  <!-- END OF CREAM -->
+
+  <!-- ICE CREAM -->
+   <product>
+    <pdt_id>GGIC003_PK</pdt_id>
+    <pdt_al_id>5</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Ice Cream</pdt_name>
+    <pdt_short_description>Vanilla Ice Cream (500g)</pdt_short_description>
+    <pdt_description>Good Ice Cream</pdt_description>
+    <pdt_price>4.99</pdt_price>
+    <pdt_package_type>1/pkg</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Mexico</pdt_origin>
+    <img_path>../../assets/Dairy Products/ice-cream.png</img_path>
+  </product>
+  <!-- END OF ICE CREAM -->
+
+  <!-- MILK -->
+   <product>
+    <pdt_id>GGSM004_PK</pdt_id>
+    <pdt_al_id>5</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Milk</pdt_name>
+    <pdt_short_description>Skim Milk 2L</pdt_short_description>
+    <pdt_description>Good Milk</pdt_description>
+    <pdt_price>7.99</pdt_price>
+    <pdt_package_type>1/pkg</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Canada</pdt_origin>
+    <img_path>../../assets/Dairy Products/milk-jug.jpg</img_path>
+  </product>
+  <!-- END OF MILK -->
+
+  <!-- YOGURT -->
+   <product>
+    <pdt_id>GGCY005_PK</pdt_id>
+    <pdt_al_id>5</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Yogurt</pdt_name>
+    <pdt_short_description>Strawberry Greek Yogurt ( 350 g )</pdt_short_description>
+    <pdt_description>Good Yogurt</pdt_description>
+    <pdt_price>6.99</pdt_price>
+    <pdt_package_type>1/pkg</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>United-States</pdt_origin>
+    <img_path>../../assets/Dairy Products/yogurt.png</img_path>
+  </product>
+  <!-- END OF YOGURT -->
+
+  <!-- DAIRY PRODUCTS -->
+
   <product>
     <pdt_id>GGCP225_PK</pdt_id>
     <pdt_al_id>6</pdt_al_id>
@@ -12,6 +107,7 @@
     <pdt_unit>2</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Mexico</pdt_origin>
     <img_path>..\..\assets/Cleaning Aisle Products/Paper Towel.png</img_path>
   </product>
 
@@ -27,6 +123,7 @@
     <pdt_unit>6</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Canada</pdt_origin>
     <img_path>..\..\assets/Cleaning Aisle Products/Toilet Paper.png</img_path>
   </product>
 
@@ -42,6 +139,7 @@
     <pdt_unit>1</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>United-States</pdt_origin>
     <img_path>..\..\assets/Cleaning Aisle Products/Dishwashing.png</img_path>
   </product>
 
@@ -57,6 +155,7 @@
     <pdt_unit>50</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Mexico</pdt_origin>
     <img_path>..\..\assets/Cleaning Aisle Products/Garbage Bags.png</img_path>
   </product>
   
@@ -72,6 +171,7 @@
     <pdt_unit>1</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Canada</pdt_origin>
     <img_path>..\..\assets/Cleaning Aisle Products/Bleach.png</img_path>
   </product>
 </products>
