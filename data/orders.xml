@@ -17,10 +17,10 @@
     <order_number>654789</order_number>
     <user_id>1</user_id>
     <order_date>2021-12-02</order_date>
-    <status>in progress</status>
+    <status>Pending</status>
     <delivery_add_id>1</delivery_add_id>
     <billing_add_id>2</billing_add_id>
-    <total>120</total>
+    <total>34.85 </total>
     <payment>debit</payment>
   </order>
 </orders>

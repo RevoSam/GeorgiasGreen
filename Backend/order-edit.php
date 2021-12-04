@@ -58,82 +58,105 @@
                 $status = $order_found[0]->status;
                 $payment = $order_found[0]->payment;
             ?>
-            <div class = "xlarge-container">
-                <input type="text" name="order-number-heading" placeholder="ORDER NUMBER: <?php echo $order_number; ?>" disabled>
-            </div>
-            <div class = "xlarge-container">
-                <input type="text" name="name" placeholder="NAME : <?php echo $fullname;?>" disabled>
-            </div>
-            <div class = "medium-container">
-                <input type="text" name="date" placeholder="DATE : <?php echo $date;?>" disabled>
-            </div>
-            <div class = "medium-container">
-                <input type="text" name="status" placeholder="STATUS : <?php echo $status;?> " disabled>
-            </div>
-            <div class = "xlarge-container" id = "purchase-list">
-                <div class = "purchase-list">
-                    <?php 
-                    $orders_products = simplexml_load_file($file_open_orders_products);
-                    $TTL = 0;
-                    foreach($orders_products->order_product as $oproduct){
-                        if ($oproduct->order_id == $order_id)
-                        {
-                            $foundproduct = "";
-                            foreach($products->product as $item){
-                                
-                                if (strcmp($item->pdt_id, $oproduct->order_product_id) == 0)
+            <form action="ordersaving.php" method="POST">
+                <div class = "xlarge-container">
+                    <span>Order number: </span><input type="text" name="order" value="<?php echo $order_number; ?>" readonly>
+                </div>
+                <div class = "xlarge-container">
+                <span>Full name: </span>
+                    <input type="text" name="name" value="<?php echo $fullname;?>" readonly>
+                </div>
+                <div class = "medium-container">
+                <span>Date: </span>
+                    <input type="text" name="date" value="<?php echo $date;?>" readonly>
+                </div>
+                <div class = "medium-container">
+                    <span>Status: </span>
+                        <select name="status" style="width:100%;">
+                            <?php 
+                            $options = array("Pending", "Shipped", "Cancelled", "Fulfilled");
+                            foreach ($options as $option) {
+                                if (strcmp($option, $status) == 0)
                                 {
-                                    $foundproduct = $item;
-                                    break;
+                                    echo "<option selected value='$option'>$option</option>";
                                 }
+                                else{
+                                    echo "<option value=$option>$option</option>";
+                                }
+                                
+                            }?>
+                        </select>
+                   
+                    <!-- <input type="text" name="status" value=" " readonly> -->
+                </div>
+            
+                <div class = "xlarge-container" id = "purchase-list">
+                    <div class = "purchase-list">
+                        <?php 
+                        $orders_products = simplexml_load_file($file_open_orders_products);
+                        $TTL = 0;
+                        foreach($orders_products->order_product as $oproduct){
+                            if ($oproduct->order_id == $order_id)
+                            {
+                                $foundproduct = "";
+                                foreach($products->product as $item){
+                                    
+                                    if (strcmp($item->pdt_id, $oproduct->order_product_id) == 0)
+                                    {
+                                        $foundproduct = $item;
+                                        break;
+                                    }
+                                }
+                                
+                                $ext = $oproduct->order_qty * $oproduct->price;
+                                $TTL += $ext;
+                                $htmlblock = '<div class = "item" id="' . $oproduct->order_product_id . '">
+                                <div class = "product-code">
+                                PRODUCT CODE
+                                <input type="text" name="productcodes[]" value="' . $oproduct->order_product_id . '" readonly>
+                                </div>
+                                <div class = "product-name">
+                                    PRODUCT NAME
+                                    <input type="text" name="productnames[]" value="' . $foundproduct[0]->pdt_name . '" readonly>
+                                </div>
+                                <div class = "product-count">
+                                    COUNT 
+                                    <input id="' . $oproduct->order_product_id . '" class = "qtyfields" step = "1" type="number" name="qty[]" value="' . $oproduct->order_qty . '" min = "0">
+                                </div>
+                                <div class = "product-bought-price">
+                                    UNIT PRICE
+                                    <input type = "text" id="' . $oproduct->order_product_id . 'price' . '"name = "price[]" value = "' . $oproduct->price . '">
+                                </div>
+                                <div class ="total-product-price">
+                                    EXT
+                                    <input class = "productexts" type = "text" id="' . $oproduct->order_product_id . 'ext' . '" name = "ext[]" placeholder = "' . $ext . '" value = "' . $ext . '" readonly>
+                                </div>
+                                <div class = "delete-product">
+                                    <button class = "deleteBtns" type="button" id="' . $oproduct->order_product_id . '">Delete</button>
+                                </div>
+                                </div>';
+                                echo $htmlblock;
                             }
-                            //$foundproduct = $products->xpath('/products/product/pdt_id[.= ' . $oproduct->order_product . ']/parent::*');
-                            $ext = $oproduct->order_qty * $oproduct->price;
-                            $TTL += $ext;
-                            $htmlblock = '<div class = "item" id="' . $oproduct->order_product_id . '">
-                            <div class = "product-code">
-                            PRODUCT CODE
-                            <input type = "text" name = "product-code" placeholder="' . $oproduct->order_product_id . '" disabled>
-                            </div>
-                            <div class = "product-name">
-                                PRODUCT NAME
-                                <input type = "text" name = "product-name" placeholder="' . $foundproduct[0]->pdt_name . '" disabled>
-                            </div>
-                            <div class = "product-count">
-                                COUNT 
-                                <input id="' . $oproduct->order_product_id . '" class = "qtyfields" step = "1" type="number" name="count" value="' . $oproduct->order_qty . '" min = "0">
-                            </div>
-                            <div class = "product-bought-price">
-                                UNIT PRICE
-                                <input type = "text" id="' . $oproduct->order_product_id . 'price' . '"name = "bought-price" value = "' . $oproduct->price . '">
-                            </div>
-                            <div class ="total-product-price">
-                                EXT
-                                <input class = "productexts" type = "text" id="' . $oproduct->order_product_id . 'ext' . '" name = "bought-price" placeholder = "' . $ext . '" value = "' . $ext . '" disabled>
-                            </div>
-                            <div class = "delete-product">
-                                <button class = "deleteBtns" type="button" id="' . $oproduct->order_product_id . '">Delete</button>
-                            </div>
-                            </div>';
-                            echo $htmlblock;
                         }
-                    }
-                    ?>
-                    <div id="add-to-order">
-                        <button type="button" id="add-to-order">Add Product</button>
+                        ?>
+                        <div id="add-to-order">
+                            <button type="button" id="add-to-order">Add Product</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class = "medium-container final-line">
-                <input type="text" name="payment-type" placeholder="PAYMENT TYPE :<?php echo $payment;?>" disabled>
-            </div>
-            <div class = "medium-container final-line">
-                <input id="total_order" type="text" name="total-amount" placeholder="TOTAL : <?php echo $TTL;?> " disabled>
-            </div>
-            <div class = "xlarge-container final-line">
-                <button type="button" id="save-button">Save</button>
-                <button type="button" id="cancel-button" onclick="location.href='backstore.php'">Cancel</button>
-            </div>
+                <div class = "medium-container final-line">
+                    <span>Payment type</span>
+                    <input type="text" name="payment" value="<?php echo $payment;?>" readonly>
+                </div>
+                <div class = "medium-container final-line">
+                    <span>Total</span>
+                    <input id="total_order" type="text" name="total" value="<?php echo $TTL;?> " readonly>
+                </div>
+                <div class = "xlarge-container final-line">
+                    <input type="submit" id="save-button" value="save" name="saveorder">
+                    <button type="button" id="cancel-button" onclick="location.href='order-list.php'">Cancel</button>
+                </div>
+            </form>
         </div>
         <script type = "text/javascript" src="../scripts/orderscript.js"></script>
     </body>
