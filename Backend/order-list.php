@@ -49,9 +49,7 @@
             <?php 
                 foreach($orders as $order){
                     $order_number = $order->order_number;
-                    $user_id = $order->user_id;
-                    $user_found = $users->xpath('/users/user/id_user[.= ' . $user_id . ']/parent::*');
-                    $fullname = $user_found[0]->firstname . ' ' . $user_found[0]->lastname;
+                    $fullname = $order->fullname;
                     $date = date("Y-M-d",strtotime($order->order_date));
                     $status = $order->status;
                     $total = $order->total;
@@ -80,10 +78,11 @@
                         <button class = "edit-button" onclick="location.href = \'' . $url . '\'"><p>EDIT</p></button>
                     </div>
                     <form id="deleteForm" method="POST">
-                    <div class = "delete-container">
-                        <input type="hidden" value= "' . $order_number . '" name="ordernumber">
-                        <input onclick= "submitForm(\'deleteorder.php\')" class = "delete-button" type="submit" id="' . $order_number . '" value="DELETE" name="DeleteOrder">
-                    </div></form>
+                        <div class = "delete-container">
+                            <input type="hidden" value= "' . $order_number . '" name="ordernumber">
+                            <input onclick= "submitForm(\'deleteorder.php\')" class = "delete-button" type="submit" id="' . $order_number . '" value="DELETE" name="DeleteOrder">
+                        </div>
+                    </form>
                 </div>';
                 echo $htmlblock;
                 }
