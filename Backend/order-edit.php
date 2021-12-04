@@ -3,6 +3,8 @@
   $file_open_orders_products = '../data/order_products.xml';
   $file_open_orders = '../data/orders.xml';
   $file_open_users = '../data/users.xml';
+  $file_open_aisles = '../data/aisles.xml';
+
   if (file_exists($file_open_products) && file_exists($file_open_orders))
   {
     if (isset($_GET['ID']))
@@ -12,6 +14,7 @@
       $orders = simplexml_load_file($file_open_orders);
       $users = simplexml_load_file($file_open_users);
       $products = simplexml_load_file($file_open_products);
+      $aisles = simplexml_load_file($file_open_aisles);
       foreach ($orders->order as $order){
         if ($order->order_number == $order_id)
         {
@@ -74,9 +77,9 @@
                     <span>Status: </span>
                         <select name="status" style="width:100%;">
                             <?php 
-                            $options = array("Pending", "Shipped", "Cancelled", "Fulfilled");
+                            $options = array("Pending", "Shipped", "Cancelled", "Fulfilled", "Ready");
                             foreach ($options as $option) {
-                                if (strcmp($option, $status) == 0)
+                                if (strcmp(strtolower($option), strtolower($status)) == 0)
                                 {
                                     echo "<option selected value='$option'>$option</option>";
                                 }
@@ -91,7 +94,9 @@
                 </div>
             
                 <div class = "xlarge-container" id = "purchase-list">
-                    <div class = "purchase-list">
+                    <div id = "listOfProducts" class = "purchase-list">
+                        <!-- Paste here -->
+
                         <?php 
                         $orders_products = simplexml_load_file($file_open_orders_products);
                         $TTL = 0;
@@ -139,14 +144,68 @@
                             }
                         }
                         ?>
+                    </div>
+                    <div  class = "purchase-list" >
+                                <div id = "listAddingProducts" class = "item">
+                                    <div class = "product-code">
+                                        PRODUCT CODE
+                                        <select id="productselection" style="width:100%;">
+                                            <option selected>Select a Product</option>
+                                            <?php
+                                                $product_aisle = 0;
+                                                foreach ($products as $product) {
+                                                    echo "<option value='$product->pdt_id'>$product->pdt_id</option>";
+                                                   
+                                                }
+                                            ?>
+                                        </select>
+                                        
+                                    </div>
+                                    <div class = "product-name">
+                                        PRODUCT NAME
+                                        <input id="productname" type="text" name="productnames[]" readonly>
+                                    </div>
+                                    <div class = "product-count">
+                                        COUNT 
+                                        <input id="productqty" step = "1" type="number" name="qty[]" value="1" min = "0">
+                                    </div>
+                                    <div class = "product-bought-price">
+                                        UNIT PRICE
+                                        <input type = "text" id="productprice" name = "price[]" value = "">
+                                    </div>
+                                    <div class = "tax-price">
+                                    </div>
+                                    <div class ="total-product-price">
+                                        EXT
+                                        <input type = "text" id="extproduct" name = "ext[]" >
+                                    </div>
+                                    <div class = "delete-product">
+                                    </div>
+                                </div>
                         <div id="add-to-order">
-                            <button type="button" id="add-to-order">Add Product</button>
+                            <button type="button" id="add_order">Add Product</button>
                         </div>
                     </div>
+                    
                 </div>
                 <div class = "medium-container final-line">
                     <span>Payment type</span>
-                    <input type="text" name="payment" value="<?php echo $payment;?>" readonly>
+                    <select name="payment" style="width:100%;">
+                        <?php 
+                            $options = array("Cash", "Debit", "Credit", "Interac");
+                            foreach ($options as $option) {
+                                if (strcmp(strtolower($option), strtolower($payment)) == 0)
+                                {
+                                    echo "<option selected value='$option'>$option</option>";
+                                }
+                                else
+                                {
+                                    echo "<option value='$option'>$option</option>";
+                                }
+                            }
+                        ?>
+                    </select>
+                    <!-- <input type="text" name="payment" value="<?php echo $payment;?>" readonly> -->
                 </div>
                 <div class = "medium-container final-line">
                     <span>Total</span>

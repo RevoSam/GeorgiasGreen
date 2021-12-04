@@ -5,11 +5,11 @@
     <order_number>456112</order_number>
     <user_id>1</user_id>
     <order_date>2021-12-01</order_date>
-    <status>ready</status>
+    <status>Shipped</status>
     <delivery_add_id>1</delivery_add_id>
     <billing_add_id>2</billing_add_id>
-    <total>150</total>
-    <payment>cash</payment>
+    <total>30.39 </total>
+    <payment>Interac</payment>
   </order>
 
   <order>
@@ -17,10 +17,10 @@
     <order_number>654789</order_number>
     <user_id>1</user_id>
     <order_date>2021-12-02</order_date>
-    <status>Pending</status>
+    <status>Ready</status>
     <delivery_add_id>1</delivery_add_id>
     <billing_add_id>2</billing_add_id>
-    <total>34.85 </total>
-    <payment>debit</payment>
+    <total>7.48 </total>
+    <payment>Credit</payment>
   </order>
 </orders>
