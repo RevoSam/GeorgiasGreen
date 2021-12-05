@@ -210,6 +210,7 @@ img {
   margin: 2%;
   width: 96%;
   border: 1px solid black;
+  text-align: center;
 }
 
 .ailes_wrapper {
@@ -282,7 +283,7 @@ img {
   background-color: rgb(236, 236, 236);
   display: inline-flex;
   flex-direction: column;
-  
+  width: 100%;
 }
 .products_wrapper h1 {
   color: black;
