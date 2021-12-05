@@ -80,6 +80,8 @@
 <img_path>../assets/Meat Products/steak.png</img_path>
 <abs_img_path>../assets/Meat\ Products/steak.png</abs_img_path>
 </product>
+
+
 <product>
 <pdt_id>GGCP225_PK</pdt_id>
 <pdt_al_id>6</pdt_al_id>
@@ -241,4 +243,78 @@
 <abs_img_path>../assets/Dairy\ Products/yogurt.png</abs_img_path>
 </product>
 
+<pdt_id>GGPP003_PK</pdt_id>
+<pdt_al_id>4</pdt_al_id>
+<pdt_order_number/>
+<pdt_name>Sugar</pdt_name>
+<pdt_short_description>Georgia's Greens Sugar (1 kg)</pdt_short_description>
+<pdt_description>Medium sized pack of sugar</pdt_description>
+<pdt_price>5.49</pdt_price>
+<pdt_package_type>1/pkg</pdt_package_type>
+<pdt_unit>1</pdt_unit>
+<pdt_brand_name>Georgia's Greens</pdt_brand_name>
+<pdt_inventory>500</pdt_inventory>
+<pdt_origin>Canada</pdt_origin>
+<img_path>..\..assets/Pantry/Sugar.png</img_path>
+<abs_img_path>\..assets/Pantry/Sugar.png</abs_img_path>
+
+<pdt_id>GGPP005_PK</pdt_id>
+<pdt_al_id>4</pdt_al_id>
+<pdt_order_number/>
+<pdt_name>Vinegar</pdt_name>
+<pdt_short_description>Georgia's Greens Vinegar (500 mL)</pdt_short_description>
+<pdt_description>Fresh Vinegar, Natural Apple Cider</pdt_description>
+<pdt_price>20.99/each</pdt_price>
+<pdt_package_type>1/pkg</pdt_package_type>
+<pdt_unit>1</pdt_unit>
+<pdt_brand_name>Georgia's Greens</pdt_brand_name>
+<pdt_inventory>500</pdt_inventory>
+<pdt_origin>Canada</pdt_origin>
+<img_path>..\..assets/Pantry/Vinegar.png</img_path>
+<abs_img_path>\..assets/Pantry/Vinegar.png</abs_img_path>
+
+<pdt_id>GGPP004_PK</pdt_id>
+<pdt_al_id>4</pdt_al_id>
+<pdt_order_number/>
+<pdt_name>Tomato Sauce</pdt_name>
+<pdt_short_description>Georgia's Greens Tomato Sauce (300 mL)</pdt_short_description>
+<pdt_description>Tomato Sauce, from Italian Tomatoes</pdt_description>
+<pdt_price>4.49/each</pdt_price>
+<pdt_package_type>1/pkg</pdt_package_type>
+<pdt_unit>1</pdt_unit>
+<pdt_brand_name>Georgia's Greens</pdt_brand_name>
+<pdt_inventory>500</pdt_inventory>
+<pdt_origin>Canada</pdt_origin>
+<img_path>..\..assets/Pantry/TomatoSauce.png</img_path>
+<abs_img_path>\..assets/Pantry/TomatoSauce.png</abs_img_path>
+
+<pdt_id>GGPP001_PK</pdt_id>
+<pdt_al_id>4</pdt_al_id>
+<pdt_order_number/>
+<pdt_name>Baking Powder</pdt_name>
+<pdt_short_description>Georgia's Greens Baking Powder (100 g)</pdt_short_description>
+<pdt_description>Fresh Baking Powder from Canada</pdt_description>
+<pdt_price>9.49/each</pdt_price>
+<pdt_package_type>1/pkg</pdt_package_type>
+<pdt_unit>1</pdt_unit>
+<pdt_brand_name>Georgia's Greens</pdt_brand_name>
+<pdt_inventory>500</pdt_inventory>
+<pdt_origin>Canada</pdt_origin>
+<img_path>..\..assets/Pantry/BakingPowder.png</img_path>
+<abs_img_path>\..assets/Pantry/BakingPowder.png</abs_img_path>
+
+<pdt_id>GGPP002_PK</pdt_id>
+<pdt_al_id>4</pdt_al_id>
+<pdt_order_number/>
+<pdt_name>Flour</pdt_name>
+<pdt_short_description>Georgia's Greens Flour (500 g)</pdt_short_description>
+<pdt_description>Fresh Flour from Canada</pdt_description>
+<pdt_price>10.49/each</pdt_price>
+<pdt_package_type>1/pkg</pdt_package_type>
+<pdt_unit>1</pdt_unit>
+<pdt_brand_name>Georgia's Greens</pdt_brand_name>
+<pdt_inventory>500</pdt_inventory>
+<pdt_origin>Canada</pdt_origin>
+<img_path>..\..assets/Pantry/Flour.png</img_path>
+<abs_img_path>\..assets/Pantry/Flour.png</abs_img_path>
 </products>

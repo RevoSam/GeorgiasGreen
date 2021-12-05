@@ -1,3 +1,18 @@
+<?php 
+  $file_open_aisles = '../../data/aisles.xml';
+  $file_open_products = '../../data/product.xml';
+  
+  if (file_exists($file_open_aisles) && file_exists($file_open_products))
+  {
+    $aisles = simplexml_load_file($file_open_aisles);
+    $products = simplexml_load_file($file_open_products);
+    $aisle_found = $aisles->xpath('/aisles/aisle/al_id[.= 6]/parent::*');
+    $products_found = $products->xpath('/products/product/pdt_al_id[.= 6]/parent::*');
+  }
+  else{
+    exit('Failed to open ');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,8 +48,26 @@
     <div class="body">
       <div class="products_wrapper">
         <h2>Start Browsing</h2>
-        <h1>Pantry</h1>
+        <!-- <h1>Pantry</h1> -->
+        <h1><?php echo $aisle_found[0]->al_name;?> Aisle</h1>
         <div class="products_block">
+        <?php 
+            echo "<ul>";
+              foreach($products_found  as $item){
+                echo "<li>";
+                echo "<a href = ''>";
+                echo "<div class = 'product'>";
+                echo "<img src = '{$item->img_path}'>";
+                echo "<h3>{$item->pdt_name}</h3>";
+                echo "<h4>{$item->pdt_description} ({$item->pdt_package_type})</h4>";
+                echo "<span>$ {$item->pdt_price}</span>";
+                echo "</div>";
+                echo "</a>";
+                echo "</li>";
+              }
+            echo "<li></li>";
+            echo "</ul>";
+          ?>
           <ul>
             <li>
               <a href="Sugar.php">
