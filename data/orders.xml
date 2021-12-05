@@ -1,28 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <orders>
-  
-  <order>
-    <id>1</id>
-    <order_number>456112</order_number>
-    <user_id>1</user_id>
-    <order_date>2021-12-01</order_date>
-    <status>Shipped</status>
-    <delivery_add_id>1</delivery_add_id>
-    <billing_add_id>2</billing_add_id>
-    <total>30.39 </total>
-    <payment>Interac</payment>
-  </order>
 
-  <order>
-    <id>2</id>
-    <order_number>654789</order_number>
-    <user_id>1</user_id>
-    <order_date>2021-12-02</order_date>
-    <status>Ready</status>
-    <delivery_add_id>1</delivery_add_id>
-    <billing_add_id>2</billing_add_id>
-    <total>7.48 </total>
-    <payment>Credit</payment>
-  </order>
-  
-</orders>
+<order><id>663835424</id><order_number>133167</order_number><user_id>1</user_id><fullname>Sami Najim</fullname><order_date>2021-Dec-04</order_date><status>Shipped</status><delivery_add_id>1</delivery_add_id><billing_add_id>2</billing_add_id><total>16.450000000000003</total><payment>Cash</payment></order></orders>
