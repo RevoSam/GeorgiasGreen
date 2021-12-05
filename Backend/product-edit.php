@@ -90,7 +90,7 @@
             $product_to_load->pdt_price =  $_POST['product-price'];
             $product_to_load->pdt_brand_name = $_POST['product-brand'];
             $product_to_load->pdt_inventory = $_POST['product-qty'];
-            $product_to_load->pdt_inventory = $_POST['product-origin'];
+            $product_to_load->pdt_origin = $_POST['product-origin'];
             $product_to_load->abs_img_path = $product_to_load->abs_img_path;
             //EDIT THE VALUES
 
