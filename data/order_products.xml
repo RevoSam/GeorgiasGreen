@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <order_products>
 
+    <order_product>
+        <id>1</id>
+        <order_id>456112</order_id>
+        <order_product_id>GGCP336_QT</order_product_id>
+        <order_qty>3</order_qty>
+        <price>6.97</price>
+    </order_product>
 
+    <order_product>
+        <id>1</id>
+        <order_id>456112</order_id>
+        <order_product_id>GGCP225_PK</order_product_id>
+        <order_qty>1</order_qty>
+        <price>3.49</price>
+    </order_product>
 
-  
-<order_product><id>1434293858</id><order_id>133167</order_id><order_product_id>GGCP336_QT</order_product_id><order_qty>1</order_qty><price>6.97</price></order_product><order_product><id>811896309</id><order_id>133167</order_id><order_product_id>GGCP628_LP</order_product_id><order_qty>1</order_qty><price>5.99</price></order_product><order_product><id>78865006</id><order_id>133167</order_id><order_product_id>GGCP101_QF</order_product_id><order_qty>1</order_qty><price>3.49</price></order_product></order_products>
+    <order_product>
+        <id>1</id>
+        <order_id>456112</order_id>
+        <order_product_id>GGCP628_LP</order_product_id>
+        <order_qty>1</order_qty>
+        <price>5.99</price>
+    </order_product>
+
+    <order_product>
+        <id>1</id>
+        <order_id>654789</order_id>
+        <order_product_id>GGCP225_PK</order_product_id>
+        <order_qty>1</order_qty>
+        <price>3.49</price>
+    </order_product>
+
+    <order_product>
+        <id>1</id>
+        <order_id>654789</order_id>
+        <order_product_id>GGCP501_GP</order_product_id>
+        <order_qty>1</order_qty>
+        <price>3.99</price>
+    </order_product>
+
+</order_products>
