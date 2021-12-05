@@ -44,13 +44,13 @@
                     $shortTag = $xml->createElement("pdt_short_description",$short_description);
                     $longTag = $xml->createElement("pdt_description",$long_description);
                     $priceTag = $xml->createElement("pdt_price",$price);
-                    $packageTag = $xml->createElement("pdt_packet_type","");//pdt_package_type
-                    $unitTag = $xml->createElement("pdt_unit",""); //pdt_unit
+                    $packageTag = $xml->createElement("pdt_packet_type","1/pkg");//pdt_package_type
+                    $unitTag = $xml->createElement("pdt_unit","1"); //pdt_unit
                     $brandTag = $xml->createElement("pdt_brand_name",$brand);
                     $qtyTag = $xml->createElement("pdt_inventory",$quantity);
                     $originTag = $xml->createElement("pdt_origin",$origin);
-                    $imgTag = $xml->createElement("img_path","..\..\assets/defaultPicture.png");//img_path
-                    $absimgTag = $xml->createElement("abs_img_path","/GeorgiasGreens/assets/defaultPicture.png");
+                    $imgTag = $xml->createElement("img_path","..\..\assets/defaultPicture.jpg");//img_path
+                    $absimgTag = $xml->createElement("abs_img_path","/GeorgiasGreens/assets/defaultPicture.jpg");
                 //format
                 $productTag->appendChild($codeTag); //pdt_id
                 $productTag->appendChild($aileTag);//pdt_al_id

@@ -43,8 +43,6 @@ if(isset($_POST["edit"])){
     }
     header("Location: product-edit.php?ID={$product_to_edit_id}");
 }
-
-
 ?>
 
 <!DOCTYPE html>
