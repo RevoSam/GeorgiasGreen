@@ -106,15 +106,15 @@
 
         function translateDpt($dptName)
         {
-            if($dptName === "f-a-v")
+            if($dptName == "f-a-v")
                 return 1;
-            else if($dptName === "meat")
+            else if($dptName == "meat")
                 return 2;
-            else if($dptName === "backery")
+            else if($dptName == "backery")
                 return 3;
-            else if($dptName === "pantry")
+            else if($dptName == "pantry")
                 return 4;
-            else if($dptName === "dairy")
+            else if($dptName == "dairy")
                 return 5;
             else
                 return 6;
@@ -151,7 +151,7 @@
     </div>
     <div class="right-side">
         <div id="picture-space">
-            <?php echo "<img class = circled-picture style = \"background-image:url({$product_to_load->abs_img_path});\">" ?>;
+            <?php echo "<img class = circled-picture style = \"background-image:url($product_to_load->abs_img_path);\">" ?>
         </div>
         <div class="med-container" id="brand">
             <label for="product-brand">Brand</label><br>
@@ -195,8 +195,8 @@
         <div class="sml-container">
             <label for="departement">Department</label><br>
             <select name="department" id="departement">
-                <option value= "meat" <?php selectDepartment($product_to_load->pdt_al_id,1);?>> Meat</option>
-                <option value = "f-a-v" <?php selectDepartment($product_to_load->pdt_al_id,2);?>>Fruits & Veggies</option>
+                <option value= "meat" <?php selectDepartment($product_to_load->pdt_al_id,2);?>> Meat</option>
+                <option value = "f-a-v" <?php selectDepartment($product_to_load->pdt_al_id,1);?>>Fruits & Veggies</option>
                 <option value= "backery" <?php selectDepartment($product_to_load->pdt_al_id,3);?>>Backery</option>
                 <option value= "pantry" <?php selectDepartment($product_to_load->pdt_al_id,4);?>>Pantry</option>
                 <option value= "dairy" <?php selectDepartment($product_to_load->pdt_al_id,5);?>>Dairy</option>
