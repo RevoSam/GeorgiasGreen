@@ -62,7 +62,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>Canada</pdt_origin>
 <img_path>../assets/Meat Products/MincedBeef.png</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Meat\ Products/MincedBeef.png</abs_img_path>
+<abs_img_path>../assets/Meat\ Products/MincedBeef.png</abs_img_path>
 </product>
 <product>
 <pdt_id>GGMP005_PK</pdt_id>
@@ -78,7 +78,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>Canada</pdt_origin>
 <img_path>../assets/Meat Products/steak.png</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Meat\ Products/steak.png</abs_img_path>
+<abs_img_path>../assets/Meat\ Products/steak.png</abs_img_path>
 </product>
 <product>
 <pdt_id>GGCP225_PK</pdt_id>
@@ -94,7 +94,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>Canada</pdt_origin>
 <img_path>../assets/Cleaning Aisle Products/Paper Towel.png</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Cleaning\ Aisle\ Products/Paper\ Towel.png</abs_img_path>
+<abs_img_path>../assets/Cleaning\ Aisle\ Products/Paper\ Towel.png</abs_img_path>
 </product>
 <product>
 <pdt_id>GGCP336_QT</pdt_id>
@@ -110,7 +110,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>Canada</pdt_origin>
 <img_path>../assets/Cleaning Aisle Products/Toilet Paper.png</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Cleaning\ Aisle\ Products/Toilet\ Paper.png</abs_img_path>
+<abs_img_path>../assets/Cleaning\ Aisle\ Products/Toilet\ Paper.png</abs_img_path>
 </product>
 <product>
 <pdt_id>GGCP501_GP</pdt_id>
@@ -126,7 +126,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>United-States</pdt_origin>
 <img_path>../assets/Cleaning Aisle Products/Dishwashing.png</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Cleaning\ Aisle\ Products/Dishwashing.png</abs_img_path>
+<abs_img_path>../assets/Cleaning\ Aisle\ Products/Dishwashing.png</abs_img_path>
 </product>
 <product>
 <pdt_id>GGCP628_LP</pdt_id>
@@ -142,7 +142,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>United-States</pdt_origin>
 <img_path>../assets/Cleaning Aisle Products/Garbage Bags.png</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Cleaning\ Aisle\ Products/Garbage Bags.png</abs_img_path>
+<abs_img_path>../assets/Cleaning\ Aisle\ Products/Garbage Bags.png</abs_img_path>
 </product>
 <product>
 <pdt_id>GGCP101_QF</pdt_id>
@@ -158,7 +158,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>United-States</pdt_origin>
 <img_path>../assets/Cleaning Aisle Products/Bleach.png</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Cleaning\ Aisle\ Products/Bleach.png</abs_img_path>
+<abs_img_path>../assets/Cleaning\ Aisle\ Products/Bleach.png</abs_img_path>
 </product>
 <product>
 <pdt_id>GGCY001_PK</pdt_id>
@@ -174,7 +174,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>United-States</pdt_origin>
 <img_path>..\..\assets/Dairy Products/cheddar-cheese.png</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Dairy\ Products/cheddar-cheese.png</abs_img_path>
+<abs_img_path>../assets/Dairy\ Products/cheddar-cheese.png</abs_img_path>
 </product>
 <product>
 <pdt_id>GGCR002_PK</pdt_id>
@@ -190,7 +190,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>United-States</pdt_origin>
 <img_path>..\..\assets/Dairy Products/cream.png</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Dairy\ Products/cream.png</abs_img_path>
+<abs_img_path>../assets/Dairy\ Products/cream.png</abs_img_path>
 </product>
 <product>
 <pdt_id>GGIC003_PK</pdt_id>
@@ -206,7 +206,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>Mexico</pdt_origin>
 <img_path>..\..\assets/Dairy Products/ice-cream.png</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Dairy\ Products/ice-cream.png</abs_img_path>
+<abs_img_path>../assets/assets/Dairy\ Products/ice-cream.png</abs_img_path>
 </product>
 <product>
 <pdt_id>GGSM004_PK</pdt_id>
@@ -222,7 +222,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>Canada</pdt_origin>
 <img_path>..\..\assets/Dairy Products/milk-jug.jpg</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Dairy\ Products/milk-jug.jpg</abs_img_path>
+<abs_img_path>../assets/assets/Dairy\ Products/milk-jug.jpg</abs_img_path>
 </product>
 <product>
 <pdt_id>GGCY005_PK</pdt_id>
@@ -238,7 +238,7 @@
 <pdt_inventory>10</pdt_inventory>
 <pdt_origin>United-States</pdt_origin>
 <img_path>..\..\assets/Dairy Products/yogurt.png</img_path>
-<abs_img_path>/GeorgiasGreens/assets/Dairy\ Products/milk-jug.jpg</abs_img_path>
+<abs_img_path>../assets/Dairy\ Products/yogurt.png</abs_img_path>
 </product>
 
 </products>
