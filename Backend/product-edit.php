@@ -49,8 +49,8 @@
                     $brandTag = $xml->createElement("pdt_brand_name",$brand);
                     $qtyTag = $xml->createElement("pdt_inventory",$quantity);
                     $originTag = $xml->createElement("pdt_origin",$origin);
-                    $imgTag = $xml->createElement("img_path","");//img_path
-
+                    $imgTag = $xml->createElement("img_path","..\..\assets/defaultPicture.png");//img_path
+                    $absimgTag = $xml->createElement("abs_img_path","/GeorgiasGreens/assets/defaultPicture.png");
                 //format
                 $productTag->appendChild($codeTag); //pdt_id
                 $productTag->appendChild($aileTag);//pdt_al_id
@@ -65,7 +65,7 @@
                 $productTag->appendChild($qtyTag);//pdt_ionventory
                 $productTag->appendChild($originTag);//pdt_origin
                 $productTag->appendChild($imgTag);//img_path
-                
+                $productTag->appendChild($absimgTag); //abs image path
             $rootTag->appendChild($productTag);
             $xml->save('../data/product.xml');
             header("Location: backstore.php");
@@ -91,7 +91,7 @@
             $product_to_load->pdt_brand_name = $_POST['product-brand'];
             $product_to_load->pdt_inventory = $_POST['product-qty'];
             $product_to_load->pdt_inventory = $_POST['product-origin'];
-            $product_to_load->img_path = $product_to_load->img_path;
+            $product_to_load->abs_img_path = $product_to_load->abs_img_path;
             //EDIT THE VALUES
 
             $products->saveXML('../data/product.xml');
@@ -151,7 +151,7 @@
     </div>
     <div class="right-side">
         <div id="picture-space">
-            <?php echo "<img class = circled-picture style = \"background-image:url({$product_to_load->img_path});\">" ?>;
+            <?php echo "<img class = circled-picture style = \"background-image:url({$product_to_load->abs_img_path});\">" ?>;
         </div>
         <div class="med-container" id="brand">
             <label for="product-brand">Brand</label><br>
