@@ -1,3 +1,18 @@
+<?php
+  $file_open_aisles = '../../data/aisles.xml';
+  $file_open_products = '../../data/product.xml';
+
+  if (file_exists($file_open_aisles) && file_exists($file_open_products))
+  {
+    $aisles = simplexml_load_file($file_open_aisles);
+    $products = simplexml_load_file($file_open_products);
+    $aisle_found = $aisles->xpath('/aisles/aisle/al_id[.= 3]/parent::*');
+    $products_found = $products->xpath('/products/product/pdt_al_id[.= 3]/parent::*');
+  }
+  else{
+    exit('Failed to open ');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,8 +20,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="..\..\styles.css" />
-    <link rel="icon" href="..\..\assets/GGLogoPicture.png"/>
     <title>Georgia's Greens - Bakery</title>
+    <link rel="icon" href="../../assets/GGLogoPicture.png" />
   </head>
   <body>
     <div class="header"><a href="..\..\index.php"><img src = "..\..\assets/GGLogo.png" width="350"></a></div>
@@ -32,62 +47,29 @@
     <div class="body">
       <div class="products_wrapper">
         <h2>Start Browsing</h2>
-        <h1>Cleaning Supplies Aisle</h1>
+        <h1><?php echo $aisle_found[0]->al_name;?> Aisle</h1>
         <div class="products_block">
-          <ul>
-            <li>
-              <a href="Baguette.php">
-              <div class="product">
-                <img src="..\..\assets/Bakery Products/baguette.png">
-                <h3>Baguette</h3>
-                <h4>Freshly Baked</h4>
-                <span>$0.99</span>
-              </div>
-            </a>
-            </li>
-
-            <li>
-              <a href="Wholewheat Bread.php">
-              <div class="product">
-                <img src="..\..\assets/Bakery Products/wholewheat.png">
-                <h3>Wholewheat Bread</h3>
-                <h4>Freshly Baked and Full of Fiber</h4>
-                <span>$3.50</span>
-              </div>
-              </a>
-            </li>
-
-            <li>
-              <a href="Croissant.php">
-              <div class="product">
-                <img src="..\..\assets/Bakery Products/croissant.png">
-                <h3>Croissant</h3>
-                <h4>Pack of 4 Fresh Butter Croissants</h4>
-                <span>$4.99</span>
-              </div></a>
-            </li>
-
-            <li>
-              <a href="Muffin.php">
-              <div class="product">
-                <img src="..\..\assets/Bakery Products/muffin.png">
-                <h3>Muffin</h3>
-                <h4>Pack of 6 Fresh Muffins</h4>
-                <span>$4.99</span>
-              </div></a>
-            </li>
-
-            <li>
-              <a href="Bagel.php">
-              <div class="product">
-                <img src="..\..\assets/Bakery Products/bagel.png">
-                <h3>Bagel</h3>
-                <h4>4 Pack of Bagels Freshly Made</h4>
-                <span>$5.99</span>
-              </div></a>
-            </li>
-            <li></li>
-          </ul>
+          <?php
+            echo "<ul>";
+              foreach($products_found  as $item){
+                echo "<li>";
+                $id = urlencode($item->pdt_id);
+                $url = htmlspecialchars("../../Products/product.php?ID=". $id );
+                echo "<a href = '{$url}'>";
+                echo "<div class = 'product'>";
+                $path = "../";
+                $path .= $item->img_path;
+                echo "<img src = '{$path}'>";
+                echo "<h3>{$item->pdt_name}</h3>";
+                echo "<h2>{$item->pdt_short_description} ({$item->pdt_package_type})</h2>";
+                echo "<span><h2>$ {$item->pdt_price}</h2></span>";
+                echo "</div>";
+                echo "</a>";
+                echo "</li>";
+              }
+            echo "<li></li>";
+            echo "</ul>";
+          ?>
         </div>
       </div>
     </div>
@@ -124,5 +106,6 @@
         <a href="https://youtu.be/dQw4w9WgXcQ" style="padding: 5px;" target="_blank"><img src = "..\..\assets/YTLogo.png"></a>
       </div>
   </div>
+  <script src="../../scripts/script.js"></script>
   </body>
 </html>
