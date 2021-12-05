@@ -80,7 +80,7 @@ if(isset($_POST["edit"])){
                 <p>Meat</p>
             </div>
             <?php 
-              foreach($dairy_products_found  as $item){
+              foreach($meat_products_found  as $item){
                 $id = urlencode($item->pdt_id);
                 $url = htmlspecialchars("product-edit.php?ID=". $id );
                 echo "<div class = \"product\">";
@@ -91,7 +91,7 @@ if(isset($_POST["edit"])){
                         echo "<p>{$item->pdt_name}</p>";
                     echo "</div>";
                     echo "<div class=\"department-container\">";
-                        echo "<p>DAIRY</p>";
+                        echo "<p>MEAT</p>";
                     echo "</div>";
                     echo "<div class=\"price-container\">";
                         echo "<p>{$item->pdt_price}$</p>";

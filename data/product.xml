@@ -13,6 +13,7 @@
     <pdt_unit>1</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Canada</pdt_origin>
     <img_path>../assets/Meat Products/ChickenBP.png</img_path>
   </product>
 
@@ -28,6 +29,7 @@
     <pdt_unit>1</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Canada</pdt_origin>
     <img_path>../assets/Meat Products/ChickenDR.png</img_path>
   </product>
 
@@ -44,6 +46,7 @@
     <pdt_unit>1</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Canada</pdt_origin>
     <img_path>../assets/Meat Products/ChickenWhole.png</img_path>
   </product>
 
@@ -60,6 +63,7 @@
     <pdt_unit>1</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Canada</pdt_origin>
     <img_path>../assets/Meat Products/MincedBeef.png</img_path>
   </product>
 
@@ -76,6 +80,7 @@
     <pdt_unit>1</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Canada</pdt_origin>
     <img_path>../assets/Meat Products/steak.png</img_path>
   </product>
   
@@ -91,6 +96,7 @@
     <pdt_unit>2</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Canada</pdt_origin>
     <img_path>../assets/Cleaning Aisle Products/Paper Towel.png</img_path>
   </product>
 
@@ -106,6 +112,7 @@
     <pdt_unit>6</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>Canada</pdt_origin>
     <img_path>../assets/Cleaning Aisle Products/Toilet Paper.png</img_path>
   </product>
 
@@ -121,6 +128,7 @@
     <pdt_unit>1</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>United-States</pdt_origin>
     <img_path>../assets/Cleaning Aisle Products/Dishwashing.png</img_path>
   </product>
 
@@ -136,6 +144,7 @@
     <pdt_unit>50</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>United-States</pdt_origin>
     <img_path>../assets/Cleaning Aisle Products/Garbage Bags.png</img_path>
   </product>
   
@@ -151,6 +160,7 @@
     <pdt_unit>1</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
+    <pdt_origin>United-States</pdt_origin>
     <img_path>../assets/Cleaning Aisle Products/Bleach.png</img_path>
   </product>
 
