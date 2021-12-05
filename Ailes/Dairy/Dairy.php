@@ -46,11 +46,10 @@
     </div>
     <div class="body">
         <div class="products_wrapper">
-            <h2>Start Browsing</h2>
-            <h1>Dairy Products Aisle</h1>
-
-            <div class="products_block">
-            <?php 
+        <h2>Start Browsing</h2>
+        <h1><?php echo $aisle_found[0]->al_name;?> Aisle</h1>
+        <div class="products_block">
+          <?php 
             echo "<ul>";
               foreach($products_found  as $item){
                 echo "<li>";
@@ -69,66 +68,7 @@
             echo "<li></li>";
             echo "</ul>";
           ?>
-
-            <!--    <ul>
-                    <li>
-                        <a href="Milk.php">
-                            <div class="product">
-                                <img src="../../assets/Dairy Products/milk-jug.jpg">
-                                <h3>Milk</h3>
-                                <h4>Skim Milk 2L</h4>
-                                <span>$7.99</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="Yogurt.php">
-                            <div class="product">
-                                <img src="../../assets/Dairy Products/yogurt.png">
-                                <h3>Yogurt</h3>
-                                <h4>Greek Yogurt (350g) </h4>
-                                <span>$6.99</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    
-                    <li>
-                        <a href="Cheese.php">
-                            <div class="product">
-                                <img src="../../assets/Dairy Products/cheddar-cheese.png">
-                                <h3>Cheese</h3>
-                                <h4>Cheddar Cheese (450g)</h4>
-                                <span>$9.99</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="Cream.php">
-                            <div class="product">
-                                <img src="../../assets/Dairy Products/cream.png">
-                                <h3>Cream</h3>
-                                <h4>Cooking Cream (470ml)</h4>
-                                <span>$4.99</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="IceCream.php">
-                            <div class="product">
-                                <img src="../../assets/Dairy Products/ice-cream.png" height="50px" width = "50px">
-                                <h3>Ice Cream</h3>
-                                <h4>Vanilla Ice Cream (500g)</h4>
-                                <span>$7.99</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li></li>
-                </ul> -->
-            </div>
+          
         </div>
     </div>
     <div class="footer">
