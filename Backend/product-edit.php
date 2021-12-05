@@ -1,25 +1,22 @@
 <?php
-        $productExist = false;
         $file_open_aisles = '../data/aisles.xml'; //'../../data/aisles.xml'
         $file_open_products = '../data/product.xml';
 
         error_reporting(E_ERROR | E_PARSE); 
         if (file_exists($file_open_products)) {
             //if it has a GET value
-            $productExist = true;
+            
             $products = simplexml_load_file($file_open_products);
             if (isset($_GET['ID'])) {
-
                 $product_id = $_GET['ID'];
                 $product_to_load = $products->xpath('/products/product/pdt_id[.= "'. $product_id. '"]/parent::*')[0];
             }
         } else {
             exit('Failed to open ');
         }
-
-        if(isset($_POST['insert']) && !$productExist) //Then we add the item
+        
+        if(isset($_POST['add'])) //Then we add the item
         {
-            
             $code = $_POST['product-code'];
             $aile = $_POST['department']; //how to get the value
             $order;
@@ -74,12 +71,32 @@
             header("Location: backstore.php");
         }
         
-        else if(isset($_POST['insert']) && $productExist) //Then we simply modify
+        else if(isset($_POST['edit']))
         {
-            echo "<h1> HGFBKSJGNBSDBNGKDSBG </h1>";
+            $file_open_products = '../data/product.xml';
+            $products = simplexml_load_file($file_open_products);
+            foreach($_POST as $key=>$value)
+            {
+                $product_to_edit_id = $value;
+            }
+            $product_to_load = $products->xpath('/products/product/pdt_id[.= "'. $product_to_edit_id. '"]/parent::*')[0];
+            
+            //EDIT THE VALUES
+            $product_to_load->pdt_id = $_POST['product-code'];
+            $product_to_load->pdt_al_id = translateDpt($_POST['department']);
+            $product_to_load->pdt_name = $_POST['product-name'];
+            $product_to_load->pdt_short_description = $_POST['short_description'];
+            $product_to_load->pdt_description = $_POST['long_description'];
+            $product_to_load->pdt_price =  $_POST['product-price'];
+            $product_to_load->pdt_brand_name = $_POST['product-brand'];
+            $product_to_load->pdt_inventory = $_POST['product-qty'];
+            $product_to_load->pdt_inventory = $_POST['product-origin'];
+            $product_to_load->img_path = $product_to_load->img_path;
+            //EDIT THE VALUES
+
+            $products->saveXML('../data/product.xml');
+            header("Location: backstore.php");
         }
-
-
 
 
         function selectDepartment($pid,$aile){
@@ -102,6 +119,18 @@
             else
                 return 6;
         }
+
+        function getName(){
+            if(isset($_GET['ID']))
+            {
+                $product_id = $_GET['ID'];
+                return "edit value = $product_id";
+            }
+            else
+            {
+                return "add";
+            }
+        }
 ?>
 <!DOCTYPE html>
 <html>
@@ -115,7 +144,7 @@
 </head>
 
 <body>
-    <form method = "POST" action = "product-edit.php">
+    <form method = "POST">
     <div class="sidebar">
         <img width="300" src="../assets/GGLogo.png" alt="">
         <p id="description-under-user-edit-logo">Add / Edit a product to the database</p>
@@ -183,9 +212,11 @@
             <?php echo " <textarea id = long-description name = long-description rows = 4 cols = 80>{$product_to_load->pdt_description}</textarea>";?>
         </div>
         <div class="button-container">
-            <button type="submit" id="edit-picture">Edit Picture</button>
+            <button type="submit" id="edit-picture" onclick="location.href='backstore.php'">Edit Picture</button>
             <button type="button" id="cancel-button" onclick="location.href='backstore.php'">Cancel</button>
-            <button type="submit" id="save-button" name = "insert">Save</button> 
+
+            <!-- Do a PHP function to check name according to the name sent and give value of code -->
+            <button type="submit" id="save-button" name = <?php echo(getName()) ?>>Save</button> 
             <!-- It depends if it has a get or no, if no get we add, if a get we modify-->
         </div>
     </div>

@@ -35,6 +35,15 @@ foreach($xpath->query("/products/product[pdt_id = '$product_to_delete_id']") as 
     header("Location: backstore.php");
 }
 
+if(isset($_POST["edit"])){
+    foreach($_POST as $key=>$value)
+    {
+        $product_to_edit_id = $value;
+    }
+    header("Location: product-edit.php?ID={$product_to_edit_id}");
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +58,7 @@ foreach($xpath->query("/products/product[pdt_id = '$product_to_delete_id']") as 
 </head>
 
 <body>
-<form method = "POST" action = "backstore.php">
+<form method = "POST">
     <header>
         <p>Welcome User</p>
     </header>
@@ -625,7 +634,7 @@ foreach($xpath->query("/products/product[pdt_id = '$product_to_delete_id']") as 
                         echo "<p>{$item->pdt_origin}</p>";
                     echo "</div>";
                     echo "<div class=\"small-container\">";
-                        echo "<button class = \"edit-button\" onclick = location.href='{$url}'><p>EDIT</p></button>";
+                        echo "<button name = edit class = \"edit-button\" value = {$item->pdt_id} onclick = location.href='{$url}'><p>EDIT</p></button>";
                     echo "</div>";
                     echo "<div class=\"small-container\">";
                         echo "<button type = submit name = delete  class = \"delete-button\" value = \"{$item->pdt_id}\"><p>DELETE</p></button>";
@@ -660,7 +669,7 @@ foreach($xpath->query("/products/product[pdt_id = '$product_to_delete_id']") as 
                         echo "<p>{$item->pdt_origin}</p>";
                     echo "</div>";
                     echo "<div class=\"small-container\">";
-                        echo "<button class = \"edit-button\" onclick= location.href='{$url}'><p>EDIT</p></button>";
+                        echo "<button value = {$item->pdt_id} name = edit class = \"edit-button\" onclick= location.href='{$url}'><p>EDIT</p></button>";
                     echo "</div>";
                     echo "<div class=\"small-container\">";
                         echo "<button type = submit name = delete class = \"delete-button\" value = {$item->pdt_id} ><p>DELETE</p></button>";
