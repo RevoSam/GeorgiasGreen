@@ -1,3 +1,18 @@
+<?php 
+  $file_open_aisles = '../../data/aisles.xml';
+  $file_open_products = '../../data/product.xml';
+  
+  if (file_exists($file_open_aisles) && file_exists($file_open_products))
+  {
+    $aisles = simplexml_load_file($file_open_aisles);
+    $products = simplexml_load_file($file_open_products);
+    $aisle_found = $aisles->xpath('/aisles/aisle/al_id[.= 2]/parent::*');
+    $products_found = $products->xpath('/products/product/pdt_al_id[.= 2]/parent::*');
+  }
+  else{
+    exit('Failed to open ');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,6 +47,31 @@
     <div class="body">
       <div class="products_wrapper">
         <h2>Start Browsing</h2>
+        <h1><?php echo $aisle_found[0]->al_name;?> Aisle</h1>
+        <div class="products_block">
+          <?php 
+            echo "<ul>";
+              foreach($products_found  as $item){
+                echo "<li>";
+                $id = urlencode($item->pdt_id);
+                $url = htmlspecialchars("../../Products/product.php?ID=". $id );
+                echo "<a href = '{$url}'>";
+                echo "<div class = 'product'>";
+                $path = "../";
+                $path .= $item->img_path;
+                echo "<img src = '{$path}'>";
+                echo "<h3>{$item->pdt_name}</h3>";
+                echo "<h2>{$item->pdt_short_description} ({$item->pdt_package_type})</h2>";
+                echo "<span><h2>$ {$item->pdt_price}</h2></span>";
+                echo "</div>";
+                echo "</a>";
+                echo "</li>";
+              }
+            echo "<li></li>";
+            echo "</ul>";
+          ?>
+
+        <!--
         <h1>Meat Aisle</h1>
         <div class="products_block">
           <ul>
@@ -87,10 +127,10 @@
               </div></a>
             </li>
             <li></li>
-          </ul>
+          </ul>-->
         </div>
       </div>
-    </div>
+    </div> 
     <div class="footer">
       <div id="link-list-left">
         <p><strong>Useful Links</strong></p>

@@ -10,7 +10,7 @@
       foreach ($products->product as $product){
         if ($product->pdt_id == $product_id)
         {
-          $product_found =  $product;   
+          $product_found = $product;   
         }
       }
       if (!$product_found){
@@ -123,6 +123,6 @@
         <a href="https://youtu.be/dQw4w9WgXcQ" style="padding: 5px;" target="_blank"><img src = "..\assets/YTLogo.png"></a>
       </div>
   </div>
-  <script src="../../scripts/script.js"></script>
+  <script src="../scripts/script.js"></script>
   </body>
 </html>

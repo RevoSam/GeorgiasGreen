@@ -1,5 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <products>
+  <product>
+    <pdt_id>GGMP001_PK</pdt_id>
+    <pdt_al_id>2</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Chicken Breast Pieces</pdt_name>
+    <pdt_short_description>Chicken Breast Pieces</pdt_short_description>
+    <pdt_description>Freshly cut breast pieces from ethically-raised Canadian farm chickens</pdt_description>
+    <pdt_price>13.99</pdt_price>
+    <pdt_package_type>4/pkg</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <img_path>../assets/Meat Products/ChickenBP.png</img_path>
+  </product>
+
+  <product>
+    <pdt_id>GGMP002_PK</pdt_id>
+    <pdt_al_id>2</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Chicken Drumsticks</pdt_name>
+    <pdt_short_description>Chicken Breast Pieces</pdt_short_description>
+    <pdt_description>Fresh chicken drumsticks from ethically-raised Canadian farm chickens</pdt_description>
+    <pdt_price>12.99</pdt_price>
+    <pdt_package_type>8/pkg</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <img_path>../assets/Meat Products/ChickenDR.png</img_path>
+  </product>
+
+
+  <product>
+    <pdt_id>GGMP003_PK</pdt_id>
+    <pdt_al_id>2</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Chicken (Whole)</pdt_name>
+    <pdt_short_description>Whole Chicken</pdt_short_description>
+    <pdt_description>Fresh whole chicken, ethically raised and bred in Canadian farms</pdt_description>
+    <pdt_price>7.99</pdt_price>
+    <pdt_package_type>1/pkg</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <img_path>../assets/Meat Products/ChickenWhole.png</img_path>
+  </product>
+
+
+  <product>
+    <pdt_id>GGMP004_PK</pdt_id>
+    <pdt_al_id>2</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Minced Beef</pdt_name>
+    <pdt_short_description>Minced Beef</pdt_short_description>
+    <pdt_description>Fresh minced beef from Canadian farms</pdt_description>
+    <pdt_price>7.99</pdt_price>
+    <pdt_package_type>1/pkg</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <img_path>../assets/Meat Products/MincedBeef.png</img_path>
+  </product>
+
+  
+  <product>
+    <pdt_id>GGMP005_PK</pdt_id>
+    <pdt_al_id>2</pdt_al_id>
+    <pdt_order_number></pdt_order_number>
+    <pdt_name>Steak</pdt_name>
+    <pdt_short_description>Freshly-cut Steak</pdt_short_description>
+    <pdt_description>Freshly cut breast beef steak</pdt_description>
+    <pdt_price>5.49</pdt_price>
+    <pdt_package_type>1/pkg</pdt_package_type>
+    <pdt_unit>1</pdt_unit>
+    <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+    <pdt_inventory>10</pdt_inventory>
+    <img_path>../assets/Meat Products/steak.png</img_path>
+  </product>
+  
   <product>
     <pdt_id>GGCP225_PK</pdt_id>
     <pdt_al_id>6</pdt_al_id>
@@ -12,7 +91,7 @@
     <pdt_unit>2</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
-    <img_path>..\..\assets/Cleaning Aisle Products/Paper Towel.png</img_path>
+    <img_path>../assets/Cleaning Aisle Products/Paper Towel.png</img_path>
   </product>
 
   <product>
@@ -27,7 +106,7 @@
     <pdt_unit>6</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
-    <img_path>..\..\assets/Cleaning Aisle Products/Toilet Paper.png</img_path>
+    <img_path>../assets/Cleaning Aisle Products/Toilet Paper.png</img_path>
   </product>
 
   <product>
@@ -42,7 +121,7 @@
     <pdt_unit>1</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
-    <img_path>..\..\assets/Cleaning Aisle Products/Dishwashing.png</img_path>
+    <img_path>../assets/Cleaning Aisle Products/Dishwashing.png</img_path>
   </product>
 
   <product>
@@ -57,7 +136,7 @@
     <pdt_unit>50</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
-    <img_path>..\..\assets/Cleaning Aisle Products/Garbage Bags.png</img_path>
+    <img_path>../assets/Cleaning Aisle Products/Garbage Bags.png</img_path>
   </product>
   
   <product>
@@ -72,6 +151,7 @@
     <pdt_unit>1</pdt_unit>
     <pdt_brand_name>Georgia's Greens</pdt_brand_name>
     <pdt_inventory>10</pdt_inventory>
-    <img_path>..\..\assets/Cleaning Aisle Products/Bleach.png</img_path>
+    <img_path>../assets/Cleaning Aisle Products/Bleach.png</img_path>
   </product>
+
 </products>
