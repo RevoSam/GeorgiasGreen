@@ -6,8 +6,8 @@
   {
     $aisles = simplexml_load_file($file_open_aisles);
     $products = simplexml_load_file($file_open_products);
-    $aisle_found = $aisles->xpath('/aisles/aisle/al_id[.= 6]/parent::*');
-    $products_found = $products->xpath('/products/product/pdt_al_id[.= 6]/parent::*');
+    $aisle_found = $aisles->xpath('/aisles/aisle/al_id[.= 4]/parent::*');
+    $products_found = $products->xpath('/products/product/pdt_al_id[.= 4]/parent::*');
   }
   else{
     exit('Failed to open ');
@@ -55,12 +55,16 @@
             echo "<ul>";
               foreach($products_found  as $item){
                 echo "<li>";
-                echo "<a href = ''>";
+                $id = urlencode($item->pdt_id);
+                $url = htmlspecialchars("../../Products/product.php?ID=". $id );
+                echo "<a href = '{$url}'>";
                 echo "<div class = 'product'>";
-                echo "<img src = '{$item->img_path}'>";
+                $path = "../";
+                $path .= $item->img_path;
+                echo "<img src = '{$path}'>";
                 echo "<h3>{$item->pdt_name}</h3>";
-                echo "<h4>{$item->pdt_description} ({$item->pdt_package_type})</h4>";
-                echo "<span>$ {$item->pdt_price}</span>";
+                echo "<h2>{$item->pdt_description} ({$item->pdt_package_type})</h2>";
+                echo "<span><h2>$ {$item->pdt_price}</h2></span>";
                 echo "</div>";
                 echo "</a>";
                 echo "</li>";
@@ -68,6 +72,8 @@
             echo "<li></li>";
             echo "</ul>";
           ?>
+
+          <!--
           <ul>
             <li>
               <a href="Sugar.php">
@@ -121,7 +127,7 @@
               </div></a>
             </li>
             <li></li>
-          </ul>
+          </ul>-->
         </div>
       </div>
     </div>
