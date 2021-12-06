@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <users>
-
   <user>
     <id_user>1</id_user>
     <id_add_user>1</id_add_user>
@@ -27,5 +26,16 @@
   </user>
 
 
+  <user>
+    <id_user>GG61AD9D750121E</id_user>
+    <id_add_user>GG61AD9D750121E</id_add_user>
+    <firstname>Tarsem</firstname>
+    <lastname>Singh</lastname>
+    <admin>0</admin>
+    <email>tarsingh@ymail.com</email>
+    <password>willow123</password>
+    <points>23</points>
+    <address>Telenova Street, Montreal, Quebec, Canada</address>
+  </user>
   
-<user><id_user>GG61AD9D750121E</id_user><id_add_user>GG61AD9D750121E</id_add_user><firstname>Tarsem</firstname><lastname>Singh</lastname><admin>0</admin><email>tarsingh@ymail.com</email><password>willow123</password><points>23</points><address>Telenova Street, Montreal, Quebec, Canada</address></user></users>
+<user><id_user>GG61AE8598436D0</id_user><id_add_user>GG61AE8598436D0</id_add_user><firstname>Shyam Kapoor</firstname><lastname>Trivedi</lastname><admin>0</admin><email>trivediji@gmail.com</email><password>qwerty99</password><points>352</points><address>Some Street, Some City, Some Province, Some Country</address></user></users>

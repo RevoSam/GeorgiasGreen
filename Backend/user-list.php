@@ -91,7 +91,7 @@ if(isset($_POST["edit"])){
                     $ggPoints = $user->points;
                     $address = $user->address;
                     $id = urlencode($user->id_user);
-                    $url = htmlspecialchars("user-edit.php?ID=". $id );
+                    $url = htmlspecialchars("user-edit.php?ID=".$id );
                     //$url = htmlspecialchars("user-edit.php?ID=". $user->id_user );
                     $htmlblock = '<div class = "order">
                     <div class = "order-number-container">
@@ -116,7 +116,7 @@ if(isset($_POST["edit"])){
                         <strong>Address:</strong> ' . $address . '
                     </div>
                     <div class = "action-container">
-                        <button name = edit class = "edit-button" value = \' ' . $user->id_user . ' \' onclick = location.href=\'' . $url . '\'><p>EDIT</p></button>
+                        <button name = edit class = "edit-button" value = \''. $user->id_user . ' \' onclick = location.href=\'' . $url . '\'><p>EDIT</p></button>
                         <button type = submit name = delete  class = "delete-button" value = \''. $userID . '\'><p>DELETE</p></button>
                     </div>
                 </div>';
