@@ -213,6 +213,13 @@ img {
   text-align: center;
 }
 
+.body2 {
+  display: block;
+  margin: 2%;
+  width: 96%;
+  border: 1px solid black;
+}
+
 .ailes_wrapper {
   background-color: rgb(247, 247, 247);
 
