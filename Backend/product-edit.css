@@ -78,6 +78,10 @@ html {
     width:100%;
 }
 
+.error {
+    color:red;
+}
+
 input{
     width:100%;
     padding:5px;
@@ -149,7 +153,8 @@ button {
 
 #edit-picture{
     float:left;
-    margin-left:27px;
+    margin-left:18%;
+    height:30px;
 }
 /*End of normal screen*/
 
