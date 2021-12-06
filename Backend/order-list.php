@@ -28,7 +28,7 @@
     </header>
     <aside>
         <img src="../assets/GGLogoPicture.png" onclick="location.href='../index.php'">
-        <a href="backstore.php"><span class="glyphicon glyphicon-tags"></span>&nbsp&nbspusers</a>
+        <a href="backstore.php"><span class="glyphicon glyphicon-tags"></span>&nbsp&nbspProducts</a>
         <a href="user-list.php"><span class="glyphicon glyphicon-user"></span>&nbsp&nbspUsers</a>
         <a href="order-list.php"><span class="glyphicon glyphicon-credit-card"></span>&nbsp&nbspOrders</a>
     </aside>
@@ -86,8 +86,7 @@
                 </div>';
                 echo $htmlblock;
                 }
-            ?>
-            
+            ?> 
         </div>
     </div>
     <footer>

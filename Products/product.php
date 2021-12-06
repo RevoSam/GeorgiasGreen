@@ -60,7 +60,7 @@
         <input type="text" placeholder="Search for a product..." />
       </div>
     </div>
-    <div class="body">
+    <div class="body2">
       <div class="item_wrapper">
         <img id="productImg" src="<?php echo $product_found[0]->img_path ?>">
         <div class="item_details">

@@ -3,11 +3,39 @@
   <user>
     <id_user>1</id_user>
     <id_add_user>1</id_add_user>
-    <firstname>Georgia</firstname>
+    <firstname>Georgia's</firstname>
     <lastname>Greens</lastname>
     <admin>1</admin>
-    <email>admin@georgiagreens.ca</email>
-    <password>1234</password>
-    <points>0</points>
+    <email>admin</email>
+    <password>admin</password>
+    <points>999</points>
+    <address>1234 Street, City, Country, H3HH3H</address>
   </user>
-</users>
+
+
+  <user>
+    <id_user>2</id_user>
+    <id_add_user>2</id_add_user>
+    <firstname>Anas</firstname>
+    <lastname>Peerzada</lastname>
+    <admin>1</admin>
+    <email>anas@georgiagreens.ca</email>
+    <password>qwerty</password>
+    <points>100</points>
+    <address>912 81st Street, Tornada, Texas. 2JJ45</address>
+  </user>
+
+
+  <user>
+    <id_user>GG61AD9D750121E</id_user>
+    <id_add_user>GG61AD9D750121E</id_add_user>
+    <firstname>Tarsem</firstname>
+    <lastname>Singh</lastname>
+    <admin>0</admin>
+    <email>tarsingh@ymail.com</email>
+    <password>willow123</password>
+    <points>23</points>
+    <address>Telenova Street, Montreal, Quebec, Canada</address>
+  </user>
+  
+<user><id_user>GG61AE8598436D0</id_user><id_add_user>GG61AE8598436D0</id_add_user><firstname>Shyam Kapoor</firstname><lastname>Trivedi</lastname><admin>0</admin><email>trivediji@gmail.com</email><password>qwerty99</password><points>352</points><address>Some Street, Some City, Some Province, Some Country</address></user></users>
