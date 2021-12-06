@@ -27,7 +27,9 @@ if (isset($_POST('Sign up')){
   if($city = ''){
     $errors[] = 'City is empty.';
   }
-
+  if (strpos($xml, "<email>$email</email>") == false)){
+    $errors[] = "Email address is aready being used.";
+  }
   if(count($errors)==0){
     $xml = new DOMDocument("1.0","UTF-8");
     $xml->load("../data/users.xml");
