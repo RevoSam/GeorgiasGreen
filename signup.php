@@ -1,6 +1,6 @@
 <?php
 $errors = array();
-if(isset($_POST('Signup')) {
+if(isset($_POST('Signup'))) {
   $email = $_POST('email');
   $name = $_POST('name');
   $name_array = explode(" ", $name);
@@ -19,7 +19,7 @@ if(isset($_POST('Signup')) {
     $errors[] = 'Email is empty.';
   }
   if($name = ''){
-    $errors[] = 'Name is empty.'
+    $errors[] = 'Name is empty.';
   }
   if($pass = '' || $confirm = ''){
     $errors[] = 'Passwords are empty.';
@@ -36,7 +36,7 @@ if(isset($_POST('Signup')) {
   if($city = ''){
     $errors[] = 'City is empty.';
   }
-  if (strpos($xml, "<email>$email</email>") !== false)){
+  if (strpos($xml, "<email>$email</email>") !== false){
     $errors[] = "Email address is aready being used.";
   }
   if(count($errors)==0){
@@ -49,7 +49,7 @@ if(isset($_POST('Signup')) {
         $fnameTag = $xml->createElement("firstname", $fname);
         $lnameTag = $xml->createElement("lastname", $lname);
         $adminTag = $xml->createElement("admin", 0);
-        $idTag = $xml->createElement("id_user", 345//fillout );
+        $idTag = $xml->createElement("id_user", 345);//fillout );
         $idaddTag = $xml->createElement("id_add_user", 1);
         $pointsTag = $xml->createElement("points", 0);
 
@@ -68,7 +68,7 @@ if(isset($_POST('Signup')) {
     $adxml->load("../data/addresses.xml");
     $adrootTag = $adxml->getElementsByTagName("addresses")->item(0);
       $addTag = $adxml->createElement("address");
-        $addressIdTag = $adxml->createElement("ad_id", 1// fill out);
+        $addressIdTag = $adxml->createElement("ad_id", 1);// fill out);
         $addressTag = $adxml->createElement("add", $address);
         $postalTag = $adxml->createElement("postal_code", $postalcode);
         $cityTag = $adxml->createElement("city", $city);
@@ -77,7 +77,7 @@ if(isset($_POST('Signup')) {
       $addTag->appendChild($postalTag);
       $addTag->appendChild($cityTag);
     $adrottTag->appendChild($addTag);
-    $adxml->save('../data/addresses.xml')
+    $adxml->save('../data/addresses.xml');
 
   }
 }
