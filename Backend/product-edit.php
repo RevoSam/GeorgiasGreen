@@ -43,8 +43,47 @@
             } else{
                $quantity = $_POST['product-qty']; 
             }
+    
+        if(isset($_POST['edit']) && empty($_POST['product-name']) || empty($_POST['product-code']) || empty($_POST['product-price']) || empty($_POST['product-qty']))
+        {
+            //change the value of the non-empty parameter
+            $file_open_products = '../data/product.xml';
+            $products = simplexml_load_file($file_open_products);
+            $product_to_edit_id = $_POST['edit'];
 
-        if(isset($_POST['add']) && !empty($_POST['product-name']) && !empty($_POST['product-code']) && !empty($_POST['product-price']) && !empty($_POST['product-qty'])) 
+            $product_to_load = $products->xpath('/products/product/pdt_id[.= "'. $product_to_edit_id. '"]/parent::*')[0];
+
+        
+            if(!empty($_POST['product-name'])){
+                $product_to_load->pdt_name = "{$_POST['product-name']}";
+            }
+            if(!empty($_POST['product-code'])){
+                $product_to_load->pdt_id = $_POST['product-code'];
+            }
+            if(!empty($_POST['product-price'])){
+                $product_to_load->pdt_price =  $_POST['product-price'];
+            }
+            if(!empty($_POST['product-qty'])){
+                $product_to_load->pdt_inventory = $_POST['product-qty'];
+            }
+            //EDIT THE VALUES
+            
+            $product_to_load->pdt_al_id = translateDpt($_POST['department']);
+            $product_to_load->pdt_short_description = $_POST['short-description'];
+            $product_to_load->pdt_description = $_POST['long-description'];
+            $product_to_load->pdt_brand_name = $_POST['product-brand'];
+            $product_to_load->pdt_origin = $_POST['product-origin'];
+            $product_to_load->img_path = $product_to_load->img_path;
+            $product_to_load->abs_img_path = $product_to_load->abs_img_path;
+            //EDIT THE VALUES
+
+            $products->saveXML('../data/product.xml');
+            header("Location: product-edit.php?ID={$_POST['edit']}"); //return to the same page
+
+        }
+
+            //ADD A PRODUCT IF NAME CODE PRICE AND QUANTITY ARE PRESENT
+        else if(isset($_POST['add']) && !empty($_POST['product-name']) && !empty($_POST['product-code']) && !empty($_POST['product-price']) && !empty($_POST['product-qty'])) 
         {
             $aile = $_POST['department']; //how to get the value
             $order;
@@ -99,7 +138,9 @@
             $xml->save('../data/product.xml');
             header("Location: backstore.php");
         }
-        
+        //END OF ADD A PRODUCT, RETURN TO BACKSTORE.PHP
+
+
         //POST FOR EDITING AN ITEM
         else if(isset($_POST['edit']) && !empty($_POST['product-name']) && !empty($_POST['product-code']) && !empty($_POST['product-price']) && !empty($_POST['product-qty']))
         {
@@ -110,9 +151,10 @@
             {
                 $product_to_edit_id = $value;
             }
-            $product_to_load = $products->xpath('/products/product/pdt_id[.= "'. $product_to_edit_id. '"]/parent::*')[0];
-            
 
+            $product_to_load = $products->xpath('/products/product/pdt_id[.= "'. $product_to_edit_id. '"]/parent::*')[0];
+
+        
             //EDIT THE VALUES
             $product_to_load->pdt_id = $_POST['product-code'];
             $product_to_load->pdt_al_id = translateDpt($_POST['department']);
@@ -130,6 +172,8 @@
             $products->saveXML('../data/product.xml');
             header("Location: backstore.php");
         }
+        //END POST FOR EDITING AN ITEM
+
     }
 
         //HELPER FUNCTIONS
@@ -209,7 +253,7 @@
         </div>
         <div class="xsml-container">
             <label for="product-price">Quantity<span class="error"> *<?php echo $quantityErr;?></span></label><br>
-            <input type= text name = product-qty pattern = "^[0-9]*" value = "<?php if(isset($_POST['product-qty'])) echo $_POST['product-qty']; else echo $product_to_load->pdt_inventory;?>">
+            <input type= text name = product-qty pattern = "^[0-9]+" value = "<?php if(isset($_POST['product-qty'])) echo $_POST['product-qty']; else echo $product_to_load->pdt_inventory;?>">
         </div>
         <div class="sml-container">
             <label for="product-qty">Price<span class="error"> *<?php echo $priceErr;?></span></label><br>
