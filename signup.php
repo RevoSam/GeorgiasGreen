@@ -11,6 +11,8 @@ if(isset($_POST('Signup'))) {
   $address = $_POST('address');
   $city = $_POST('city');
   $confirm = $_POST('c_pass');
+  $finaladdress = $address + ", " + $city + ", " + $postalcode;
+  $idnum = strtoupper(uniqid('GG'));
 
   $xml = new DOMDocument("1.0","UTF-8");
   $xml->load("../data/users.xml");
@@ -49,36 +51,24 @@ if(isset($_POST('Signup'))) {
         $fnameTag = $xml->createElement("firstname", $fname);
         $lnameTag = $xml->createElement("lastname", $lname);
         $adminTag = $xml->createElement("admin", 0);
-        $idTag = $xml->createElement("id_user", 345);//fillout );
-        $idaddTag = $xml->createElement("id_add_user", 1);
+        $idTag = $xml->createElement("id_user", $idnum);
+        $idaddTag = $xml->createElement("id_add_user", $idnum);
         $pointsTag = $xml->createElement("points", 0);
+        $addressTag = $xml->createElement("address", $finaladdress);
 
-      $user->appendChild($emailTag);
-      $user->appendChild($passTag);
-      $user->appendChild($nameTag);
-      $user->appendChild($adminTag);
-      $user->appendChild($idTag);
-      $user->appendChild($idaddTag);
-      $user->appendChild($pointsTag);
+
+      $userTag->appendChild($emailTag);
+      $userTag->appendChild($passTag);
+      $userTag->appendChild($nameTag);
+      $userTag->appendChild($adminTag);
+      $userTag->appendChild($idTag);
+      $userTag->appendChild($idaddTag);
+      $userTag->appendChild($pointsTag);
+      $userTag->appendChild($pointsTag);
+      $userTag->appendChild($addressTag);
 
     $rootTag->appendChild($userTag);
     $xml->save('../data/users.xml');
-
-    $adxml = new DOMDocument("1.0","UTF-8");
-    $adxml->load("../data/addresses.xml");
-    $adrootTag = $adxml->getElementsByTagName("addresses")->item(0);
-      $addTag = $adxml->createElement("address");
-        $addressIdTag = $adxml->createElement("ad_id", 1);// fill out);
-        $addressTag = $adxml->createElement("add", $address);
-        $postalTag = $adxml->createElement("postal_code", $postalcode);
-        $cityTag = $adxml->createElement("city", $city);
-      $addTag->appendChild($addressIdTag);
-      $addTag->appendChild($addressTag);
-      $addTag->appendChild($postalTag);
-      $addTag->appendChild($cityTag);
-    $adrottTag->appendChild($addTag);
-    $adxml->save('../data/addresses.xml');
-
   }
 }
 ?>
