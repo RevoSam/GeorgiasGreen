@@ -1,16 +1,25 @@
 <?php
 $errors = array();
-if (isset($_POST('Sign up')){
+if(isset($_POST('Signup')) {
   $email = $_POST('email');
   $name = $_POST('name');
+  $name_array = explode(" ", $name);
+  $fname = $name_array[0];
+  $lname = $name_array[1];
   $pass = $_POST('pass');
   $postalcode = $_POST('postal-code');
   $address = $_POST('address');
   $city = $_POST('city');
   $confirm = $_POST('c_pass');
 
+  $xml = new DOMDocument("1.0","UTF-8");
+  $xml->load("../data/users.xml");
+
   if($email = ''){
     $errors[] = 'Email is empty.';
+  }
+  if($name = ''){
+    $errors[] = 'Name is empty.'
   }
   if($pass = '' || $confirm = ''){
     $errors[] = 'Passwords are empty.';
@@ -27,7 +36,7 @@ if (isset($_POST('Sign up')){
   if($city = ''){
     $errors[] = 'City is empty.';
   }
-  if (strpos($xml, "<email>$email</email>") == false)){
+  if (strpos($xml, "<email>$email</email>") !== false)){
     $errors[] = "Email address is aready being used.";
   }
   if(count($errors)==0){
@@ -37,9 +46,10 @@ if (isset($_POST('Sign up')){
       $userTag = $xml->createElement("user");
         $emailTag = $xml->createElement("email", $email);
         $passTag = $xml->createElement("password", $pass);
-        $nameTag = $xml->createElement("name", $name);
+        $fnameTag = $xml->createElement("firstname", $fname);
+        $lnameTag = $xml->createElement("lastname", $lname);
         $adminTag = $xml->createElement("admin", 0);
-        $idTag = $xml->createElement("id_user",//fillout );
+        $idTag = $xml->createElement("id_user", 345//fillout );
         $idaddTag = $xml->createElement("id_add_user", 1);
         $pointsTag = $xml->createElement("points", 0);
 
@@ -54,11 +64,24 @@ if (isset($_POST('Sign up')){
     $rootTag->appendChild($userTag);
     $xml->save('../data/users.xml');
 
+    $adxml = new DOMDocument("1.0","UTF-8");
+    $adxml->load("../data/addresses.xml");
+    $adrootTag = $adxml->getElementsByTagName("addresses")->item(0);
+      $addTag = $adxml->createElement("address");
+        $addressIdTag = $adxml->createElement("ad_id", 1// fill out);
+        $addressTag = $adxml->createElement("add", $address);
+        $postalTag = $adxml->createElement("postal_code", $postalcode);
+        $cityTag = $adxml->createElement("city", $city);
+      $addTag->appendChild($addressIdTag);
+      $addTag->appendChild($addressTag);
+      $addTag->appendChild($postalTag);
+      $addTag->appendChild($cityTag);
+    $adrottTag->appendChild($addTag);
+    $adxml->save('../data/addresses.xml')
+
   }
 }
-
-
- ?>
+?>
 
 
 <html lang="en">
@@ -139,7 +162,7 @@ if (isset($_POST('Sign up')){
       </div>
     </div>
     <input class="Login-submit" type="submit" name="Reset" value="Reset">
-    <input class="Login-submit" type="submit" name="Sign up" value="Sign Up">
+    <input class="Login-submit" type="submit" name="Signup" value="Sign Up">
     </form>
 
 
