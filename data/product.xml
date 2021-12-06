@@ -94,7 +94,7 @@
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
         <pdt_inventory>500</pdt_inventory>
         <pdt_origin>Canada</pdt_origin>
-        <img_path>..\..assets/Pantry/Sugar.png</img_path>
+        <img_path>../assets/Pantry/Sugar.png</img_path>
         <abs_img_path>\..assets/Pantry/Sugar.png</abs_img_path>
     </product>
 
@@ -111,7 +111,7 @@
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
         <pdt_inventory>500</pdt_inventory>
         <pdt_origin>Canada</pdt_origin>
-        <img_path>..\..assets/Pantry/Vinegar.png</img_path>
+        <img_path>../assets/Pantry/Vinegar.png</img_path>
         <abs_img_path>\..assets/Pantry/Vinegar.png</abs_img_path>
     </product>
 
@@ -128,7 +128,7 @@
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
         <pdt_inventory>500</pdt_inventory>
         <pdt_origin>Canada</pdt_origin>
-        <img_path>..\..assets/Pantry/TomatoSauce.png</img_path>
+        <img_path>../assets/Pantry/TomatoSauce.png</img_path>
         <abs_img_path>\..assets/Pantry/TomatoSauce.png</abs_img_path>
     </product>
 
@@ -145,7 +145,7 @@
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
         <pdt_inventory>500</pdt_inventory>
         <pdt_origin>Canada</pdt_origin>
-        <img_path>..\..assets/Pantry/BakingPowder.png</img_path>
+        <img_path>../assets/Pantry/BakingPowder.png</img_path>
         <abs_img_path>\..assets/Pantry/BakingPowder.png</abs_img_path>
     </product>
 
@@ -162,7 +162,7 @@
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
         <pdt_inventory>500</pdt_inventory>
         <pdt_origin>Canada</pdt_origin>
-        <img_path>..\..assets/Pantry/Flour.png</img_path>
+        <img_path>../assets/Pantry/Flour.png</img_path>
         <abs_img_path>\..assets/Pantry/Flour.png</abs_img_path>
     </product>
 
