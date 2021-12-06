@@ -1,3 +1,64 @@
+<?php
+$errors = array();
+if (isset($_POST('Sign up')){
+  $email = $_POST('email');
+  $name = $_POST('name');
+  $pass = $_POST('pass');
+  $postalcode = $_POST('postal-code');
+  $address = $_POST('address');
+  $city = $_POST('city');
+  $confirm = $_POST('c_pass');
+
+  if($email = ''){
+    $errors[] = 'Email is empty.';
+  }
+  if($pass = '' || $confirm = ''){
+    $errors[] = 'Passwords are empty.';
+  }
+  if($pass != $confirm){
+    $errors[] = 'Passwords do not match.';
+  }
+  if($address = ''){
+    $errors[] = 'Address is empty.';
+  }
+  if($postalcode = ''){
+    $errors[] = 'Postal code is empty.';
+  }
+  if($city = ''){
+    $errors[] = 'City is empty.';
+  }
+
+  if(count($errors)==0){
+    $xml = new DOMDocument("1.0","UTF-8");
+    $xml->load("../data/users.xml");
+    $rootTag = $xml->getElementsByTagName("users")->item(0);
+      $userTag = $xml->createElement("user");
+        $emailTag = $xml->createElement("email", $email);
+        $passTag = $xml->createElement("password", $pass);
+        $nameTag = $xml->createElement("name", $name);
+        $adminTag = $xml->createElement("admin", 0);
+        $idTag = $xml->createElement("id_user",//fillout );
+        $idaddTag = $xml->createElement("id_add_user", 1);
+        $pointsTag = $xml->createElement("points", 0);
+
+      $user->appendChild($emailTag);
+      $user->appendChild($passTag);
+      $user->appendChild($nameTag);
+      $user->appendChild($adminTag);
+      $user->appendChild($idTag);
+      $user->appendChild($idaddTag);
+      $user->appendChild($pointsTag);
+
+    $rootTag->appendChild($userTag);
+    $xml->save('../data/users.xml');
+
+  }
+}
+
+
+ ?>
+
+
 <html lang="en">
 
 <head>
@@ -46,18 +107,13 @@
           <small class="form-error-message"></small>
         </div>
         <div class="form-field">
-          <h3><label for="confirm-email">Confirm your email:</label></h3>
-          <input type="email" id="confirm-email" name="email-confirm" placeholder="" value="">
-          <small class="form-error-message"></small>
-        </div>
-        <div class="form-field">
           <h3><label for="pass">Enter your password:</label></h3>
           <input type="password" id="pass" name="pass" value="">
           <small class="form-error-message"></small>
         </div>
         <div class="form-field">
-          <h3><label for="confirm-pass">Confirm your password:</label></h3>
-          <input type="password" id="confirm-pass" name="pass-confirm" value="">
+          <h3><label for="pass">Confirm your password:</label></h3>
+          <input type="password" id="pass" name="c_pass" value="">
           <small class="form-error-message"></small>
         </div>
     </div>
@@ -76,7 +132,7 @@
       </div>
       <div class="form-field">
         <h3><label for="city">City</label></h3>
-        <input type="text" id="city" name=" city" placeholder="" value="">
+        <input type="text" id="city" name="city" placeholder="" value="">
         <small class="form-error-message"></small>
       </div>
     </div>

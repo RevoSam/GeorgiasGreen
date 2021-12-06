@@ -2,10 +2,10 @@
         $file_open_aisles = '../data/aisles.xml'; //'../../data/aisles.xml'
         $file_open_products = '../data/product.xml';
 
-        error_reporting(E_ERROR | E_PARSE); 
+        error_reporting(E_ERROR | E_PARSE);
         if (file_exists($file_open_products)) {
             //if it has a GET value
-            
+
             $products = simplexml_load_file($file_open_products);
             if (isset($_GET['ID'])) {
                 $product_id = $_GET['ID'];
@@ -14,7 +14,7 @@
         } else {
             exit('Failed to open ');
         }
-        
+
         if(isset($_POST['add'])) //Then we add the item
         {
             $code = $_POST['product-code'];
@@ -30,7 +30,7 @@
             $quantity = $_POST['product-qty'];
             $origin = $_POST['product-origin'];
             $image;
-            
+
 
             $xml = new DOMDocument("1.0","UTF-8");
             $xml->load("../data/product.xml");
@@ -70,7 +70,7 @@
             $xml->save('../data/product.xml');
             header("Location: backstore.php");
         }
-        
+
         else if(isset($_POST['edit']))
         {
             $file_open_products = '../data/product.xml';
@@ -80,7 +80,7 @@
                 $product_to_edit_id = $value;
             }
             $product_to_load = $products->xpath('/products/product/pdt_id[.= "'. $product_to_edit_id. '"]/parent::*')[0];
-            
+
             //EDIT THE VALUES
             $product_to_load->pdt_id = $_POST['product-code'];
             $product_to_load->pdt_al_id = translateDpt($_POST['department']);
@@ -156,7 +156,7 @@
         <div class="med-container" id="brand">
             <label for="product-brand">Brand</label><br>
             <?php echo "<input type = text name = product-brand value = \"{$product_to_load->pdt_brand_name}\">";?>
-        </div> 
+        </div>
         <div class="med-container" id="name">
             <label for="product-name">Name</label><br>
             <?php echo "<input type= text name= product-name value = \"{$product_to_load->pdt_name}\">";?>
@@ -216,7 +216,7 @@
             <button type="button" id="cancel-button" onclick="location.href='backstore.php'">Cancel</button>
 
             <!-- Do a PHP function to check name according to the name sent and give value of code -->
-            <button type="submit" id="save-button" name = <?php echo(getName()) ?>>Save</button> 
+            <button type="submit" id="save-button" name = <?php echo(getName()) ?>>Save</button>
             <!-- It depends if it has a get or no, if no get we add, if a get we modify-->
         </div>
     </div>
