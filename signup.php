@@ -1,3 +1,30 @@
+<?php
+  if (isset($_POST["submit"])) {
+    $name = $_POST["fullname"];
+    $name_array = explode(" ", $name);
+    $email = $_POST["email"];
+    $password = $_POST["pass"];
+
+    $file = 'data/users.xml';
+    $xml = simplexml_load_file($file);
+   
+    $users = $xml->users;
+    $user = $users->addChild('user');
+
+    $user->addChild('id_user', 1);
+    $user->addChild('id_add_user', 1);
+    $user->addChild('firstname', $name_array[0]);
+    $user->addChild('lastname', $name_array[1]);
+    $user->addChild('admin', '0');
+    $user->addChild('email', $email);
+    $user->addChild('password', $password);
+    $user->addChild('points', '0');
+    
+    $xml->asXML($file);
+  }
+?>
+
+
 <html lang="en">
 
 <head>
@@ -34,7 +61,7 @@
     <div class="contact-details">
       <h1>Contact Details</h1>
       <hr>
-      <form id="signup-form">
+      <form id="signup-form" action="" method="post">
         <div class="form-field">
           <h3><label for="name">Full Name:</label></h3>
           <input type="text" id="name" name="fullname" placeholder="" value="">
@@ -81,7 +108,7 @@
       </div>
     </div>
     <input class="Login-submit" type="submit" name="Reset" value="Reset">
-    <input class="Login-submit" type="submit" name="Sign up" value="Sign Up">
+    <input class="Login-submit" type="submit" name="submit" value="Sign Up">
     </form>
 
 

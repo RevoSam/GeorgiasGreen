@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +14,15 @@
 
 <body>
     <header>
-        <p>Welcome User</p>
+        <?php
+            if (isset($_SESSION["firstname"])){
+                $name = $_SESSION["firstname"];
+                echo "<p>Welcome {$name} </p>";
+            }
+            else {
+                echo "<p>Welcome User</p>";
+            }
+        ?>
     </header>
     <aside>
         <img src="../assets/GGLogoPicture.png" onclick="location.href='../index.php'">

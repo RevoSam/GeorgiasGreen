@@ -126,8 +126,8 @@ function getCartTotal(myString, sign) {
   document.getElementById("qst_total").innerHTML = parseFloat(QST).toFixed(2);
   document.getElementById("total").innerHTML = parseFloat(
     parseFloat(document.getElementById("subtotal").innerHTML) +
-      parseFloat(document.getElementById("gst_total").innerHTML) +
-      parseFloat(document.getElementById("qst_total").innerHTML)
+    parseFloat(document.getElementById("gst_total").innerHTML) +
+    parseFloat(document.getElementById("qst_total").innerHTML)
   ).toFixed(2);
 }
 
@@ -177,8 +177,8 @@ function updateSummary() {
       ).toFixed(2);
       document.getElementById("total").innerHTML = parseFloat(
         parseFloat(document.getElementById("subtotal").innerHTML) +
-          parseFloat(document.getElementById("gst_total").innerHTML) +
-          parseFloat(document.getElementById("qst_total").innerHTML)
+        parseFloat(document.getElementById("gst_total").innerHTML) +
+        parseFloat(document.getElementById("qst_total").innerHTML)
       ).toFixed(2);
     } else document.getElementById("nbrItems").innerText = 0;
   } catch (error) {
