@@ -1,3 +1,79 @@
+<?php
+$errors = array();
+if(isset($_POST('Signup'))) {
+  $email = $_POST('email');
+  $name = $_POST('name');
+  $name_array = explode(" ", $name);
+  $fname = $name_array[0];
+  $lname = $name_array[1];
+  $pass = $_POST('pass');
+  $postalcode = $_POST('postal-code');
+  $address = $_POST('address');
+  $city = $_POST('city');
+  $confirm = $_POST('c_pass');
+  $finaladdress = $address + ", " + $city + ", " + $postalcode;
+  $idnum = strtoupper(uniqid('GG'));
+
+  $xml = new DOMDocument("1.0","UTF-8");
+  $xml->load("../data/users.xml");
+
+  if($email = ''){
+    $errors[] = 'Email is empty.';
+  }
+  if($name = ''){
+    $errors[] = 'Name is empty.';
+  }
+  if($pass = '' || $confirm = ''){
+    $errors[] = 'Passwords are empty.';
+  }
+  if($pass != $confirm){
+    $errors[] = 'Passwords do not match.';
+  }
+  if($address = ''){
+    $errors[] = 'Address is empty.';
+  }
+  if($postalcode = ''){
+    $errors[] = 'Postal code is empty.';
+  }
+  if($city = ''){
+    $errors[] = 'City is empty.';
+  }
+  if (strpos($xml, "<email>$email</email>") !== false){
+    $errors[] = "Email address is aready being used.";
+  }
+  if(count($errors)==0){
+    $xml = new DOMDocument("1.0","UTF-8");
+    $xml->load("../data/users.xml");
+    $rootTag = $xml->getElementsByTagName("users")->item(0);
+      $userTag = $xml->createElement("user");
+        $emailTag = $xml->createElement("email", $email);
+        $passTag = $xml->createElement("password", $pass);
+        $fnameTag = $xml->createElement("firstname", $fname);
+        $lnameTag = $xml->createElement("lastname", $lname);
+        $adminTag = $xml->createElement("admin", 0);
+        $idTag = $xml->createElement("id_user", $idnum);
+        $idaddTag = $xml->createElement("id_add_user", $idnum);
+        $pointsTag = $xml->createElement("points", 0);
+        $addressTag = $xml->createElement("address", $finaladdress);
+
+
+      $userTag->appendChild($emailTag);
+      $userTag->appendChild($passTag);
+      $userTag->appendChild($nameTag);
+      $userTag->appendChild($adminTag);
+      $userTag->appendChild($idTag);
+      $userTag->appendChild($idaddTag);
+      $userTag->appendChild($pointsTag);
+      $userTag->appendChild($pointsTag);
+      $userTag->appendChild($addressTag);
+
+    $rootTag->appendChild($userTag);
+    $xml->save('../data/users.xml');
+  }
+}
+?>
+
+
 <html lang="en">
 
 <head>
@@ -46,18 +122,13 @@
           <small class="form-error-message"></small>
         </div>
         <div class="form-field">
-          <h3><label for="confirm-email">Confirm your email:</label></h3>
-          <input type="email" id="confirm-email" name="email-confirm" placeholder="" value="">
-          <small class="form-error-message"></small>
-        </div>
-        <div class="form-field">
           <h3><label for="pass">Enter your password:</label></h3>
           <input type="password" id="pass" name="pass" value="">
           <small class="form-error-message"></small>
         </div>
         <div class="form-field">
-          <h3><label for="confirm-pass">Confirm your password:</label></h3>
-          <input type="password" id="confirm-pass" name="pass-confirm" value="">
+          <h3><label for="pass">Confirm your password:</label></h3>
+          <input type="password" id="pass" name="c_pass" value="">
           <small class="form-error-message"></small>
         </div>
     </div>
@@ -76,12 +147,12 @@
       </div>
       <div class="form-field">
         <h3><label for="city">City</label></h3>
-        <input type="text" id="city" name=" city" placeholder="" value="">
+        <input type="text" id="city" name="city" placeholder="" value="">
         <small class="form-error-message"></small>
       </div>
     </div>
     <input class="Login-submit" type="submit" name="Reset" value="Reset">
-    <input class="Login-submit" type="submit" name="Sign up" value="Sign Up">
+    <input class="Login-submit" type="submit" name="Signup" value="Sign Up">
     </form>
 
 
