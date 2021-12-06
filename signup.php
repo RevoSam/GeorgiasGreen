@@ -1,6 +1,6 @@
 <?php
 $errors = array();
-if(isset($_POST('Signup'))) {
+if(isset($_POST['Signup'])) {
   $email = $_POST('email');
   $name = $_POST('name');
   $name_array = explode(" ", $name);
@@ -69,6 +69,7 @@ if(isset($_POST('Signup'))) {
 
     $rootTag->appendChild($userTag);
     $xml->save('../data/users.xml');
+    header('Location: login.php');
   }
 }
 ?>
