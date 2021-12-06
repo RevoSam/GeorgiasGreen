@@ -78,7 +78,7 @@
             //EDIT THE VALUES
 
             $products->saveXML('../data/product.xml');
-            header("Location: product-edit.php?ID={$_POST['edit']}"); //return to the same page
+            header("Location: product-edit.php?ID={$_POST['edit']}&warning=true"); //return to the same page
 
         }
 
@@ -244,19 +244,19 @@
             <input type = text name = product-brand value = "<?php if(isset($_POST['product-brand'])) echo $_POST['product-brand']; else echo $product_to_load->pdt_brand_name ?>"> <!--if(isset($_POST['product-brand'])) echo $_POST['product-brand']; else echo "{$product_to_load->pdt_brand_name}"-->
         </div> 
         <div class="med-container" id="name">
-            <label for="product-name">Name<span class="error"> *<?php echo $nameErr;?></span></label><br>
+            <label for="product-name">Name<span class="error"> *<?php if (isset($_GET['warning'])) echo "Required";?></span></label><br>
             <input type= text name= product-name value = "<?php if(isset($_POST['product-name'])) echo $_POST['product-name']; else echo $product_to_load->pdt_name; ?>">
         </div>
         <div class="xsml-container">
-            <label for="product-code">Code<span class="error"> *<?php echo $codeErr;?></span></label><br>
+            <label for="product-code">Code<span class="error"> *<?php if (isset($_GET['warning'])) echo "Required";?></span></label><br>
             <input type= text name = product-code value = "<?php if(isset($_POST['product-code'])) echo $_POST['product-code']; else echo $product_to_load->pdt_id; ?>">
         </div>
         <div class="xsml-container">
-            <label for="product-price">Quantity<span class="error"> *<?php echo $quantityErr;?></span></label><br>
+            <label for="product-price">Quantity<span class="error"> *<?php if (isset($_GET['warning'])) echo "Required";?></span></label><br>
             <input type= text name = product-qty pattern = "^[0-9]+" value = "<?php if(isset($_POST['product-qty'])) echo $_POST['product-qty']; else echo $product_to_load->pdt_inventory;?>">
         </div>
         <div class="sml-container">
-            <label for="product-qty">Price<span class="error"> *<?php echo $priceErr;?></span></label><br>
+            <label for="product-qty">Price<span class="error"> *<?php if (isset($_GET['warning'])) echo "Required";?></span></label><br>
             <input type= text name = product-price pattern = "^[0-9]*.[0-9]{2}" value = "<?php if(isset($_POST['product-price'])) echo $_POST['product-price']; else echo $product_to_load->pdt_price;?>">
         </div>
         <div class="sml-container">
