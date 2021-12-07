@@ -312,4 +312,89 @@
         <img_path>..\..\assets/Dairy Products/yogurt.png</img_path>
         <abs_img_path>../assets/Dairy\ Products/yogurt.png</abs_img_path>
     </product>
+
+    <product>
+        <pdt_id>GGBP001_PK</pdt_id>
+        <pdt_al_id>3</pdt_al_id>
+        <pdt_order_number />
+        <pdt_name>Bagel</pdt_name>
+        <pdt_short_description>Pack of 4 Freshly Made Bagels</pdt_short_description>
+        <pdt_description>Plain Bagel, Pack containing 4 Bagels</pdt_description>
+        <pdt_price>5.99/each</pdt_price>
+        <pdt_package_type>4/pkg</pdt_package_type>
+        <pdt_unit>1</pdt_unit>
+        <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+        <pdt_inventory>500</pdt_inventory>
+        <pdt_origin>Canada</pdt_origin>
+        <img_path>../assets/Bakery Products/bagel.png</img_path>
+        <abs_img_path>\..assets/Bakery Products/bagel.png</abs_img_path>
+    </product>
+
+    <product>
+        <pdt_id>GGBP002_PK</pdt_id>
+        <pdt_al_id>3</pdt_al_id>
+        <pdt_order_number />
+        <pdt_name>Baguette</pdt_name>
+        <pdt_short_description>Baguette</pdt_short_description>
+        <pdt_description>Loaf of Baguette Bread</pdt_description>
+        <pdt_price>0.99/each</pdt_price>
+        <pdt_package_type>1/pkg</pdt_package_type>
+        <pdt_unit>1</pdt_unit>
+        <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+        <pdt_inventory>500</pdt_inventory>
+        <pdt_origin>Canada</pdt_origin>
+        <img_path>../assets/Bakery Products/baguette.png</img_path>
+        <abs_img_path>\..assets/Bakery Products/baguette.png</abs_img_path>
+    </product>
+
+    <product>
+        <pdt_id>GGBP003_PK</pdt_id>
+        <pdt_al_id>3</pdt_al_id>
+        <pdt_order_number />
+        <pdt_name>Croissant</pdt_name>
+        <pdt_short_description>Croissants</pdt_short_description>
+        <pdt_description>Butter Croissants, pack containing 4 croissants.</pdt_description>
+        <pdt_price>4.99/each</pdt_price>
+        <pdt_package_type>4/pkg</pdt_package_type>
+        <pdt_unit>1</pdt_unit>
+        <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+        <pdt_inventory>500</pdt_inventory>
+        <pdt_origin>Canada</pdt_origin>
+        <img_path>../assets/Bakery Products/croissant.png</img_path>
+        <abs_img_path>\..assets/Bakery Products/croissant.png</abs_img_path>
+    </product>
+
+    <product>
+        <pdt_id>GGBP004_PK</pdt_id>
+        <pdt_al_id>3</pdt_al_id>
+        <pdt_order_number />
+        <pdt_name>Muffin</pdt_name>
+        <pdt_short_description>Pack of 6 Fresh Muffins</pdt_short_description>
+        <pdt_description>Plain Muffins, pack containing 6 muffins.</pdt_description>
+        <pdt_price>4.99/each</pdt_price>
+        <pdt_package_type>6/pkg</pdt_package_type>
+        <pdt_unit>1</pdt_unit>
+        <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+        <pdt_inventory>500</pdt_inventory>
+        <pdt_origin>Canada</pdt_origin>
+        <img_path>../assets/Bakery Products/muffin.png</img_path>
+        <abs_img_path>\..assets/Bakery Products/muffin.png</abs_img_path>
+    </product>
+
+    <product>
+        <pdt_id>GGBP005_PK</pdt_id>
+        <pdt_al_id>3</pdt_al_id>
+        <pdt_order_number />
+        <pdt_name>Wholewheat Bread</pdt_name>
+        <pdt_short_description>Wholewheat Bread</pdt_short_description>
+        <pdt_description>Loaf of Wholewheat Bread, 650g</pdt_description>
+        <pdt_price>3.50/each</pdt_price>
+        <pdt_package_type>1/pkg</pdt_package_type>
+        <pdt_unit>1</pdt_unit>
+        <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+        <pdt_inventory>500</pdt_inventory>
+        <pdt_origin>Canada</pdt_origin>
+        <img_path>../assets/Bakery Products/wholewheat.png</img_path>
+        <abs_img_path>\..assets/Bakery Products/wholewheat.png</abs_img_path>
+    </product>
 </products>
