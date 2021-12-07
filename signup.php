@@ -1,7 +1,6 @@
 <?php
 
 if(isset($_POST['submit'])) {
-  debug_to_console("bingbong");
   $email = $_POST['email'];
   $name = $_POST['fullname'];
   $name_array = explode(" ", $name);
@@ -170,7 +169,7 @@ if(isset($_POST['submit'])) {
       <a href="https://youtu.be/dQw4w9WgXcQ" style="padding: 5px;" target="_blank"><img src="assets/YTLogo.png"></a>
     </div>
   </div>
-  <script src="scripts/signup.js"></script>
+<!--<script src="scripts/signup.js"></script> -->
 </body>
 
 </html>
