@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,13 +30,27 @@
           <a class="dropdown-menu" href="Ailes/CleaningSupplies/CleaningSupplies.php">Cleaning Supplies</a>
         </div>
       </div>
-      <a class="nav" href="login.php">Sign in</a>
+      <?php 
+        if (isset($_SESSION["id_user"])) {
+          echo '<a class="nav" href="login.php?logout=true">Log out</a>';
+        }
+        else {
+         echo '<a class="nav" href="login.php">Sign in</a>';
+        }
+      ?>
+      
       <a class="nav" href="shoppingcart.php">Check out</a>
       <input type="text" placeholder="Search for a product..." />
     </div>
   </div>
   <div class="body">
     <div class="ailes_wrapper">
+      <?php
+        if (isset($_SESSION["firstname"])) {
+          $name = $_SESSION["firstname"];
+          echo "<h2>Welcome {$name}</h2>";
+        }
+      ?>
       <h2>Start Browsing</h2>
       <h1>Browse our Aisles</h1>
       <div class="ailes_block">

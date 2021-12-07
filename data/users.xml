@@ -11,5 +11,5 @@
     <password>1234</password>
     <points>0</points>
   </user>
-<user><id_user>1</id_user><id_add_user>1</id_add_user><firstname>Bob</firstname><lastname>Smith</lastname><admin>0</admin><email>bob123@gmail.com</email><password>123qwe</password><points>0</points></user></users>
+<user><id_user>68</id_user><id_add_user>99</id_add_user><firstname>Bob</firstname><lastname>Smith</lastname><admin>0</admin><email>bob123@gmail.com</email><password>123qwe</password><points>0</points></user><user><id_user>63</id_user><id_add_user>84</id_add_user><firstname>Xavier</firstname><lastname>Johnson</lastname><admin>0</admin><email>xavierjohnson@gmail.com</email><password>123qwe</password><points>0</points></user></users>
 </root>

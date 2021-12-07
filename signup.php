@@ -11,8 +11,8 @@
     $users = $xml->users;
     $user = $users->addChild('user');
 
-    $user->addChild('id_user', 1);
-    $user->addChild('id_add_user', 1);
+    $user->addChild('id_user', rand(2,100));
+    $user->addChild('id_add_user', rand(2,100));
     $user->addChild('firstname', $name_array[0]);
     $user->addChild('lastname', $name_array[1]);
     $user->addChild('admin', '0');
