@@ -1,4 +1,3 @@
-
 const form = document.getElementById("signup-form");
 const fullName = document.getElementById("name");
 const email = document.getElementById("email");

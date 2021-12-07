@@ -100,7 +100,7 @@
         </div>
         <div class="form-field">
           <h3><label for="confirm-pass">Confirm your password:</label></h3>
-          <input type="password" id="confirm-pass" name="pass-confirm" value="">
+          <input type="password" id="confirm-pass" name="c_pass" value="">
           <small class="form-error-message"></small>
         </div>
     </div>
@@ -162,7 +162,7 @@
       <a href="https://youtu.be/dQw4w9WgXcQ" style="padding: 5px;" target="_blank"><img src="assets/YTLogo.png"></a>
     </div>
   </div>
-  <script src="scripts\signup.js"></script>
+<script src="scripts/signup.js"></script> 
 </body>
 
 </html>
