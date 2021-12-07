@@ -1,7 +1,7 @@
 <?php 
-  if (isset($_POST['ordernumber']) && isset($_POST['DeleteOrder']))
+    if (isset($_POST['ordernumber']))
   {
-    $order = $_POST['ordernumber'];
+        $order = $_POST['ordernumber'];
     $file = '../data/orders.xml';
     $file_products = '../data/order_products.xml';
     $xml = new SimpleXMLElement(file_get_contents($file));

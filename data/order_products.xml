@@ -41,11 +41,5 @@
         <price>3.99</price>
     </order_product>
 
-    <order_product>
-        <id>928047237</id>
-        <order_id>533304</order_id>
-        <order_product_id>GGMP001_PK</order_product_id>
-        <order_qty>1</order_qty>
-        <price>13.99</price>
-    </order_product>
+    
 </order_products>

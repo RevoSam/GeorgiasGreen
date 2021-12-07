@@ -1,7 +1,7 @@
 <?php 
   if(isset($_POST['saveorder']))
   {
-
+    //When there is one product, deleting does not work!
     if(isset($_POST['order']))
     {
       $order = $_POST['order'];
@@ -13,7 +13,6 @@
         $file = '../data/order_products.xml';
         $xml = simplexml_load_file($file);
         
-
         if (isset($_POST['productcodes']) && isset($_POST['qty']) && isset($_POST['price']))
         {
           $operation = $_POST['operation'];
@@ -68,6 +67,7 @@
             
           }
           else {
+            echo '<br>' . "Here" . '<br>';
             $found = $xml->xpath('/order_products/order_product/order_id[.=' . $order . ']/parent::*');
             $count_xml = count($found);
             $count_order = count($codes);
@@ -147,16 +147,6 @@
               }
             }
         }
-          else {
-            foreach ($found as $product) {
-              if(!empty($product))
-              {
-                unset($product[0]);
-                $cancel = true;
-              }
-            }
-        }
-
             $orderfile = '../data/orders.xml';
             $orderXml = simplexml_load_file($orderfile);
             
@@ -169,14 +159,29 @@
               $orderfound[0]->status = 'Cancelled';
               $orderfound[0]->total = 0;
             }
-            
             $orderXml->saveXML();
             $orderXml->asXML($orderfile);
-            
-          }
+          }      
+    }
+    else{
+      //No Products have been passed.
 
-
-            
+      
+      $found = $xml->xpath('/order_products/order_product/order_id[.=' . $order . ']/parent::*');
+      foreach ($found as $product) {
+        if(!empty($product))
+        {
+          unset($product[0]);
+        }
+      }
+      $orderfile = '../data/orders.xml';
+      $orderXml = simplexml_load_file($orderfile);
+      $orderfound = $orderXml->xpath('/orders/order/order_number[.=' . $order . ']/parent::*');        
+      $orderfound[0]->payment = $payment;
+      $orderfound[0]->status = 'Cancelled';
+      $orderfound[0]->total = 0;
+      $orderXml->saveXML();
+      $orderXml->asXML($orderfile);
 
     }
     

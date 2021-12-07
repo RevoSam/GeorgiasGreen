@@ -158,9 +158,29 @@
                                         <select id="productselection" style="width:100%;">
                                             <option selected>Select a Product</option>
                                             <?php
+                                                $aisles;
+                                                $last_item = 0;
+                                                $foundaisle;
                                                 foreach ($products as $product) {
+                                                    if (strcmp($product->pdt_al_id, $last_item) != 0)
+                                                    {
+                                                        foreach ($aisles->aisle as $aisle) {
+                                                            if (strcmp($aisle->al_id, $product->pdt_al_id) == 0)
+                                                            {
+                                                                $foundaisle = $aisle;
+                                                                break;
+                                                            }
+                                                        }
+                                                        echo "<optgroup label='" . $foundaisle->al_name . "'>";
+                                                        
+                                                    }
+                                                    
                                                     echo "<option value='$product->pdt_id'>$product->pdt_id</option>";
-                                                   
+                                                    if (strcmp($product->pdt_al_id, $last_item) != 0)
+                                                    {
+                                                        echo "</optgroup>";
+                                                    }
+                                                    $last_item = $product->pdt_al_id;
                                                 }
                                             ?>
                                         </select>

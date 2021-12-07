@@ -77,10 +77,10 @@
                     <div class = "edit-container">
                         <button class = "edit-button" onclick="location.href = \'' . $url . '\'"><p>EDIT</p></button>
                     </div>
-                    <form id="deleteForm" method="POST">
+                    <form id="deleteForm' . $order_number . '" method="POST">
                         <div class = "delete-container">
                             <input type="hidden" value= "' . $order_number . '" name="ordernumber">
-                            <input onclick= "submitForm(\'deleteorder.php\')" class = "delete-button" type="submit" id="' . $order_number . '" value="DELETE" name="DeleteOrder">
+                            <input class = "delete-button" type="submit" id="' . $order_number . '" value="DELETE" name="DeleteOrder">
                         </div>
                     </form>
                 </div>';

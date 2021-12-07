@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <orders>
 
-    <order>
-        <id>663835424</id>
-        <order_number>133167</order_number>
-        <user_id>1</user_id>
-        <fullname>Sami Najim</fullname>
-        <order_date>2021-Dec-04</order_date>
-        <status>Shipped</status>
-        <delivery_add_id>1</delivery_add_id>
-        <billing_add_id>2</billing_add_id>
-        <total>16.450000000000003</total>
-        <payment>Cash</payment>
-    </order>
-    <order>
-        <id>377011842</id>
-        <order_number>533304</order_number>
-        <user_id>1</user_id>
-        <fullname>Anas Peerzada</fullname>
-        <order_date>2021-Dec-05</order_date>
-        <status>Ready</status>
-        <delivery_add_id>1</delivery_add_id>
-        <billing_add_id>2</billing_add_id>
-        <total>13.99</total>
-        <payment>Interac</payment>
-    </order>
+    
+    
 </orders>
