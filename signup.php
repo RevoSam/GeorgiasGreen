@@ -182,7 +182,7 @@ if(isset($_POST['submit'])) {
       <a href="https://youtu.be/dQw4w9WgXcQ" style="padding: 5px;" target="_blank"><img src="assets/YTLogo.png"></a>
     </div>
   </div>
-<!--<script src="scripts/signup.js"></script> -->
+<script src="scripts/signup.js"></script> 
 </body>
 
 </html>

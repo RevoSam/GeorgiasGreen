@@ -12,7 +12,6 @@
     <address>1234 Street, City, Country, H3HH3H</address>
   </user>
 
-
   <user>
     <id_user>2</id_user>
     <id_add_user>2</id_add_user>
@@ -24,7 +23,6 @@
     <points>100</points>
     <address>912 81st Street, Tornada, Texas. 2JJ45</address>
   </user>
-
 
   <user>
     <id_user>GG61AD9D750121E</id_user>
@@ -38,15 +36,25 @@
     <address>Telenova Street, Montreal, Quebec, Canada</address>
   </user>
 
-<user>
-  <id_user>GG61AE8598436D0</id_user>
-  <id_add_user>GG61AE8598436D0</id_add_user>
-  <firstname>Shyam Kapoor</firstname>
-  <lastname>Trivedi</lastname>
-  <admin>0</admin>
-  <email>trivediji@gmail.com</email>
-  <password>qwerty99</password>
-  <points>352</points>
-  <address>Some Street, Some City, Some Province, Some Country</address>
-</user>
-</users>
+  <user>
+    <id_user>GG61AE8598436D0</id_user>
+    <id_add_user>GG61AE8598436D0</id_add_user>
+    <firstname>Shyam Kapoor</firstname>
+    <lastname>Trivedi</lastname>
+    <admin>0</admin>
+    <email>trivediji@gmail.com</email>
+    <password>qwerty99</password>
+    <points>352</points>
+    <address>Some Street, Some City, Some Province, Some Country</address>
+  </user>
+  <user>
+    <email>salman@gmail.com</email>
+    <password>12345</password>
+    <firstname>grge</firstname><lastname/>
+    <admin>0</admin>
+    <id_user>GG61AFB3FC9A9A4</id_user>
+    <id_add_user>GG61AFB3FC9A9A4</id_add_user>
+    <points>0</points>
+    <address>neoisnge, mont, euoe</address>
+  </user>
+<user><email>hiwao@gmail.com</email><password>123456</password><firstname>egs</firstname><lastname>erhrrh</lastname><admin>0</admin><id_user>GG61AFB5DB0D3E3</id_user><id_add_user>GG61AFB5DB0D3E3</id_add_user><points>0</points><address>rhrehh, rehreh, rghw</address></user><user><email>mniofw@gmail.com</email><password>123456</password><firstname>gewge</firstname><lastname>fewfef</lastname><admin>0</admin><id_user>GG61AFB60574C28</id_user><id_add_user>GG61AFB60574C28</id_add_user><points>0</points><address>besif, mont, gsege</address></user></users>
