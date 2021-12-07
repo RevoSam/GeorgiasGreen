@@ -1,3 +1,66 @@
+<?php
+
+$file_open_users = 'data/users.xml';
+
+if (file_exists($file_open_users)) {
+    $users = simplexml_load_file($file_open_users);
+    if (isset($_GET['ID'])) {
+        $user_id = $_GET['ID'];
+        $user_to_load = $users->xpath('/users/user/id_user[.= "'. $user_id. '"]/parent::*')[0];
+        //print_r($user_to_load);
+    }
+    } else {
+        exit('Failed to open ');
+    }
+
+if(isset($_POST['submit'])) {
+  $email = $_POST['email'];
+  $name = $_POST['fullname'];
+  $name_array = explode(" ", $name);
+  $fname = $name_array[0];
+  $lname = $name_array[1];
+  $pass = $_POST['pass'];
+  $postalcode = $_POST['postal-code'];
+  $address = $_POST['address'];
+  $city = $_POST['city'];
+  $confirm = $_POST['c_pass'];
+  $finaladdress = $address . ", " . $city . ", " . $postalcode;
+  $idnum = strtoupper(uniqid('GG'));
+
+    $xml = new DOMDocument("1.0","UTF-8");
+    $xml->load("data/users.xml");
+    $rootTag = $xml->getElementsByTagName("users")->item(0);
+      $userTag = $xml->createElement("user");
+        $emailTag = $xml->createElement("email", $email);
+        $passTag = $xml->createElement("password", $pass);
+        $fnameTag = $xml->createElement("firstname", $fname);
+        $lnameTag = $xml->createElement("lastname", $lname);
+        $adminTag = $xml->createElement("admin", 0);
+        $idTag = $xml->createElement("id_user", $idnum);
+        $idaddTag = $xml->createElement("id_add_user", $idnum);
+        $pointsTag = $xml->createElement("points", 0);
+        $addressTag = $xml->createElement("address", $finaladdress);
+
+
+      $userTag->appendChild($emailTag);
+      $userTag->appendChild($passTag);
+      $userTag->appendChild($fnameTag);
+      $userTag->appendChild($lnameTag);
+      $userTag->appendChild($adminTag);
+      $userTag->appendChild($idTag);
+      $userTag->appendChild($idaddTag);
+      $userTag->appendChild($pointsTag);
+      $userTag->appendChild($pointsTag);
+      $userTag->appendChild($addressTag);
+
+    $rootTag->appendChild($userTag);
+    $xml->save('data/users.xml');
+    header('Location: login.php');
+
+}
+?>
+
+
 <html lang="en">
 
 <head>
@@ -34,7 +97,7 @@
     <div class="contact-details">
       <h1>Contact Details</h1>
       <hr>
-      <form id="signup-form">
+      <form id="signup-form" action="" method="post">
         <div class="form-field">
           <h3><label for="name">Full Name:</label></h3>
           <input type="text" id="name" name="fullname" placeholder="" value="">
@@ -57,7 +120,7 @@
         </div>
         <div class="form-field">
           <h3><label for="confirm-pass">Confirm your password:</label></h3>
-          <input type="password" id="confirm-pass" name="pass-confirm" value="">
+          <input type="password" id="confirm-pass" name="c_pass" value="">
           <small class="form-error-message"></small>
         </div>
     </div>
@@ -81,7 +144,7 @@
       </div>
     </div>
     <input class="Login-submit" type="submit" name="Reset" value="Reset">
-    <input class="Login-submit" type="submit" name="Sign up" value="Sign Up">
+    <input class="Login-submit" type="submit" name="submit" value="Sign Up">
     </form>
 
 
@@ -119,7 +182,7 @@
       <a href="https://youtu.be/dQw4w9WgXcQ" style="padding: 5px;" target="_blank"><img src="assets/YTLogo.png"></a>
     </div>
   </div>
-  <script src="scripts\signup.js"></script>
+<script src="scripts/signup.js"></script> 
 </body>
 
 </html>
