@@ -1,4 +1,16 @@
 <?php 
+    session_start();
+    if (isset($_SESSION["admin"])){
+        if ($_SESSION["admin"] == 0) {
+            header("location: ../index.php");
+        }
+    }
+    else {
+        header("location: ../index.php");
+    }
+?>
+
+<?php 
   $file_open_orders = '../data/orders.xml';
   $file_open_users = '../data/users.xml';
   
@@ -24,7 +36,15 @@
 
 <body>
     <header>
-        <p>Welcome User</p>
+    <?php
+            if (isset($_SESSION["firstname"])){
+                $name = $_SESSION["firstname"];
+                echo "<p>Welcome {$name} </p>";
+            }
+            else {
+                echo "<p>Welcome User</p>";
+            }
+        ?>
     </header>
     <aside>
         <img src="../assets/GGLogoPicture.png" onclick="location.href='../index.php'">

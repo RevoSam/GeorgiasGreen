@@ -1,65 +1,45 @@
 <?php
-
-$file_open_users = 'data/users.xml';
-
-if (file_exists($file_open_users)) {
-    $users = simplexml_load_file($file_open_users);
-    if (isset($_GET['ID'])) {
-        $user_id = $_GET['ID'];
-        $user_to_load = $users->xpath('/users/user/id_user[.= "'. $user_id. '"]/parent::*')[0];
-        //print_r($user_to_load);
-    }
-    } else {
-        exit('Failed to open ');
-    }
-
-if(isset($_POST['submit'])) {
-  $email = $_POST['email'];
-  $name = $_POST['fullname'];
-  $name_array = explode(" ", $name);
-  $fname = $name_array[0];
-  $lname = $name_array[1];
-  $pass = $_POST['pass'];
-  $postalcode = $_POST['postal-code'];
-  $address = $_POST['address'];
-  $city = $_POST['city'];
-  $confirm = $_POST['c_pass'];
-  $finaladdress = $address . ", " . $city . ", " . $postalcode;
-  $idnum = strtoupper(uniqid('GG'));
+  if (isset($_POST["submit"])) {
+    $name = $_POST["fullname"];
+    $name_array = explode(" ", $name);
+    $email = $_POST["email"];
+    $password = $_POST["pass"];
+    $postalCode = $_POST["postal-code"];
+    $address = $_POST["address"];
+    $city = $_POST["city"];
+    
+    $fulladdress = $address . ', ' . $city . ', ' . $postalCode;
 
     $xml = new DOMDocument("1.0","UTF-8");
     $xml->load("data/users.xml");
     $rootTag = $xml->getElementsByTagName("users")->item(0);
-      $userTag = $xml->createElement("user");
-        $emailTag = $xml->createElement("email", $email);
-        $passTag = $xml->createElement("password", $pass);
-        $fnameTag = $xml->createElement("firstname", $fname);
-        $lnameTag = $xml->createElement("lastname", $lname);
-        $adminTag = $xml->createElement("admin", 0);
-        $idTag = $xml->createElement("id_user", $idnum);
-        $idaddTag = $xml->createElement("id_add_user", $idnum);
-        $pointsTag = $xml->createElement("points", 0);
-        $addressTag = $xml->createElement("address", $finaladdress);
 
+    $userTag = $xml->createElement("user");
+    $IDTag = $xml->createElement("id_user", rand(2, 100));
+    $IDAddTag = $xml->createElement("id_add_user", rand(2, 100));
+    $firstNameTag = $xml -> createElement("firstname", $name_array[0]);
+    $lastNameTag = $xml->createElement("lastname",$name_array[1]);
+    $adminTag = $xml->createElement("admin", 0);
+    $emailTag = $xml->createElement("email",$email);
+    $passwordTag = $xml->createElement("password", $password);
+    $pointsTag = $xml->createElement("points",0);
+    $addressTag = $xml->createElement("address",$fulladdress);
 
-      $userTag->appendChild($emailTag);
-      $userTag->appendChild($passTag);
-      $userTag->appendChild($fnameTag);
-      $userTag->appendChild($lnameTag);
-      $userTag->appendChild($adminTag);
-      $userTag->appendChild($idTag);
-      $userTag->appendChild($idaddTag);
-      $userTag->appendChild($pointsTag);
-      $userTag->appendChild($pointsTag);
-      $userTag->appendChild($addressTag);
-
+    $userTag->appendChild($IDTag); 
+    $userTag->appendChild($IDAddTag);
+    $userTag->appendChild($firstNameTag);
+    $userTag->appendChild($lastNameTag);
+    $userTag->appendChild($adminTag);
+    $userTag->appendChild($emailTag);
+    $userTag->appendChild($passwordTag);
+    $userTag->appendChild($pointsTag);
+    $userTag->appendChild($addressTag);
     $rootTag->appendChild($userTag);
     $xml->save('data/users.xml');
-    header('Location: login.php');
 
-}
+    header("Location: index.php");
+  }
 ?>
-
 
 <html lang="en">
 
@@ -139,11 +119,11 @@ if(isset($_POST['submit'])) {
       </div>
       <div class="form-field">
         <h3><label for="city">City</label></h3>
-        <input type="text" id="city" name=" city" placeholder="" value="">
+        <input type="text" id="city" name="city" placeholder="" value="">
         <small class="form-error-message"></small>
       </div>
     </div>
-    <input class="Login-submit" type="submit" name="Reset" value="Reset">
+    <!-- <input class="Login-submit" type="submit" name="Reset" value="Reset"> -->
     <input class="Login-submit" type="submit" name="submit" value="Sign Up">
     </form>
 

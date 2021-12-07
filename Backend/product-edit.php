@@ -1,3 +1,14 @@
+<?php 
+    session_start();
+    if (isset($_SESSION["admin"])){
+        if ($_SESSION["admin"] == 0) {
+            header("location: ../index.php");
+        }
+    }
+    else {
+        header("location: ../index.php");
+    }
+?>
 <?php
         $file_open_aisles = '../data/aisles.xml'; //'../../data/aisles.xml'
         $file_open_products = '../data/product.xml';

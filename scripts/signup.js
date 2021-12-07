@@ -119,7 +119,6 @@ function validateInput() {
     else {
         displayNone(city);
     }
-
     return error;
 }
 
