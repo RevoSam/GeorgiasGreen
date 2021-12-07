@@ -118,7 +118,7 @@ function getName(){
     <form method = "POST">
         <div class = "sidebar">
             <img width="300" src="../assets/GGLogo.png" alt="">
-           <p id="description-under-user-edit-logo">Add a user to the database</p>
+           <p id="description-under-user-edit-logo">Add a User or Edit a User</p>
         </div>
         <div class = "right-side">
         

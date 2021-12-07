@@ -167,6 +167,9 @@ button {
 
 /*End of normal screen*/
 
+.sidebar img {
+    margin-top:50%;
+}
 
 /*for xlarge screens*/
   @media (min-width: 1060px) and (max-width: 1400px) {
@@ -175,6 +178,10 @@ button {
     }
     .sidebar {
         width:20%;
+    }
+    .sidebar img {
+        margin-top:100%;
+        width:200px;
     }
   }
   
