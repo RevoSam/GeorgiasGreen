@@ -10,8 +10,11 @@ const address = document.getElementById("address");
 const city = document.getElementById("city");
 
 form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    validateInput();
+    let hasError = validateInput();
+    if (hasError) {
+        e.preventDefault();
+    }
+
 });
 
 function validateInput() {
@@ -24,9 +27,16 @@ function validateInput() {
     const addressValue = address.value;
     const cityValue = city.value;
 
+    let error = false;
+
     // Full name verification
     if (fullNameValue === "") {
         displayError(fullName, "Enter your name");
+        error = true;
+    }
+    else if (!validateFullName(fullNameValue)) {
+        displayError(fullName, "Enter your first and last name");
+        error = true;
     }
     else {
         displayNone(fullName);
@@ -35,9 +45,11 @@ function validateInput() {
     // Email verification
     if (emailValue === "") {
         displayError(email, "Enter your email");
+        error = true;
     }
     else if (!validateEmail(emailValue)) {
         displayError(email, "Enter a valid email");
+        error = true;
     }
     else {
         displayNone(email);
@@ -46,9 +58,11 @@ function validateInput() {
     // Confirm email verification
     if (confirmEmailValue === "") {
         displayError(confirmEmail, "Confirm your email");
+        error = true;
     }
     else if (confirmEmailValue !== emailValue) {
-        displayError(confirmEmail, "Emails must match")
+        displayError(confirmEmail, "Emails must match");
+        error = true;
     }
     else {
         displayNone(confirmEmail);
@@ -56,10 +70,12 @@ function validateInput() {
 
     // Password verification
     if (passwordValue === "") {
-        displayError(password, "Enter a password")
+        displayError(password, "Enter a password");
+        error = true;
     }
     else if (passwordValue.length < 6) {
-        displayError(password, "Minimum 6 characters required")
+        displayError(password, "Minimum 6 characters required");
+        error = true;
     }
     else {
         displayNone(password);
@@ -68,9 +84,11 @@ function validateInput() {
     // Confirm password verification
     if (passwordConfirmValue === "") {
         displayError(passwordConfirm, "Confirm your password");
+        error = true;
     }
     else if (passwordConfirmValue !== passwordValue) {
-        displayError(passwordConfirm, "Passwords must match")
+        displayError(passwordConfirm, "Passwords must match");
+        error = true;
     }
     else {
         displayNone(passwordConfirm);
@@ -79,6 +97,7 @@ function validateInput() {
     // Postal Code verification
     if (postalValue === "") {
         displayError(postal, "Enter your postal code");
+        error = true;
     }
     else {
         displayNone(postal);
@@ -87,6 +106,7 @@ function validateInput() {
     // Address verification
     if (addressValue === "") {
         displayError(address, "Enter your address");
+        error = true;
     }
     else {
         displayNone(address);
@@ -95,10 +115,12 @@ function validateInput() {
     // City verification
     if (cityValue === "") {
         displayError(city, "Enter your city");
+        error = true;
     }
     else {
         displayNone(city);
     }
+    return error;
 }
 
 function displayError(input, message) {
@@ -112,6 +134,11 @@ function displayError(input, message) {
 function displayNone(input) {
     const formField = input.parentElement;
     formField.className = "form-field";
+}
+
+function validateFullName(name) {
+    const regex = /\w+\s\w+/;
+    return regex.test(String(name).toLowerCase());
 }
 
 function validateEmail(email) {

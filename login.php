@@ -1,3 +1,48 @@
+<?php
+  session_start();
+  if (isset($_GET["logout"])){
+    session_destroy();
+  }
+  
+  if (isset($_POST["Login"])){
+    $email = $_POST["email"];
+    $password = $_POST["pass"];
+
+    $file = 'data/users.xml';
+    $xml = simplexml_load_file($file);
+
+    $user = $xml->xpath('//user[email="'.$email.'"][password="'.$password.'"]');
+
+
+    if (count($user) == 0) {
+      header("location: login.php?error=wronglogin");
+      exit();
+    }
+    else if (count($user) == 1){
+      session_start();
+      $_SESSION["id_user"] = strval($user[0]->id_user);
+      $_SESSION["id_add_user"] = strval($user[0]->id_add_user);
+      $_SESSION["firstname"] = strval($user[0]->firstname);
+      $_SESSION["lastname"] = strval($user[0]->lastname);
+      $_SESSION["admin"] = strval($user[0]->admin);
+      $_SESSION["email"] = strval($user[0]->email);
+      $_SESSION["password"] = strval($user[0]->password);
+      $_SESSION["points"] = strval($user[0]->points);
+
+      if ($user[0]->admin == 1) {
+        header("location: Backend\backstore.php");
+        exit();
+      }
+      else {
+        header("location: index.php");
+        exit();
+      }
+    }
+
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +77,11 @@
     </div>
   </div>
   <div class="login-page">
+  <?php 
+      if (isset($_GET["error"])) {
+        echo '<p style="color: red;"> The information you have entered in incorrect. Please try again. </p>';
+      }
+    ?>
     <form class="login" action="" method="post">
       <h2><label for="email">Enter your email:</label></h2>
       <input type="text" id="email" name="email" placeholder="example@gmail.com" value="">

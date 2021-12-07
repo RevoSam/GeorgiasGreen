@@ -1,4 +1,15 @@
 <?php 
+    session_start();
+    if (isset($_SESSION["admin"])){
+        if ($_SESSION["admin"] == 0) {
+            header("location: ../index.php");
+        }
+    }
+    else {
+        header("location: ../index.php");
+    }
+?>
+<?php 
   $file_open_aisles = '../data/aisles.xml';//'../../data/aisles.xml'
   $file_open_products = '../data/product.xml';
   
@@ -63,7 +74,15 @@ if(isset($_POST["edit"])){
 <body>
 <form method = "POST">
     <header>
-        <p>Welcome User</p>
+        <?php
+            if (isset($_SESSION["firstname"])){
+                $name = $_SESSION["firstname"];
+                echo "<p>Welcome {$name} </p>";
+            }
+            else {
+                echo "<p>Welcome User</p>";
+            }
+        ?>
     </header>
     <aside>
         <img src="../assets/GGLogoPicture.png" onclick="location.href='../index.php'">

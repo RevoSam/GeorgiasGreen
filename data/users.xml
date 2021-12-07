@@ -3,7 +3,7 @@
   <user>
     <id_user>1</id_user>
     <id_add_user>1</id_add_user>
-    <firstname>Georgia's</firstname>
+    <firstname>Admin</firstname>
     <lastname>Greens</lastname>
     <admin>1</admin>
     <email>admin</email>
@@ -38,4 +38,4 @@
     <address>Telenova Street, Montreal, Quebec, Canada</address>
   </user>
   
-<user><id_user>GG61AE8598436D0</id_user><id_add_user>GG61AE8598436D0</id_add_user><firstname>Shyam Kapoor</firstname><lastname>Trivedi</lastname><admin>0</admin><email>trivediji@gmail.com</email><password>qwerty99</password><points>352</points><address>Some Street, Some City, Some Province, Some Country</address></user></users>
+<user><id_user>GG61AE8598436D0</id_user><id_add_user>GG61AE8598436D0</id_add_user><firstname>Shyam Kapoor</firstname><lastname>Trivedi</lastname><admin>0</admin><email>trivediji@gmail.com</email><password>qwerty99</password><points>352</points><address>Some Street, Some City, Some Province, Some Country</address></user><user><id_user>13</id_user><id_add_user>90</id_add_user><firstname>Bob</firstname><lastname>Smith</lastname><admin>0</admin><email>bob123@gmail.com</email><password>123qwe</password><points>0</points><address>123 street, Montreal, H9J 1F6</address></user></users>

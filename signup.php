@@ -1,3 +1,46 @@
+<?php
+  if (isset($_POST["submit"])) {
+    $name = $_POST["fullname"];
+    $name_array = explode(" ", $name);
+    $email = $_POST["email"];
+    $password = $_POST["pass"];
+    $postalCode = $_POST["postal-code"];
+    $address = $_POST["address"];
+    $city = $_POST["city"];
+    
+    $fulladdress = $address . ', ' . $city . ', ' . $postalCode;
+
+    $xml = new DOMDocument("1.0","UTF-8");
+    $xml->load("data/users.xml");
+    $rootTag = $xml->getElementsByTagName("users")->item(0);
+
+    $userTag = $xml->createElement("user");
+    $IDTag = $xml->createElement("id_user", rand(2, 100));
+    $IDAddTag = $xml->createElement("id_add_user", rand(2, 100));
+    $firstNameTag = $xml -> createElement("firstname", $name_array[0]);
+    $lastNameTag = $xml->createElement("lastname",$name_array[1]);
+    $adminTag = $xml->createElement("admin", 0);
+    $emailTag = $xml->createElement("email",$email);
+    $passwordTag = $xml->createElement("password", $password);
+    $pointsTag = $xml->createElement("points",0);
+    $addressTag = $xml->createElement("address",$fulladdress);
+
+    $userTag->appendChild($IDTag); 
+    $userTag->appendChild($IDAddTag);
+    $userTag->appendChild($firstNameTag);
+    $userTag->appendChild($lastNameTag);
+    $userTag->appendChild($adminTag);
+    $userTag->appendChild($emailTag);
+    $userTag->appendChild($passwordTag);
+    $userTag->appendChild($pointsTag);
+    $userTag->appendChild($addressTag);
+    $rootTag->appendChild($userTag);
+    $xml->save('data/users.xml');
+
+    header("Location: index.php");
+  }
+?>
+
 <html lang="en">
 
 <head>
@@ -34,7 +77,7 @@
     <div class="contact-details">
       <h1>Contact Details</h1>
       <hr>
-      <form id="signup-form">
+      <form id="signup-form" action="" method="post">
         <div class="form-field">
           <h3><label for="name">Full Name:</label></h3>
           <input type="text" id="name" name="fullname" placeholder="" value="">
@@ -76,12 +119,12 @@
       </div>
       <div class="form-field">
         <h3><label for="city">City</label></h3>
-        <input type="text" id="city" name=" city" placeholder="" value="">
+        <input type="text" id="city" name="city" placeholder="" value="">
         <small class="form-error-message"></small>
       </div>
     </div>
-    <input class="Login-submit" type="submit" name="Reset" value="Reset">
-    <input class="Login-submit" type="submit" name="Sign up" value="Sign Up">
+    <!-- <input class="Login-submit" type="submit" name="Reset" value="Reset"> -->
+    <input class="Login-submit" type="submit" name="submit" value="Sign Up">
     </form>
 
 
