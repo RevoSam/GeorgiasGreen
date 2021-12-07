@@ -241,7 +241,6 @@
                             }
                         ?>
                     </select>
-                    <!-- <input type="text" name="payment" value="<?php echo $payment;?>" readonly> -->
                 </div>
                 <div class = "medium-container final-line">
                     <span>Total</span>

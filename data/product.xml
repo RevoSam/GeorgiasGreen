@@ -337,7 +337,7 @@
         <pdt_name>Baguette</pdt_name>
         <pdt_short_description>Baguette</pdt_short_description>
         <pdt_description>Loaf of Baguette Bread</pdt_description>
-        <pdt_price>0.99/each</pdt_price>
+        <pdt_price>0.99</pdt_price>
         <pdt_package_type>1/pkg</pdt_package_type>
         <pdt_unit>1</pdt_unit>
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
@@ -354,7 +354,7 @@
         <pdt_name>Croissant</pdt_name>
         <pdt_short_description>Croissants</pdt_short_description>
         <pdt_description>Butter Croissants, pack containing 4 croissants.</pdt_description>
-        <pdt_price>4.99/each</pdt_price>
+        <pdt_price>4.99</pdt_price>
         <pdt_package_type>4/pkg</pdt_package_type>
         <pdt_unit>1</pdt_unit>
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
@@ -371,7 +371,7 @@
         <pdt_name>Muffin</pdt_name>
         <pdt_short_description>Pack of 6 Fresh Muffins</pdt_short_description>
         <pdt_description>Plain Muffins, pack containing 6 muffins.</pdt_description>
-        <pdt_price>4.99/each</pdt_price>
+        <pdt_price>4.99</pdt_price>
         <pdt_package_type>6/pkg</pdt_package_type>
         <pdt_unit>1</pdt_unit>
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>

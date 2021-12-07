@@ -183,9 +183,9 @@ function addProduct(event) {
       extend.value =
         parseFloat(price.value, 10) * parseInt(existingProduct.value, 10);
     }
+    if (products_order.indexOf(id_product) === -1) {
+      products_order.push(id_product);
+    }
     updateTTL();
-  }
-  if (products_order.indexOf(id_product) === -1) {
-    products_order.push(id_product);
   }
 }
