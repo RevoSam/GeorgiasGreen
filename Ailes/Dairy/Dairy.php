@@ -71,6 +71,7 @@
           
         </div>
     </div>
+            </div>
     <div class="footer">
         <div id="link-list-left">
             <p><strong>Useful Links</strong></p>
