@@ -1,49 +1,22 @@
 <?php
-$errors = array();
+
 if(isset($_POST['Signup'])) {
-  $email = $_POST('email');
-  $name = $_POST('name');
+  debug_to_console("bingbong");
+  $email = $_POST['email'];
+  $name = $_POST['fullname'];
   $name_array = explode(" ", $name);
   $fname = $name_array[0];
   $lname = $name_array[1];
-  $pass = $_POST('pass');
-  $postalcode = $_POST('postal-code');
-  $address = $_POST('address');
-  $city = $_POST('city');
-  $confirm = $_POST('c_pass');
-  $finaladdress = $address + ", " + $city + ", " + $postalcode;
+  $pass = $_POST['pass'];
+  $postalcode = $_POST['postal-code'];
+  $address = $_POST['address'];
+  $city = $_POST['city'];
+  $confirm = $_POST['c_pass'];
+  $finaladdress = $address . ", " . $city . ", " . $postalcode;
   $idnum = strtoupper(uniqid('GG'));
 
-  $xml = new DOMDocument("1.0","UTF-8");
-  $xml->load("../data/users.xml");
-
-  if($email = ''){
-    $errors[] = 'Email is empty.';
-  }
-  if($name = ''){
-    $errors[] = 'Name is empty.';
-  }
-  if($pass = '' || $confirm = ''){
-    $errors[] = 'Passwords are empty.';
-  }
-  if($pass != $confirm){
-    $errors[] = 'Passwords do not match.';
-  }
-  if($address = ''){
-    $errors[] = 'Address is empty.';
-  }
-  if($postalcode = ''){
-    $errors[] = 'Postal code is empty.';
-  }
-  if($city = ''){
-    $errors[] = 'City is empty.';
-  }
-  if (strpos($xml, "<email>$email</email>") !== false){
-    $errors[] = "Email address is aready being used.";
-  }
-  if(count($errors)==0){
     $xml = new DOMDocument("1.0","UTF-8");
-    $xml->load("../data/users.xml");
+    $xml->load("data/users.xml");
     $rootTag = $xml->getElementsByTagName("users")->item(0);
       $userTag = $xml->createElement("user");
         $emailTag = $xml->createElement("email", $email);
@@ -59,7 +32,8 @@ if(isset($_POST['Signup'])) {
 
       $userTag->appendChild($emailTag);
       $userTag->appendChild($passTag);
-      $userTag->appendChild($nameTag);
+      $userTag->appendChild($fnameTag);
+      $userTag->appendChild($lnameTag);
       $userTag->appendChild($adminTag);
       $userTag->appendChild($idTag);
       $userTag->appendChild($idaddTag);
@@ -68,9 +42,9 @@ if(isset($_POST['Signup'])) {
       $userTag->appendChild($addressTag);
 
     $rootTag->appendChild($userTag);
-    $xml->save('../data/users.xml');
+    $xml->save('data/users.xml');
     header('Location: login.php');
-  }
+
 }
 ?>
 
@@ -111,7 +85,7 @@ if(isset($_POST['Signup'])) {
     <div class="contact-details">
       <h1>Contact Details</h1>
       <hr>
-      <form id="signup-form" method="post" action="">
+      <form id="signup-form" action="" method="post">
         <div class="form-field">
           <h3><label for="name">Full Name:</label></h3>
           <input type="text" id="name" name="fullname" placeholder="" value="">
@@ -124,12 +98,12 @@ if(isset($_POST['Signup'])) {
         </div>
         <div class="form-field">
           <h3><label for="pass">Enter your password:</label></h3>
-          <input type="password"  name="pass" value="">
+          <input type="password" id="pass" name="pass" value="">
           <small class="form-error-message"></small>
         </div>
         <div class="form-field">
-          <h3><label for="pass">Confirm your password:</label></h3>
-          <input type="password"  name="c_pass" value="">
+          <h3><label for="confirm-pass">Confirm your password:</label></h3>
+          <input type="password" id="confirm-pass" name="c_pass" value="">
           <small class="form-error-message"></small>
         </div>
     </div>
@@ -148,12 +122,12 @@ if(isset($_POST['Signup'])) {
       </div>
       <div class="form-field">
         <h3><label for="city">City</label></h3>
-        <input type="text" id="city" name="city" placeholder="" value="">
+        <input type="text" id="city" name=" city" placeholder="" value="">
         <small class="form-error-message"></small>
       </div>
     </div>
     <input class="Login-submit" type="submit" name="Reset" value="Reset">
-    <input class="Login-submit" type="submit" name="Signup" value="Sign Up">
+    <input class="Login-submit" type="submit" name="submit" value="Sign Up">
     </form>
 
 

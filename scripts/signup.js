@@ -2,9 +2,8 @@
 const form = document.getElementById("signup-form");
 const fullName = document.getElementById("name");
 const email = document.getElementById("email");
-const confirmEmail = document.getElementById("confirm-email");
 const password = document.getElementById("pass");
-const passwordConfirm = document.getElementById("confirm-pass");
+const passwordConfirm = document.getElementById("confirm_pass");
 const postal = document.getElementById("postal");
 const address = document.getElementById("address");
 const city = document.getElementById("city");
@@ -17,7 +16,6 @@ form.addEventListener("submit", function (e) {
 function validateInput() {
     const fullNameValue = fullName.value;
     const emailValue = email.value;
-    const confirmEmailValue = confirmEmail.value;
     const passwordValue = password.value;
     const passwordConfirmValue = passwordConfirm.value;
     const postalValue = postal.value;
@@ -41,17 +39,6 @@ function validateInput() {
     }
     else {
         displayNone(email);
-    }
-
-    // Confirm email verification
-    if (confirmEmailValue === "") {
-        displayError(confirmEmail, "Confirm your email");
-    }
-    else if (confirmEmailValue !== emailValue) {
-        displayError(confirmEmail, "Emails must match")
-    }
-    else {
-        displayNone(confirmEmail);
     }
 
     // Password verification
