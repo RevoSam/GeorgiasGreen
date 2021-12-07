@@ -111,7 +111,7 @@ if(isset($_POST['Signup'])) {
     <div class="contact-details">
       <h1>Contact Details</h1>
       <hr>
-      <form id="signup-form">
+      <form id="signup-form" method="post" action="">
         <div class="form-field">
           <h3><label for="name">Full Name:</label></h3>
           <input type="text" id="name" name="fullname" placeholder="" value="">
@@ -124,12 +124,12 @@ if(isset($_POST['Signup'])) {
         </div>
         <div class="form-field">
           <h3><label for="pass">Enter your password:</label></h3>
-          <input type="password" id="pass" name="pass" value="">
+          <input type="password"  name="pass" value="">
           <small class="form-error-message"></small>
         </div>
         <div class="form-field">
           <h3><label for="pass">Confirm your password:</label></h3>
-          <input type="password" id="pass" name="c_pass" value="">
+          <input type="password"  name="c_pass" value="">
           <small class="form-error-message"></small>
         </div>
     </div>
