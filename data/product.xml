@@ -105,7 +105,7 @@
         <pdt_name>Vinegar</pdt_name>
         <pdt_short_description>Georgia's Greens Vinegar (500 mL)</pdt_short_description>
         <pdt_description>Fresh Vinegar, Natural Apple Cider</pdt_description>
-        <pdt_price>20.99/each</pdt_price>
+        <pdt_price>20.99</pdt_price>
         <pdt_package_type>1/pkg</pdt_package_type>
         <pdt_unit>1</pdt_unit>
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
@@ -122,7 +122,7 @@
         <pdt_name>Tomato Sauce</pdt_name>
         <pdt_short_description>Georgia's Greens Tomato Sauce (300 mL)</pdt_short_description>
         <pdt_description>Tomato Sauce, from Italian Tomatoes</pdt_description>
-        <pdt_price>4.49/each</pdt_price>
+        <pdt_price>4.49</pdt_price>
         <pdt_package_type>1/pkg</pdt_package_type>
         <pdt_unit>1</pdt_unit>
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
@@ -139,7 +139,7 @@
         <pdt_name>Baking Powder</pdt_name>
         <pdt_short_description>Georgia's Greens Baking Powder (100 g)</pdt_short_description>
         <pdt_description>Fresh Baking Powder from Canada</pdt_description>
-        <pdt_price>9.49/each</pdt_price>
+        <pdt_price>9.49</pdt_price>
         <pdt_package_type>1/pkg</pdt_package_type>
         <pdt_unit>1</pdt_unit>
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
@@ -156,7 +156,7 @@
         <pdt_name>Flour</pdt_name>
         <pdt_short_description>Georgia's Greens Flour (500 g)</pdt_short_description>
         <pdt_description>Fresh Flour from Canada</pdt_description>
-        <pdt_price>10.49/each</pdt_price>
+        <pdt_price>10.49</pdt_price>
         <pdt_package_type>1/pkg</pdt_package_type>
         <pdt_unit>1</pdt_unit>
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
