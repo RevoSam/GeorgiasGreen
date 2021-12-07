@@ -1,5 +1,18 @@
 <?php
 
+$file_open_users = 'data/users.xml';
+
+if (file_exists($file_open_users)) {
+    $users = simplexml_load_file($file_open_users);
+    if (isset($_GET['ID'])) {
+        $user_id = $_GET['ID'];
+        $user_to_load = $users->xpath('/users/user/id_user[.= "'. $user_id. '"]/parent::*')[0];
+        //print_r($user_to_load);
+    }
+    } else {
+        exit('Failed to open ');
+    }
+
 if(isset($_POST['submit'])) {
   $email = $_POST['email'];
   $name = $_POST['fullname'];
