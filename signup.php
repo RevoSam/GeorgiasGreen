@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['Signup'])) {
+if(isset($_POST['submit'])) {
   debug_to_console("bingbong");
   $email = $_POST['email'];
   $name = $_POST['fullname'];
@@ -97,6 +97,11 @@ if(isset($_POST['Signup'])) {
           <small class="form-error-message"></small>
         </div>
         <div class="form-field">
+          <h3><label for="confirm-email">Confirm your email:</label></h3>
+          <input type="email" id="confirm-email" name="email-confirm" placeholder="" value="">
+          <small class="form-error-message"></small>
+        </div>
+        <div class="form-field">
           <h3><label for="pass">Enter your password:</label></h3>
           <input type="password" id="pass" name="pass" value="">
           <small class="form-error-message"></small>
@@ -165,7 +170,7 @@ if(isset($_POST['Signup'])) {
       <a href="https://youtu.be/dQw4w9WgXcQ" style="padding: 5px;" target="_blank"><img src="assets/YTLogo.png"></a>
     </div>
   </div>
-  <script src="scripts\signup.js"></script>
+  <script src="scripts/signup.js"></script>
 </body>
 
 </html>
