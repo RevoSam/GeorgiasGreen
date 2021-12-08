@@ -57,7 +57,9 @@
                 $url = htmlspecialchars("../../Products/product.php?ID=". $id );
                 echo "<a href = '{$url}'>";
                 echo "<div class = 'product'>";
-                echo "<img src = '{$item->img_path}'>";
+                $path = "../";
+                $path .= $item->img_path;
+                echo "<img src = '{$path}'>";
                 echo "<h3>{$item->pdt_name}</h3>";
                 echo "<h4>{$item->pdt_short_description} ({$item->pdt_package_type})</h4>";
                 echo "<span>$ {$item->pdt_price}</span>";

@@ -325,7 +325,7 @@
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
         <pdt_inventory>10</pdt_inventory>
         <pdt_origin>United-States</pdt_origin>
-        <img_path>..\..\assets/Dairy Products/cheddar-cheese.png</img_path>
+        <img_path>../assets/Dairy Products/cheddar-cheese.png</img_path>
         <abs_img_path>../assets/Dairy\ Products/cheddar-cheese.png</abs_img_path>
     </product>
     <product>
@@ -341,7 +341,7 @@
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
         <pdt_inventory>10</pdt_inventory>
         <pdt_origin>United-States</pdt_origin>
-        <img_path>..\..\assets/Dairy Products/cream.png</img_path>
+        <img_path>../assets/Dairy Products/cream.png</img_path>
         <abs_img_path>../assets/Dairy\ Products/cream.png</abs_img_path>
     </product>
     <product>
@@ -357,7 +357,7 @@
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
         <pdt_inventory>10</pdt_inventory>
         <pdt_origin>Mexico</pdt_origin>
-        <img_path>..\..\assets/Dairy Products/ice-cream.png</img_path>
+        <img_path>../assets/Dairy Products/ice-cream.png</img_path>
         <abs_img_path>../assets/assets/Dairy\ Products/ice-cream.png</abs_img_path>
     </product>
     <product>
@@ -373,7 +373,7 @@
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
         <pdt_inventory>10</pdt_inventory>
         <pdt_origin>Canada</pdt_origin>
-        <img_path>..\..\assets/Dairy Products/milk-jug.jpg</img_path>
+        <img_path>../assets/Dairy Products/milk-jug.jpg</img_path>
         <abs_img_path>../assets/assets/Dairy\ Products/milk-jug.jpg</abs_img_path>
     </product>
     <product>
@@ -389,7 +389,7 @@
         <pdt_brand_name>Georgia's Greens</pdt_brand_name>
         <pdt_inventory>10</pdt_inventory>
         <pdt_origin>United-States</pdt_origin>
-        <img_path>..\..\assets/Dairy Products/yogurt.png</img_path>
+        <img_path>../assets/Dairy Products/yogurt.png</img_path>
         <abs_img_path>../assets/Dairy\ Products/yogurt.png</abs_img_path>
     </product>
 
