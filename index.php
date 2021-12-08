@@ -52,12 +52,6 @@
   </div>
   <div class="body">
     <div class="ailes_wrapper">
-    <?php
-        if (isset($_SESSION["firstname"])) {
-          $name = $_SESSION["firstname"];
-          echo "<h2>Welcome {$name}</h2>";
-        }
-      ?>
       <h2>Start Browsing</h2>
       <h1>Browse our Aisles</h1>
       <div class="ailes_block">

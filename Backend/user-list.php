@@ -83,6 +83,7 @@ if(isset($_POST["edit"])){
         <a href="backstore.php"><span class="glyphicon glyphicon-tags"></span>&nbsp&nbspProducts</a>
         <a href="user-list.php"><span class="glyphicon glyphicon-user"></span>&nbsp&nbspUsers</a>
         <a href="order-list.php"><span class="glyphicon glyphicon-credit-card"></span>&nbsp&nbspOrders</a>
+        <a href="../index.php"><span class="glyphicon glyphicon-home"></span>&nbsp&nbspHome</a>
         <?php 
         if (isset($_SESSION["id_user"])) {
           echo '<a href="../login.php?logout=true"><span class="glyphicon glyphicon-remove"></span>&nbsp&nbspLog Out</a>';
