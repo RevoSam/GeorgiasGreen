@@ -14,7 +14,16 @@
 </head>
 
 <body>
-  <div class="header"><a href="index.php"><img src="assets/GGLogo.png" width="350"></a></div>
+  <div class="header"><a href="index.php"><img class = "header-image" src="assets/GGLogo.png" width="350"></a>
+  <?php
+        if (isset($_SESSION["firstname"])) {
+          $name = $_SESSION["firstname"];
+          echo '<div class="header-user-display">';
+            echo "<h2>Welcome, {$name}!</h2>";
+          echo "</div>";
+        }
+      ?>
+  </div>
   <div class="blank"></div>
   <div class="row">
     <div class="col-4 menu">

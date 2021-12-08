@@ -71,7 +71,7 @@ if(isset($_POST["edit"])){
     <?php
             if (isset($_SESSION["firstname"])){
                 $name = $_SESSION["firstname"];
-                echo "<p>Welcome {$name} </p>";
+                echo '<p class="user-display"> Welcome, '.$name.'! </p>';
             }
             else {
                 echo "<p>Welcome User</p>";
@@ -83,6 +83,14 @@ if(isset($_POST["edit"])){
         <a href="backstore.php"><span class="glyphicon glyphicon-tags"></span>&nbsp&nbspProducts</a>
         <a href="user-list.php"><span class="glyphicon glyphicon-user"></span>&nbsp&nbspUsers</a>
         <a href="order-list.php"><span class="glyphicon glyphicon-credit-card"></span>&nbsp&nbspOrders</a>
+        <?php 
+        if (isset($_SESSION["id_user"])) {
+          echo '<a href="../login.php?logout=true"><span class="glyphicon glyphicon-remove"></span>&nbsp&nbspLog Out</a>';
+        }
+        else {
+         echo '<a class="nav" href="login.php">Sign in</a>';
+        }
+      ?>
     </aside>
     <div class="additional-components">
         <div class="additional-components">

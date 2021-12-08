@@ -17,6 +17,15 @@ header p {
 .orders{
     margin-left:30px;
 }
+.user-display {
+    float: left;
+    background-color: rgb(58, 182, 0);
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    margin: 10px;
+  }
+
 
 
 /*Side Bar*/
@@ -213,6 +222,10 @@ button {
             margin-top:5px;
             width:90%;
         }
+        .user-display {
+            float: none;
+            text-align: center;
+          }
     }
 
 /* Medium Screens*/
@@ -270,6 +283,10 @@ button {
             font-size:17px;
             margin-right:10px;
         }
+        .user-display {
+            float: none;
+            text-align: center;
+          }
   
     }
 
@@ -294,4 +311,8 @@ button {
             margin-right:10px;
             margin-bottom:20px;
         }
+        .user-display {
+            float: none;
+            text-align: center;
+          }
     }

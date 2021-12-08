@@ -144,7 +144,7 @@ function getName(){
             </div>
             <div class = "xsml-container">
                 <label for = "product-code">Password</label><br>
-                <input type="text" name="password" value="<?php echo $user_to_load->password;?>">
+                <input type="password" name="password" value="<?php echo $user_to_load->password;?>">
             </div>
             <div class = "xsml-container">
                 <label for = "product-price">Email</label><br>

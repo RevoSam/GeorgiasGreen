@@ -61,7 +61,21 @@ body {
   background-color: rgb(33, 105, 0);
   width: 100%;
   text-align: center;
-  padding-right: 50px;
+  
+}
+
+.header-image {
+  float: left;
+  padding: 15px;
+}
+
+.header-user-display {
+  float: right;
+  background-color: rgb(58, 182, 0);
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  margin: 10px;
 }
 
 .BigTitle {
@@ -135,6 +149,13 @@ img {
   }
   .body {
     width: 96%;
+  }
+  .header-user-display {
+    float: none;
+  }
+  .header-image {
+    float: none;
+    
   }
 }
 
