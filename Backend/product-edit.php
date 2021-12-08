@@ -127,8 +127,8 @@
                     $brandTag = $xml->createElement("pdt_brand_name",isGiven($brand));
                     $qtyTag = $xml->createElement("pdt_inventory",$quantity);
                     $originTag = $xml->createElement("pdt_origin",isGiven($origin));
-                    $imgTag = $xml->createElement("img_path","..\..\assets/defaultPicture.jpg");//img_path
-                    $absimgTag = $xml->createElement("abs_img_path","../assets/defaultPicture.jpg");
+                    $imgTag = $xml->createElement("img_path","../assets/GGLogoPictureBigger.png");//img_path
+                    $absimgTag = $xml->createElement("abs_img_path","../assets/GGLogoPictureBigger.png");
                 //format
                 $productTag->appendChild($codeTag); //pdt_id
                 $productTag->appendChild($aileTag);//pdt_al_id

@@ -1,9 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <products>
     <product>
+        <pdt_id>GGFV001_PK</pdt_id>
+        <pdt_al_id>1</pdt_al_id>
+        <pdt_order_number/>
+        <pdt_name>Apples</pdt_name>
+        <pdt_short_description>Fresh Apples</pdt_short_description>
+        <pdt_description>Fresh apples from farms</pdt_description>
+        <pdt_price>0.69</pdt_price>
+        <pdt_package_type>1/pkg</pdt_package_type>
+        <pdt_unit>1</pdt_unit>
+        <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+        <pdt_inventory>10</pdt_inventory>
+        <pdt_origin>Canada</pdt_origin>
+        <img_path>../assets/Fruits and Vegetables Products/Apple.png</img_path>
+        <abs_img_path>../assets/Fruits and Vegetables Products/Apple.png</abs_img_path>
+    </product>
+    <product>
+        <pdt_id>GGFV002_PK</pdt_id>
+        <pdt_al_id>1</pdt_al_id>
+        <pdt_order_number/>
+        <pdt_name>Bananas</pdt_name>
+        <pdt_short_description>Fresh Sweet Bananas</pdt_short_description>
+        <pdt_description>Sweet Bananas imported from Brazil</pdt_description>
+        <pdt_price>0.79</pdt_price>
+        <pdt_package_type>1/pkg</pdt_package_type>
+        <pdt_unit>1</pdt_unit>
+        <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+        <pdt_inventory>10</pdt_inventory>
+        <pdt_origin>Brazil</pdt_origin>
+        <img_path>../assets/Fruits and Vegetables Products/Banana.png</img_path>
+        <abs_img_path>../assets/Fruits and Vegetables Products/Banana.png</abs_img_path>
+    </product>
+    <product>
+        <pdt_id>GGFV003_PK</pdt_id>
+        <pdt_al_id>1</pdt_al_id>
+        <pdt_order_number/>
+        <pdt_name>Broccoli</pdt_name>
+        <pdt_short_description>Broccoli</pdt_short_description>
+        <pdt_description>Fresh Broccoli, yummy and healthy.</pdt_description>
+        <pdt_price>3.99</pdt_price>
+        <pdt_package_type>4/pkg</pdt_package_type>
+        <pdt_unit>1</pdt_unit>
+        <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+        <pdt_inventory>10</pdt_inventory>
+        <pdt_origin>Canada</pdt_origin>
+        <img_path>../assets/Fruits and Vegetables Products/Broccoli.png</img_path>
+        <abs_img_path>../assets/Fruits and Vegetables Products/Broccoli.png</abs_img_path>
+    </product>
+    <product>
+        <pdt_id>GGFV004_PK</pdt_id>
+        <pdt_al_id>1</pdt_al_id>
+        <pdt_order_number/>
+        <pdt_name>Carrots</pdt_name>
+        <pdt_short_description>Fresh Carrots</pdt_short_description>
+        <pdt_description>They're good for your eyes, you know?</pdt_description>
+        <pdt_price>1.99</pdt_price>
+        <pdt_package_type>3/pkg</pdt_package_type>
+        <pdt_unit>1</pdt_unit>
+        <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+        <pdt_inventory>10</pdt_inventory>
+        <pdt_origin>Canada</pdt_origin>
+        <img_path>../assets/Fruits and Vegetables Products/Carrot.png</img_path>
+        <abs_img_path>../assets/Fruits and Vegetables Products/Carrot.png</abs_img_path>
+    </product>
+    <product>
+        <pdt_id>GGFV005_PK</pdt_id>
+        <pdt_al_id>1</pdt_al_id>
+        <pdt_order_number/>
+        <pdt_name>Onion</pdt_name>
+        <pdt_short_description>Fresh Onions</pdt_short_description>
+        <pdt_description>Wanna make Italian Food? You can't without these bad boys.</pdt_description>
+        <pdt_price>3.99</pdt_price>
+        <pdt_package_type>6/pkg</pdt_package_type>
+        <pdt_unit>1</pdt_unit>
+        <pdt_brand_name>Georgia's Greens</pdt_brand_name>
+        <pdt_inventory>10</pdt_inventory>
+        <pdt_origin>Canada</pdt_origin>
+        <img_path>../assets/Fruits and Vegetables Products/Onion.png</img_path>
+        <abs_img_path>../assets/Fruits and Vegetables Products/Onion.png</abs_img_path>
+    </product>
+    <product>
         <pdt_id>GGMP001_PK</pdt_id>
         <pdt_al_id>2</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Chicken Breast Pieces</pdt_name>
         <pdt_short_description>Chicken Breast Pieces</pdt_short_description>
         <pdt_description>Freshly cut breast pieces from ethically-raised Canadian farm chickens</pdt_description>
@@ -19,7 +99,7 @@
     <product>
         <pdt_id>GGMP002_PK</pdt_id>
         <pdt_al_id>2</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Chicken Drumsticks</pdt_name>
         <pdt_short_description>Chicken Breast Pieces</pdt_short_description>
         <pdt_description>Fresh chicken drumsticks from ethically-raised Canadian farm chickens</pdt_description>
@@ -35,7 +115,7 @@
     <product>
         <pdt_id>GGMP003_PK</pdt_id>
         <pdt_al_id>2</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Chicken (Whole)</pdt_name>
         <pdt_short_description>Whole Chicken</pdt_short_description>
         <pdt_description>Fresh whole chicken, ethically raised and bred in Canadian farms</pdt_description>
@@ -51,7 +131,7 @@
     <product>
         <pdt_id>GGMP004_PK</pdt_id>
         <pdt_al_id>2</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Minced Beef</pdt_name>
         <pdt_short_description>Minced Beef</pdt_short_description>
         <pdt_description>Fresh minced beef from Canadian farms</pdt_description>
@@ -67,7 +147,7 @@
     <product>
         <pdt_id>GGMP005_PK</pdt_id>
         <pdt_al_id>2</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Steak</pdt_name>
         <pdt_short_description>Freshly-cut Steak</pdt_short_description>
         <pdt_description>Freshly cut breast beef steak</pdt_description>
@@ -84,7 +164,7 @@
     <product>
         <pdt_id>GGPP003_PK</pdt_id>
         <pdt_al_id>4</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Sugar</pdt_name>
         <pdt_short_description>Georgia's Greens Sugar (1 kg)</pdt_short_description>
         <pdt_description>Medium sized pack of sugar</pdt_description>
@@ -101,7 +181,7 @@
     <product>
         <pdt_id>GGPP005_PK</pdt_id>
         <pdt_al_id>4</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Vinegar</pdt_name>
         <pdt_short_description>Georgia's Greens Vinegar (500 mL)</pdt_short_description>
         <pdt_description>Fresh Vinegar, Natural Apple Cider</pdt_description>
@@ -118,7 +198,7 @@
     <product>
         <pdt_id>GGPP004_PK</pdt_id>
         <pdt_al_id>4</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Tomato Sauce</pdt_name>
         <pdt_short_description>Georgia's Greens Tomato Sauce (300 mL)</pdt_short_description>
         <pdt_description>Tomato Sauce, from Italian Tomatoes</pdt_description>
@@ -135,7 +215,7 @@
     <product>
         <pdt_id>GGPP001_PK</pdt_id>
         <pdt_al_id>4</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Baking Powder</pdt_name>
         <pdt_short_description>Georgia's Greens Baking Powder (100 g)</pdt_short_description>
         <pdt_description>Fresh Baking Powder from Canada</pdt_description>
@@ -152,7 +232,7 @@
     <product>
         <pdt_id>GGPP002_PK</pdt_id>
         <pdt_al_id>4</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Flour</pdt_name>
         <pdt_short_description>Georgia's Greens Flour (500 g)</pdt_short_description>
         <pdt_description>Fresh Flour from Canada</pdt_description>
@@ -170,7 +250,7 @@
     <product>
         <pdt_id>GGCP225_PK</pdt_id>
         <pdt_al_id>6</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Strong Paper Towel</pdt_name>
         <pdt_short_description>Strong Paper Towel</pdt_short_description>
         <pdt_description>Ultra Strong Paper Towel, 60 sheets each roll (27.4 x 22.0 cm)</pdt_description>
@@ -186,7 +266,7 @@
     <product>
         <pdt_id>GGCP336_QT</pdt_id>
         <pdt_al_id>6</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Soft Double Ply Toilet Paper</pdt_name>
         <pdt_short_description>Soft Double Ply TP</pdt_short_description>
         <pdt_description>High-quality Double Ply Toilet Paper, soft and thick. (6 Rolls - 242 Sheets per Roll)</pdt_description>
@@ -202,7 +282,7 @@
     <product>
         <pdt_id>GGCP501_GP</pdt_id>
         <pdt_al_id>6</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Dishwashing Liquid</pdt_name>
         <pdt_short_description>Dishwashing Liquid</pdt_short_description>
         <pdt_description>Powerful grease cutting formula to clean dirty dishes.</pdt_description>
@@ -218,7 +298,7 @@
     <product>
         <pdt_id>GGCP628_LP</pdt_id>
         <pdt_al_id>6</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Garbage Bags</pdt_name>
         <pdt_short_description>Garbage Bags</pdt_short_description>
         <pdt_description>Kitchen White garbage bags. 50 bags per roll</pdt_description>
@@ -235,7 +315,7 @@
     <product>
         <pdt_id>GGCY001_PK</pdt_id>
         <pdt_al_id>5</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Cheese</pdt_name>
         <pdt_short_description>Cheddar Cheese (450g)</pdt_short_description>
         <pdt_description>Good Cheese</pdt_description>
@@ -251,7 +331,7 @@
     <product>
         <pdt_id>GGCR002_PK</pdt_id>
         <pdt_al_id>5</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Cream</pdt_name>
         <pdt_short_description>Good Cream</pdt_short_description>
         <pdt_description>Very Good Cream</pdt_description>
@@ -267,7 +347,7 @@
     <product>
         <pdt_id>GGIC003_PK</pdt_id>
         <pdt_al_id>5</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Ice Cream</pdt_name>
         <pdt_short_description>Vanilla Ice Cream (500g)</pdt_short_description>
         <pdt_description>Good Ice Cream</pdt_description>
@@ -283,7 +363,7 @@
     <product>
         <pdt_id>GGSM004_PK</pdt_id>
         <pdt_al_id>5</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Milk</pdt_name>
         <pdt_short_description>Skim Milk 2L</pdt_short_description>
         <pdt_description>Good Milk</pdt_description>
@@ -299,7 +379,7 @@
     <product>
         <pdt_id>GGCY005_PK</pdt_id>
         <pdt_al_id>5</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Yogurt</pdt_name>
         <pdt_short_description>Strawberry Greek Yogurt ( 350 g )</pdt_short_description>
         <pdt_description>Good Yogurt</pdt_description>
@@ -316,7 +396,7 @@
     <product>
         <pdt_id>GGBP001_PK</pdt_id>
         <pdt_al_id>3</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Bagel</pdt_name>
         <pdt_short_description>Pack of 4 Freshly Made Bagels</pdt_short_description>
         <pdt_description>Plain Bagel, Pack containing 4 Bagels</pdt_description>
@@ -333,7 +413,7 @@
     <product>
         <pdt_id>GGBP002_PK</pdt_id>
         <pdt_al_id>3</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Baguette</pdt_name>
         <pdt_short_description>Baguette</pdt_short_description>
         <pdt_description>Loaf of Baguette Bread</pdt_description>
@@ -350,7 +430,7 @@
     <product>
         <pdt_id>GGBP003_PK</pdt_id>
         <pdt_al_id>3</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Croissant</pdt_name>
         <pdt_short_description>Croissants</pdt_short_description>
         <pdt_description>Butter Croissants, pack containing 4 croissants.</pdt_description>
@@ -367,7 +447,7 @@
     <product>
         <pdt_id>GGBP004_PK</pdt_id>
         <pdt_al_id>3</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Muffin</pdt_name>
         <pdt_short_description>Pack of 6 Fresh Muffins</pdt_short_description>
         <pdt_description>Plain Muffins, pack containing 6 muffins.</pdt_description>
@@ -384,7 +464,7 @@
     <product>
         <pdt_id>GGBP005_PK</pdt_id>
         <pdt_al_id>3</pdt_al_id>
-        <pdt_order_number />
+        <pdt_order_number/>
         <pdt_name>Wholewheat Bread</pdt_name>
         <pdt_short_description>Wholewheat Bread</pdt_short_description>
         <pdt_description>Loaf of Wholewheat Bread, 650g</pdt_description>
@@ -397,4 +477,5 @@
         <img_path>../assets/Bakery Products/wholewheat.png</img_path>
         <abs_img_path>\..assets/Bakery Products/wholewheat.png</abs_img_path>
     </product>
+    
 </products>
