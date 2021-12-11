@@ -27,7 +27,7 @@
     <link rel="icon" href="../../assets/GGLogoPicture.png" />
   </head>
   <body>
-    <div class="header"><a href="..\..\index.php"><img src = "..\..\assets/GGLogo.png" width="350"></a>
+    <div class="header"><a href="..\..\index.php"><img class = "header-image" src = "..\..\assets/GGLogo.png" width="350"></a>
     <?php
         if (isset($_SESSION["firstname"])) {
           $name = $_SESSION["firstname"];

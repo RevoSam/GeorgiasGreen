@@ -18,6 +18,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  
 }
 
 [class*="col-"] {
@@ -292,6 +293,7 @@ img {
   padding: 20px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  
 }
 .ailes_block img {
   width: 25%;
