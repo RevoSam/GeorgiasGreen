@@ -1,4 +1,5 @@
 <?php 
+  session_start();
   $file_open_aisles = '../../data/aisles.xml';
   $file_open_products = '../../data/product.xml';
   
@@ -25,7 +26,16 @@
     <link rel="icon" href="../../assets/GGLogoPicture.png" />
   </head>
   <body>
-    <div class="header"><a href="..\..\index.php"><img src = "..\..\assets/GGLogo.png" width="350"></a></div>
+    <div class="header"><a href="..\..\index.php"><img src = "..\..\assets/GGLogo.png" width="350"></a>
+    <?php
+        if (isset($_SESSION["firstname"])) {
+          $name = $_SESSION["firstname"];
+          echo '<div class="header-user-display">';
+            echo "<h2>Welcome, {$name}!</h2>";
+          echo "</div>";
+        }
+      ?>
+  </div>
     <div class="blank"></div>
     <div class="row">
       <div class="col-4 menu">
@@ -40,7 +50,14 @@
             <a class="dropdown-menu" href="../CleaningSupplies/CleaningSupplies.php">Cleaning Supplies</a>
           </div>
         </div>
-        <a class="nav" href="../../login.php">Sign in</a>
+        <?php 
+        if (isset($_SESSION["id_user"])) {
+          echo '<a class="nav" href="../../login.php?logout=true">Log out</a>';
+        }
+        else {
+         echo '<a class="nav" href="../../login.php">Sign in</a>';
+        }
+      ?>
         <a class="nav" href="../../shoppingcart.php">Check out</a>
         <input type="text" placeholder="Search for a product..." />
       </div>
